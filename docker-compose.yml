@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./Backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - db-data:/app/data
+    environment:
+      - DB_PATH=/app/data/courseforge.db
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  db-data:
