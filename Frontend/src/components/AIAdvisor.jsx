@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getAIRecommendation } from '../data/api';
 
-export default function AIAdvisor({ courses, selectedIds, onSelectCourse }) {
+export default function AIAdvisor({ courses, selectedIds, onSelectCourse, userMajor, userMinor }) {
   const [open, setOpen] = useState(true);
   const [prompt, setPrompt] = useState('');
   const [loading, setLoading] = useState(false);
@@ -12,7 +12,7 @@ export default function AIAdvisor({ courses, selectedIds, onSelectCourse }) {
     if (!prompt.trim() || loading) return;
     setLoading(true);
     try {
-      const rec = await getAIRecommendation(prompt, selectedIds);
+      const rec = await getAIRecommendation(prompt, selectedIds, userMajor, userMinor);
       setResult(rec);
     } catch (err) {
       console.error('AI recommendation failed:', err);

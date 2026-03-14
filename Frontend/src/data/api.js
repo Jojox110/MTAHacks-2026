@@ -1,101 +1,128 @@
 /**
  * API service layer — all backend calls go through here.
- * Currently returns mock data. Replace with real fetch() calls when backend is ready.
  */
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
 
-/**
- * Fetch course catalog from backend
- */
-export async function fetchCourses() {
-  // TODO: Replace with real API call
-  // return fetch(`${API_BASE}/courses`).then(r => r.json());
-  const { CATALOG } = await import('./courses.js');
-  return CATALOG;
+function getToken() {
+  return localStorage.getItem('courseforge_token');
 }
 
-/**
- * Fetch career paths from backend
- */
-export async function fetchCareerPaths() {
-  // TODO: Replace with real API call
-  // return fetch(`${API_BASE}/career-paths`).then(r => r.json());
-  const { CAREER_PATHS } = await import('./courses.js');
-  return CAREER_PATHS;
-}
-
-/**
- * Send user preferences to AI advisor and get recommended path + courses
- * @param {string} prompt - User's career goals / preferences
- * @param {string[]} currentCourses - IDs of currently selected courses
- * @returns {Promise<{ careerPath: string, description: string, required: string[], recommended: string[] }>}
- */
-export async function getAIRecommendation(prompt, currentCourses = []) {
-  // TODO: Replace with real API call
-  // return fetch(`${API_BASE}/ai/recommend`, {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({ prompt, currentCourses }),
-  // }).then(r => r.json());
-
-  // Mock: simple keyword matching for demo
-  const { CAREER_PATHS } = await import('./courses.js');
-
-  await new Promise(r => setTimeout(r, 1500)); // simulate latency
-
-  const lower = prompt.toLowerCase();
-  const keywords = {
-    'Software Engineer': ['software', 'web', 'app', 'code', 'programming', 'developer', 'full stack', 'frontend', 'backend'],
-    'Data Scientist': ['data', 'analytics', 'statistics', 'analysis', 'insight'],
-    'Cybersecurity Analyst': ['security', 'cyber', 'hacking', 'network', 'protect'],
-    'AI/ML Engineer': ['ai', 'machine learning', 'ml', 'artificial intelligence', 'deep learning', 'neural'],
-    'Product Manager': ['product', 'manage', 'lead', 'strategy', 'pm'],
-    'Financial Analyst': ['finance', 'financial', 'investment', 'banking', 'accounting', 'money'],
-    'Biomedical Engineer': ['biomedical', 'medical', 'health', 'bio', 'healthcare'],
-    'UX Researcher': ['ux', 'user experience', 'design', 'research', 'usability'],
-  };
-
-  let bestMatch = 'Software Engineer';
-  let bestScore = 0;
-
-  for (const [path, words] of Object.entries(keywords)) {
-    const score = words.filter(w => lower.includes(w)).length;
-    if (score > bestScore) {
-      bestScore = score;
-      bestMatch = path;
-    }
+async function authFetch(path, options = {}) {
+  const token = getToken();
+  const headers = { 'Content-Type': 'application/json', ...options.headers };
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
   }
-
-  const pathData = CAREER_PATHS[bestMatch];
-  return {
-    careerPath: bestMatch,
-    description: pathData.description,
-    required: pathData.required,
-    recommended: pathData.recommended,
-  };
+  const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.detail || `Request failed (${res.status})`);
+  }
+  return res.json();
 }
 
-/**
- * Save user's schedule to backend
- * @param {string[]} courseIds
- */
+// ─── Auth ───
+
+export async function registerUser({ name, email, major, minor }) {
+  return authFetch('/register', {
+    method: 'POST',
+    body: JSON.stringify({ name, email, major, minor }),
+  });
+}
+
+export async function loginUser(email) {
+  return authFetch('/login', {
+    method: 'POST',
+    body: JSON.stringify({ email }),
+  });
+}
+
+export async function getCurrentUser() {
+  return authFetch('/me');
+}
+
+// ─── Courses ───
+
+export async function fetchCourses() {
+  try {
+    return await authFetch('/courses');
+  } catch {
+    // Fallback to local data if backend is unavailable
+    const { CATALOG } = await import('./courses.js');
+    return CATALOG;
+  }
+}
+
+export async function fetchCareerPaths() {
+  try {
+    return await authFetch('/career-paths');
+  } catch {
+    const { CAREER_PATHS } = await import('./courses.js');
+    return CAREER_PATHS;
+  }
+}
+
+// ─── AI Advisor ───
+
+export async function getAIRecommendation(prompt, currentCourses = [], major = null, minor = null) {
+  try {
+    return await authFetch('/ai/recommend', {
+      method: 'POST',
+      body: JSON.stringify({ prompt, currentCourses, major, minor }),
+    });
+  } catch {
+    // Fallback: local keyword matching
+    const { CAREER_PATHS } = await import('./courses.js');
+    await new Promise(r => setTimeout(r, 1500));
+
+    const lower = prompt.toLowerCase();
+    const keywords = {
+      'Software Engineer': ['software', 'web', 'app', 'code', 'programming', 'developer', 'full stack', 'frontend', 'backend'],
+      'Data Scientist': ['data', 'analytics', 'statistics', 'analysis', 'insight'],
+      'Cybersecurity Analyst': ['security', 'cyber', 'hacking', 'network', 'protect'],
+      'AI/ML Engineer': ['ai', 'machine learning', 'ml', 'artificial intelligence', 'deep learning', 'neural'],
+      'Product Manager': ['product', 'manage', 'lead', 'strategy', 'pm'],
+      'Financial Analyst': ['finance', 'financial', 'investment', 'banking', 'accounting', 'money'],
+      'Biomedical Engineer': ['biomedical', 'medical', 'health', 'bio', 'healthcare'],
+      'UX Researcher': ['ux', 'user experience', 'design', 'research', 'usability'],
+    };
+
+    let bestMatch = 'Software Engineer';
+    let bestScore = 0;
+    for (const [path, words] of Object.entries(keywords)) {
+      const score = words.filter(w => lower.includes(w)).length;
+      if (score > bestScore) { bestScore = score; bestMatch = path; }
+    }
+
+    const pathData = CAREER_PATHS[bestMatch];
+    return {
+      careerPath: bestMatch,
+      description: pathData.description,
+      required: pathData.required,
+      recommended: pathData.recommended,
+    };
+  }
+}
+
+// ─── Schedule persistence ───
+
 export async function saveSchedule(courseIds) {
-  // TODO: Replace with real API call
-  // return fetch(`${API_BASE}/schedule`, {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({ courseIds }),
-  // }).then(r => r.json());
-  console.log('Schedule saved (mock):', courseIds);
-  return { success: true };
+  try {
+    return await authFetch('/schedule', {
+      method: 'POST',
+      body: JSON.stringify({ courseIds }),
+    });
+  } catch {
+    console.log('Schedule saved (local fallback):', courseIds);
+    return { success: true };
+  }
 }
 
-/**
- * Load user's saved schedule from backend
- */
 export async function loadSchedule() {
-  // TODO: Replace with real API call
-  // return fetch(`${API_BASE}/schedule`).then(r => r.json());
-  return { courseIds: [] };
+  try {
+    return await authFetch('/schedule');
+  } catch {
+    return { courseIds: [] };
+  }
 }

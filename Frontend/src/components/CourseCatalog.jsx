@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { DEPARTMENTS } from '../data/courses';
 import { hasConflict } from '../data/courses';
 
-export default function CourseCatalog({ courses, selectedCourses, onToggleCourse }) {
-  const [dept, setDept] = useState('All');
+export default function CourseCatalog({ courses, selectedCourses, onToggleCourse, userMajor }) {
+  const [dept, setDept] = useState(userMajor || 'All');
   const [search, setSearch] = useState('');
 
   const selectedIds = selectedCourses.map((c) => c.id);

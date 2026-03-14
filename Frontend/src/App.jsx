@@ -2,22 +2,58 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import './App.css';
 
+import LoginScreen from './components/LoginScreen';
 import AIAdvisor from './components/AIAdvisor';
 import CourseCatalog from './components/CourseCatalog';
 import ScheduleGrid from './components/ScheduleGrid';
 import ProgressView from './components/ProgressView';
-import { fetchCourses } from './data/api';
+import { fetchCourses, getCurrentUser, saveSchedule, loadSchedule } from './data/api';
 import { hasConflict } from './data/courses';
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [authChecked, setAuthChecked] = useState(false);
   const [courses, setCourses] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [activeTab, setActiveTab] = useState('schedule');
 
-  // Load course catalog from API
+  // Restore session from localStorage
+  useEffect(() => {
+    const token = localStorage.getItem('courseforge_token');
+    if (token) {
+      getCurrentUser()
+        .then(setUser)
+        .catch(() => localStorage.removeItem('courseforge_token'))
+        .finally(() => setAuthChecked(true));
+    } else {
+      setAuthChecked(true);
+    }
+  }, []);
+
+  // Load course catalog
   useEffect(() => {
     fetchCourses().then(setCourses);
   }, []);
+
+  // Load saved schedule when user logs in
+  useEffect(() => {
+    if (!user || courses.length === 0) return;
+    loadSchedule().then(({ courseIds }) => {
+      if (courseIds.length > 0) {
+        const saved = courseIds
+          .map((id) => courses.find((c) => c.id === id))
+          .filter(Boolean);
+        setSelectedCourses(saved);
+      }
+    }).catch(() => {});
+  }, [user, courses]);
+
+  // Auto-save schedule when it changes
+  useEffect(() => {
+    if (!user || selectedCourses.length === 0) return;
+    const ids = selectedCourses.map((c) => c.id);
+    saveSchedule(ids).catch(() => {});
+  }, [user, selectedCourses]);
 
   const selectedIds = selectedCourses.map((c) => c.id);
 
@@ -28,7 +64,6 @@ function App() {
         if (exists) {
           return prev.filter((c) => c.id !== course.id);
         }
-        // Check for conflicts before adding
         const conflict = hasConflict(course, prev);
         if (conflict) return prev;
         return [...prev, course];
@@ -53,6 +88,20 @@ function App() {
     setSelectedCourses((prev) => prev.filter((c) => c.id !== course.id));
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('courseforge_token');
+    setUser(null);
+    setSelectedCourses([]);
+  };
+
+  // Show nothing until auth check completes
+  if (!authChecked) return null;
+
+  // Show login screen if not authenticated
+  if (!user) {
+    return <LoginScreen onComplete={setUser} />;
+  }
+
   return (
     <div className="app">
       {/* Background effects */}
@@ -68,6 +117,10 @@ function App() {
             </h1>
             <span className="logo-tag">2026</span>
           </div>
+          <div className="user-info">
+            <span className="user-name">{user.name}</span>
+            <button className="logout-btn" onClick={handleLogout}>Log out</button>
+          </div>
         </div>
 
         <div className="sidebar-content">
@@ -75,11 +128,14 @@ function App() {
             courses={courses}
             selectedIds={selectedIds}
             onSelectCourse={addCourse}
+            userMajor={user.major}
+            userMinor={user.minor}
           />
           <CourseCatalog
             courses={courses}
             selectedCourses={selectedCourses}
             onToggleCourse={toggleCourse}
+            userMajor={user.major}
           />
         </div>
 

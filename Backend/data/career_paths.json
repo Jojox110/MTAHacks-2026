@@ -1,0 +1,42 @@
+{
+  "Software Engineer": {
+    "required": ["CS101", "CS201", "CS301", "CS310", "CS320", "CS330", "MATH101", "MATH202"],
+    "recommended": ["CS401", "CS430", "CS440", "MATH201", "ENG101"],
+    "description": "Build software systems, web apps, and scalable platforms."
+  },
+  "Data Scientist": {
+    "required": ["CS101", "CS201", "MATH101", "MATH102", "MATH201", "MATH301", "CS401"],
+    "recommended": ["CS301", "CS320", "ECON101", "PSY101", "BUS301"],
+    "description": "Analyze data, build ML models, and derive insights."
+  },
+  "Cybersecurity Analyst": {
+    "required": ["CS101", "CS201", "CS340", "CS420", "CS310"],
+    "recommended": ["CS301", "MATH202", "CS330", "ENG201"],
+    "description": "Protect systems and networks from security threats."
+  },
+  "AI/ML Engineer": {
+    "required": ["CS101", "CS201", "CS301", "CS401", "CS410", "MATH101", "MATH102", "MATH201"],
+    "recommended": ["MATH301", "CS320", "PSY201"],
+    "description": "Design and deploy artificial intelligence systems."
+  },
+  "Product Manager": {
+    "required": ["BUS101", "BUS210", "BUS310", "CS101", "ENG101", "ENG201"],
+    "recommended": ["PSY101", "ECON101", "BUS201", "BUS301", "CS201"],
+    "description": "Lead product strategy and cross-functional teams."
+  },
+  "Financial Analyst": {
+    "required": ["BUS101", "BUS201", "ECON101", "ECON102", "MATH101", "MATH301"],
+    "recommended": ["BUS301", "ECON201", "MATH102", "CS101"],
+    "description": "Evaluate investments and financial performance."
+  },
+  "Biomedical Engineer": {
+    "required": ["ENGR101", "BIO101", "CHEM101", "PHYS101", "MATH101", "MATH102"],
+    "recommended": ["PHYS102", "ENGR201", "BIO201", "CHEM201"],
+    "description": "Apply engineering to healthcare and medical devices."
+  },
+  "UX Researcher": {
+    "required": ["PSY101", "PSY201", "CS101", "ENG101", "ENG201"],
+    "recommended": ["BUS210", "MATH301", "CS430"],
+    "description": "Study user behavior to improve product experiences."
+  }
+}
