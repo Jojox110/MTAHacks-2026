@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-export default function ProgramView({ programData, userMajor, userMinor, scheduleMap, onUpdateProfile }) {
+export default function ProgramView({ programData, courses = [], userMajor, userMinor, scheduleMap, onUpdateProfile }) {
   const [editing, setEditing] = useState(false);
   const [editMajor, setEditMajor] = useState(userMajor || '');
   const [editMinor, setEditMinor] = useState(userMinor || '');
@@ -58,19 +58,20 @@ export default function ProgramView({ programData, userMajor, userMinor, schedul
       }
     }
 
-    const totalCredits = reqCredits + optTotalCredits;
-    const scheduledCredits = reqScheduledCredits + optScheduledCredits;
-    const total = reqCourses.length + (program.years || []).reduce((s, y) => s + (y.option_groups || []).length, 0);
-    const scheduled = reqScheduled.length + (program.years || []).reduce((s, y) => {
-      return s + (y.option_groups || []).filter((og) => {
-        const groupCourses = y.courses.filter((c) => c.option_group === og.id);
-        const cr = groupCourses.filter((c) => allScheduledIds.has(c.code)).reduce((sum, c) => sum + c.credits, 0);
-        return cr >= og.credits_required;
-      }).length;
-    }, 0);
+    // Open OFG credits (1 course per OFG, 3 cr each)
+    const openOfgs = program.ofg_requirements?.open || [];
+    const ofgTotalCredits = openOfgs.reduce((s, o) => s + o.credits, 0);
+    let ofgScheduledCredits = 0;
+    for (const ofg of openOfgs) {
+      const ofgCourses = courses.filter((c) => c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg));
+      if (ofgCourses.some((c) => allScheduledIds.has(c.id))) ofgScheduledCredits += ofg.credits;
+    }
 
-    return { total, scheduled, totalCredits, scheduledCredits };
-  }, [program, allScheduledIds]);
+    const totalCredits = reqCredits + optTotalCredits + ofgTotalCredits;
+    const scheduledCredits = reqScheduledCredits + optScheduledCredits + ofgScheduledCredits;
+
+    return { totalCredits, scheduledCredits };
+  }, [program, allScheduledIds, courses]);
 
   const minorStats = useMemo(() => {
     if (!minor) return null;
@@ -169,15 +170,8 @@ export default function ProgramView({ programData, userMajor, userMinor, schedul
             {program.degree && <div className="program-card-degree">{program.degree}</div>}
           </motion.div>
           <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <div className="progress-card-label">Courses Scheduled</div>
-            <div className="progress-card-value accent">{programStats.scheduled}<span className="program-stat-total">/{programStats.total}</span></div>
-            <div className="progress-bar-container">
-              <div className="progress-bar-fill" style={{ width: `${programStats.total > 0 ? (programStats.scheduled / programStats.total) * 100 : 0}%` }} />
-            </div>
-          </motion.div>
-          <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
             <div className="progress-card-label">Credits Scheduled</div>
-            <div className="progress-card-value">{programStats.scheduledCredits}<span className="program-stat-total">/{programStats.totalCredits}</span></div>
+            <div className="progress-card-value accent">{programStats.scheduledCredits}<span className="program-stat-total">/{programStats.totalCredits}</span></div>
             <div className="progress-bar-container">
               <div className="progress-bar-fill" style={{ width: `${programStats.totalCredits > 0 ? (programStats.scheduledCredits / programStats.totalCredits) * 100 : 0}%` }} />
             </div>
@@ -293,6 +287,11 @@ export default function ProgramView({ programData, userMajor, userMinor, schedul
                     );
                   })}
 
+                  {year.open_credits > 0 && (
+                    <div className="program-minor-slot">
+                      {year.open_credits} cr from electives / options
+                    </div>
+                  )}
                   {year.minor_credits > 0 && (
                     <div className="program-minor-slot">
                       + {year.minor_credits} cr from minor
@@ -302,6 +301,64 @@ export default function ProgramView({ programData, userMajor, userMinor, schedul
               );
             })}
           </div>
+        </>
+      )}
+
+      {/* ─── OFG Requirements ─── */}
+      {program && program.ofg_requirements && program.ofg_requirements.open && program.ofg_requirements.open.length > 0 && (
+        <>
+          <h3 className="progress-section-heading">OFG — Formation g&eacute;n&eacute;rale</h3>
+          <div className="program-ofg-grid">
+            {program.ofg_requirements.open.map((ofg) => {
+              const ofgCourses = courses.filter((c) => c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg));
+              const scheduled = ofgCourses.filter((c) => allScheduledIds.has(c.id));
+              const fulfilled = scheduled.length > 0;
+              return (
+                <motion.div
+                  key={ofg.ofg}
+                  className={`program-ofg-card ${fulfilled ? 'fulfilled' : ''}`}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
+                  <div className="program-ofg-header">
+                    <span className="program-ofg-tag">{ofg.ofg}</span>
+                    <span className="program-ofg-status">{fulfilled ? '\u2713' : `${ofg.credits} cr`}</span>
+                  </div>
+                  <div className="program-ofg-name">{ofg.name}</div>
+                  {fulfilled ? (
+                    <div className="program-ofg-fulfilled">
+                      {scheduled.map((c) => (
+                        <span key={c.id} className="dept-course-chip enrolled">{c.id}</span>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="program-ofg-options">
+                      {ofgCourses.slice(0, 8).map((c) => (
+                        <span key={c.id} className="dept-course-chip">{c.id}</span>
+                      ))}
+                      {ofgCourses.length > 8 && (
+                        <span className="program-ofg-more">+{ofgCourses.length - 8} more</span>
+                      )}
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Fulfilled OFGs (by required courses) */}
+          {program.ofg_requirements.fulfilled && Object.keys(program.ofg_requirements.fulfilled).length > 0 && (
+            <div className="program-ofg-fulfilled-list">
+              {Object.entries(program.ofg_requirements.fulfilled).map(([ofgKey, codes]) => (
+                <div key={ofgKey} className="program-ofg-fulfilled-row">
+                  <span className="program-ofg-tag small">{ofgKey}</span>
+                  <span className="program-ofg-fulfilled-by">
+                    {codes.join(', ')}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
         </>
       )}
 

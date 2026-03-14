@@ -31,20 +31,41 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
   // Program course completion stats
   const programProgress = useMemo(() => {
     if (!program) return null;
-    const programCodes = new Set(program.all_courses.map((c) => c.code));
-    const scheduledInProgram = selectedIds.filter((id) => programCodes.has(id));
-    const scheduledCredits = program.all_courses
-      .filter((c) => selectedIds.includes(c.code))
-      .reduce((s, c) => s + c.credits, 0);
-    const totalProgramCredits = program.all_courses.reduce((s, c) => s + c.credits, 0);
+    const reqCourses = program.all_courses.filter((c) => c.type !== 'option');
+    const reqScheduled = reqCourses.filter((c) => selectedIds.includes(c.code));
+    const reqCredits = reqCourses.reduce((s, c) => s + c.credits, 0);
+    const reqScheduledCredits = reqScheduled.reduce((s, c) => s + c.credits, 0);
+
+    let optTotalCredits = 0;
+    let optScheduledCredits = 0;
+    let openCredits = 0;
+    for (const y of (program.years || [])) {
+      openCredits += y.open_credits || 0;
+      for (const og of (y.option_groups || [])) {
+        optTotalCredits += og.credits_required;
+        const groupCourses = y.courses.filter((c) => c.option_group === og.id);
+        const cr = groupCourses.filter((c) => selectedIds.includes(c.code)).reduce((s, c) => s + c.credits, 0);
+        optScheduledCredits += Math.min(cr, og.credits_required);
+      }
+    }
+
+    // Open OFG credits
+    const openOfgs = program.ofg_requirements?.open || [];
+    const ofgTotalCredits = openOfgs.reduce((s, o) => s + o.credits, 0);
+    let ofgScheduledCredits = 0;
+    for (const ofg of openOfgs) {
+      const ofgCourses = courses.filter((c) => c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg));
+      if (ofgCourses.some((c) => selectedIds.includes(c.id))) ofgScheduledCredits += ofg.credits;
+    }
+
+    const totalCredits = reqCredits + optTotalCredits + openCredits + ofgTotalCredits;
+    const scheduledCredits = reqScheduledCredits + optScheduledCredits + ofgScheduledCredits;
     return {
-      total: programCodes.size,
-      scheduled: scheduledInProgram.length,
-      totalCredits: totalProgramCredits,
+      totalCredits,
       scheduledCredits,
-      percent: programCodes.size > 0 ? (scheduledInProgram.length / programCodes.size) * 100 : 0,
+      percent: totalCredits > 0 ? (scheduledCredits / totalCredits) * 100 : 0,
     };
-  }, [program, selectedIds]);
+  }, [program, selectedIds, courses]);
 
   // Minor course completion stats
   const minorProgress = useMemo(() => {
@@ -68,19 +89,30 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
   const yearProgress = useMemo(() => {
     if (!program || !program.years) return [];
     return [...program.years].sort((a, b) => a.year - b.year).map((year) => {
-      const yearCodes = year.courses.map((c) => c.code);
-      const scheduled = yearCodes.filter((code) => selectedIds.includes(code));
-      const scheduledCredits = year.courses
-        .filter((c) => selectedIds.includes(c.code))
-        .reduce((s, c) => s + c.credits, 0);
+      const reqCourses = year.courses.filter((c) => c.type !== 'option');
+      const reqScheduled = reqCourses.filter((c) => selectedIds.includes(c.code));
+      const reqScheduledCredits = reqScheduled.reduce((s, c) => s + c.credits, 0);
+      const reqCredits = reqCourses.reduce((s, c) => s + c.credits, 0);
+
+      let optTotalCredits = 0;
+      let optScheduledCredits = 0;
+      for (const og of (year.option_groups || [])) {
+        optTotalCredits += og.credits_required;
+        const groupCourses = year.courses.filter((c) => c.option_group === og.id);
+        const cr = groupCourses.filter((c) => selectedIds.includes(c.code)).reduce((s, c) => s + c.credits, 0);
+        optScheduledCredits += Math.min(cr, og.credits_required);
+      }
+
+      const totalCredits = reqCredits + optTotalCredits + (year.open_credits || 0);
+      const scheduledCredits = reqScheduledCredits + optScheduledCredits;
+
       return {
         label: year.label,
         year: year.year,
-        total: yearCodes.length,
-        scheduled: scheduled.length,
-        totalCredits: year.credits,
+        totalCredits,
         scheduledCredits,
         courses: year.courses,
+        optionGroups: year.option_groups || [],
       };
     });
   }, [program, selectedIds]);
@@ -168,17 +200,10 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
           <h3 className="progress-section-heading">Program: {program.name}</h3>
           <div className="progress-overview">
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="progress-card-label">Program Courses</div>
-              <div className="progress-card-value accent">{programProgress.scheduled}<span className="program-stat-total">/{programProgress.total}</span></div>
+              <div className="progress-card-label">Program Credits</div>
+              <div className="progress-card-value accent">{programProgress.scheduledCredits}<span className="program-stat-total">/{programProgress.totalCredits}</span></div>
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${programProgress.percent}%` }} />
-              </div>
-            </motion.div>
-            <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
-              <div className="progress-card-label">Program Credits</div>
-              <div className="progress-card-value">{programProgress.scheduledCredits}<span className="program-stat-total">/{programProgress.totalCredits}</span></div>
-              <div className="progress-bar-container">
-                <div className="progress-bar-fill" style={{ width: `${programProgress.totalCredits > 0 ? (programProgress.scheduledCredits / programProgress.totalCredits) * 100 : 0}%` }} />
               </div>
             </motion.div>
           </div>
@@ -197,11 +222,11 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
                   <div className="program-year-progress-header">
                     <h4>{yr.label}</h4>
                     <span className="program-year-progress-stats">
-                      {yr.scheduled}/{yr.total} courses &middot; {yr.scheduledCredits}/{yr.totalCredits} cr
+                      {yr.scheduledCredits}/{yr.totalCredits} cr
                     </span>
                   </div>
                   <div className="progress-bar-container">
-                    <div className="progress-bar-fill" style={{ width: `${yr.total > 0 ? (yr.scheduled / yr.total) * 100 : 0}%` }} />
+                    <div className="progress-bar-fill" style={{ width: `${yr.totalCredits > 0 ? (yr.scheduledCredits / yr.totalCredits) * 100 : 0}%` }} />
                   </div>
                   <div className="dept-courses">
                     {yr.courses.map((c) => (

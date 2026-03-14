@@ -1441,6 +1441,102 @@
   font-weight: 500;
 }
 
+/* ─── OFG Requirements ─── */
+.program-ofg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.program-ofg-card {
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.program-ofg-card.fulfilled {
+  border-color: var(--success);
+  background: rgba(94, 194, 105, 0.05);
+}
+
+.program-ofg-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.program-ofg-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.program-ofg-tag.small {
+  font-size: 0.688rem;
+  padding: 1px 6px;
+}
+
+.program-ofg-status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.program-ofg-card.fulfilled .program-ofg-status {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.program-ofg-name {
+  font-size: 0.813rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.program-ofg-options,
+.program-ofg-fulfilled {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.program-ofg-more {
+  font-size: 0.688rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 3px 8px;
+}
+
+.program-ofg-fulfilled-list {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.program-ofg-fulfilled-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.program-ofg-fulfilled-by {
+  font-family: var(--font-mono);
+  font-size: 0.688rem;
+}
+
 .program-minor-slot {
   margin-top: 12px;
   padding: 8px 12px;

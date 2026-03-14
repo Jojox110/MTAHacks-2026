@@ -281,6 +281,7 @@ function App() {
         {activeTab === 'program' && (
           <ProgramView
             programData={programData}
+            courses={courses}
             userMajor={user.major}
             userMinor={user.minor}
             scheduleMap={scheduleMap}

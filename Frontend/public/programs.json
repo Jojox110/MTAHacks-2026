@@ -15208,6 +15208,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG4": [
+            "ADMI4999"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG7": [
+            "ADCO4320"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -15826,6 +15860,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "ADFI4510"
+          ],
+          "OFG4": [
+            "ADMI4999"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -16406,6 +16474,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG3": [
+            "ADMK3393"
+          ],
+          "OFG4": [
+            "ADMI4999"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG7": [
+            "ADGO2432"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -16925,6 +17027,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "ADMN3212"
+          ],
+          "OFG4": [
+            "ADMI4999"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG9": [
+            "ANGL1032"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -17389,6 +17525,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "ADMN3212"
+          ],
+          "OFG4": [
+            "ADMI4999"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG3": [
+            "ADMK3393"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -17957,6 +18127,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "ADMN3212"
+          ],
+          "OFG4": [
+            "ADMI4999"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -18505,6 +18709,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "ADMK4315"
+          ],
+          "OFG4": [
+            "ADMI4999"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG3": [
+            "ADMK3393"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -19049,6 +19287,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "ADMN3212"
+          ],
+          "OFG4": [
+            "ADMI4999"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -19721,6 +19993,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "FORS1053"
+          ],
+          "OFG3": [
+            "FORS4153"
+          ],
+          "OFG4": [
+            "ECON1011"
+          ],
+          "OFG7": [
+            "FORS4923"
+          ],
+          "OFG1": [
+            "FSC1003"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -19822,14 +20128,16 @@
           "label": "Année 3",
           "credits": 30,
           "courses": [],
-          "minor_credits": 30
+          "minor_credits": 30,
+          "open_credits": 30
         },
         {
           "year": 4,
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -19917,6 +20225,23 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG4"
+          },
+          {
+            "ofg": "OFG5"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {}
       }
     },
     {
@@ -20637,6 +20962,30 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG5"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG4": [
+            "ARDR1633"
+          ],
+          "OFG6": [
+            "ARDR3704"
+          ]
+        }
       }
     },
     {
@@ -20956,6 +21305,10 @@
         "total_credits": 24,
         "slots": [],
         "how_it_works": "Les crédits de la mineure sont comblés par des cours de la discipline de la mineure choisie. Par exemple, si la mineure est en mathématiques, choisir des cours de sigle MATH."
+      },
+      "ofg_requirements": {
+        "open": [],
+        "fulfilled": {}
       }
     },
     {
@@ -21222,14 +21575,6 @@
               "corequisites": [
                 "MATH1073"
               ],
-              "type": "obligatoire"
-            },
-            {
-              "code": "CHIM1123",
-              "name": "], choisir 3 crédits de cours au choix. Sinon, vous devez choisir 3 crédits de cours dans la Banque de cours des objectifs de formation générale pour satisfaire à l’objectif 2, Ouverture à l’Autre et/ou internationalisation",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
               "type": "obligatoire"
             }
           ],
@@ -21913,6 +22258,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "FSCI2013"
+          ],
+          "OFG3": [
+            "FSCI3903"
+          ],
+          "OFG4": [
+            "PHYS1373"
+          ],
+          "OFG5": [
+            "BICH2023"
+          ],
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG7": [
+            "BICH4033"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -22661,6 +23040,40 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "FSCI2013"
+          ],
+          "OFG3": [
+            "FSCI3903"
+          ],
+          "OFG4": [
+            "CHIM1123"
+          ],
+          "OFG5": [
+            "BICH2023"
+          ],
+          "OFG7": [
+            "BICH4033"
+          ],
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -23055,14 +23468,6 @@
               ],
               "corequisites": [],
               "type": "obligatoire"
-            },
-            {
-              "code": "BIOL1213",
-              "name": ") ou",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
             }
           ],
           "minor_credits": 0
@@ -23325,6 +23730,24 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -23493,6 +23916,10 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [],
+        "fulfilled": {}
       }
     },
     {
@@ -24352,6 +24779,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "FSCI2013"
+          ],
+          "OFG3": [
+            "FSCI3903"
+          ],
+          "OFG4": [
+            "MATH1073"
+          ],
+          "OFG5": [
+            "CHIM1123"
+          ],
+          "OFG7": [
+            "CHIM4083"
+          ],
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -24504,7 +24965,8 @@
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 12
+          "minor_credits": 12,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -24645,6 +25107,45 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG3": [
+            "CRIM2001",
+            "CRIM2010"
+          ],
+          "OFG4": [
+            "CRIM1010"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "PHIL2235",
+            "PHIL2236",
+            "PHIL3451"
+          ],
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600",
+            "FRAN1003"
+          ],
+          "OFG9": [
+            "ANGL1031",
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -24929,14 +25430,6 @@
                   "BIOL1233"
                 ]
               ],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "BIOL1243",
-              "name": ") ou",
-              "credits": 3,
-              "prerequisites": [],
               "corequisites": [],
               "type": "obligatoire"
             },
@@ -25258,6 +25751,32 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG4"
+          }
+        ],
+        "fulfilled": {
+          "OFG5": [
+            "MATH1173"
+          ],
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG7": [
+            "BIOL1223",
+            "BIOL1243"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -25671,14 +26190,6 @@
                   "BADI3913"
                 ]
               ],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "BADI2911",
-              "name": "BADI2921, BADI2983 et BADI3913)",
-              "credits": 2,
-              "prerequisites": [],
               "corequisites": [],
               "type": "obligatoire"
             },
@@ -26242,6 +26753,39 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG5"
+          },
+          {
+            "ofg": "OFG7"
+          },
+          {
+            "ofg": "OFG8"
+          }
+        ],
+        "fulfilled": {
+          "OFG4": [
+            "ARVI4522"
+          ],
+          "OFG6": [
+            "ARVI1304"
+          ],
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -26578,6 +27122,24 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [],
+        "fulfilled": {
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -27090,6 +27652,37 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "GIZC2050"
+          ],
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG4": [
+            "GIZC3021"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "GIZC3062"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -27611,6 +28204,44 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG7": [
+            "GEIN1010",
+            "GEIN3090",
+            "GEIN4030"
+          ],
+          "OFG4": [
+            "ECON1011"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG3": [
+            "GEIN2020",
+            "GEIN3050",
+            "GEIN3080"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -28040,6 +28671,46 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG1": [
+            "SANT1003"
+          ],
+          "OFG3": [
+            "GLST2000"
+          ],
+          "OFG7": [
+            "GLST2002"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1021",
+            "ANGL1022"
+          ],
+          "OFG4": [
+            "ECON1011",
+            "PHIL1100",
+            "PSYC1000",
+            "SCPO1000",
+            "SCPO1050",
+            "SOCI1000"
+          ]
+        }
       }
     },
     {
@@ -28053,7 +28724,8 @@
           "label": "Année 1",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 2,
@@ -28476,14 +29148,16 @@
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 5,
           "label": "Année 5",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -28893,6 +29567,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "GCIV1011"
+          ],
+          "OFG3": [
+            "GCIV4011"
+          ],
+          "OFG4": [
+            "SOCI3320"
+          ],
+          "OFG5": [
+            "MATH1073"
+          ],
+          "OFG7": [
+            "GCIV3220"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -28906,14 +29614,16 @@
           "label": "Année 1",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 2,
           "label": "Année 2",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 3,
@@ -29272,14 +29982,16 @@
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 5,
           "label": "Année 5",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -29633,6 +30345,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "GCIV1011"
+          ],
+          "OFG3": [
+            "GCIV4011"
+          ],
+          "OFG4": [
+            "SOCI3320"
+          ],
+          "OFG5": [
+            "MATH1073"
+          ],
+          "OFG7": [
+            "GMEC2311"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -30054,21 +30800,24 @@
           "label": "Année 3",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 4,
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 5,
           "label": "Année 5",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -30470,6 +31219,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "GCIV1011"
+          ],
+          "OFG3": [
+            "GCIV4011"
+          ],
+          "OFG4": [
+            "SOCI3320"
+          ],
+          "OFG5": [
+            "MATH1073"
+          ],
+          "OFG7": [
+            "GELE3700"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -30788,6 +31571,40 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG4"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "GEOG1703"
+          ],
+          "OFG3": [
+            "GEOG1103"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "PHIL1100"
+          ],
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG9": [
+            "ANGL1031"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -30946,7 +31763,8 @@
           "label": "Année 3",
           "credits": 30,
           "courses": [],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "open_credits": 30
         },
         {
           "year": 4,
@@ -31080,6 +31898,44 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "HIST1501",
+            "HIST1800",
+            "HIST2422",
+            "HIST2810",
+            "HIST2863"
+          ],
+          "OFG4": [
+            "PHIL3400"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "HIST3003"
+          ],
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG9": [
+            "ANGL1031"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -31408,102 +32264,6 @@
               "type": "obligatoire"
             },
             {
-              "code": "ICOM2230",
-              "name": "Médias et sociétés",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM2771",
-              "name": "Journalisme radio",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM3101",
-              "name": "Journalisme télévisuel I",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM3102",
-              "name": "Journalisme télévisuel II",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM3120",
-              "name": "Journalisme en ligne",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM2782",
-              "name": "Journalisme d’opinion",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM2120",
-              "name": "Communication de crise",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM2330",
-              "name": "Communication interne",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM2340",
-              "name": "Communication persuasive",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM3100",
-              "name": "Communication gouvernementale",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM3230",
-              "name": "Communication interculturelle",
-              "credits": 2,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "ICOM3320",
-              "name": "Communication multimédia",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
               "code": "ICOM4601",
               "name": "Stage",
               "credits": 3,
@@ -31760,6 +32520,40 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG5"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG2": [
+            "ICOM3230"
+          ],
+          "OFG3": [
+            "ICOM3400"
+          ],
+          "OFG4": [
+            "ICOM4700"
+          ],
+          "OFG7": [
+            "ICOM2900"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1041"
+          ]
+        }
       }
     },
     {
@@ -31935,29 +32729,6 @@
               "credits": 3,
               "prerequisites": [
                 "INFO2012"
-              ],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "MATH1173",
-              "name": "Calcul intégral",
-              "credits": 3,
-              "prerequisites": [
-                [
-                  "MATH1073",
-                  "MATH1153"
-                ]
-              ],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "MATH1563",
-              "name": "Éléments de math. discrètes",
-              "credits": 3,
-              "prerequisites": [
-                "MATH1073"
               ],
               "corequisites": [],
               "type": "obligatoire"
@@ -32401,7 +33172,8 @@
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -32846,6 +33618,42 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG4": [
+            "PHYS1373"
+          ],
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG3": [
+            "PHIL3475",
+            "PHIL3492",
+            "SOCI3320"
+          ],
+          "OFG5": [
+            "MATH1073"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -33174,7 +33982,8 @@
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -33434,6 +34243,40 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG4": [
+            "PHYS1373"
+          ],
+          "OFG5": [
+            "MATH1073"
+          ],
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -33718,17 +34561,6 @@
             {
               "code": "KNEP4201",
               "name": "Réadapt. musculo-squelettique",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 1,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
-            },
-            {
-              "code": "KNEP3201",
-              "name": ") ou",
               "credits": 3,
               "prerequisites": [],
               "corequisites": [],
@@ -34090,6 +34922,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG4"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG3": [
+            "KNEP4102"
+          ],
+          "OFG7": [
+            "SANT3023"
+          ],
+          "OFG1": [
+            "SANT1003"
+          ],
+          "OFG9": [
+            "ANGL1031"
+          ],
+          "OFG5": [
+            "MATH1073"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -34735,6 +35601,40 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "MATH3903"
+          ],
+          "OFG4": [
+            "INFO1101"
+          ],
+          "OFG5": [
+            "MATH1073"
+          ],
+          "OFG7": [
+            "MATH2423"
+          ],
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -34788,7 +35688,8 @@
           "label": "Année 3",
           "credits": 6,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 6
         },
         {
           "year": 4,
@@ -35134,6 +36035,10 @@
         "slots": [],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [],
+        "fulfilled": {}
       }
     },
     {
@@ -35280,14 +36185,16 @@
           "label": "Année 3",
           "credits": 30,
           "courses": [],
-          "minor_credits": 27
+          "minor_credits": 27,
+          "open_credits": 30
         },
         {
           "year": 4,
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 21
+          "minor_credits": 21,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -35415,6 +36322,40 @@
         ],
         "multi_minor": true,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie. Ce programme comporte plusieurs mineures."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG4": [
+            "ADMN1220"
+          ],
+          "OFG5": [
+            "MATH1153"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG1": [
+            "ADMN1000"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -35533,14 +36474,16 @@
           "label": "Année 2",
           "credits": 30,
           "courses": [],
-          "minor_credits": 21
+          "minor_credits": 21,
+          "open_credits": 30
         },
         {
           "year": 3,
           "label": "Année 3",
           "credits": 30,
           "courses": [],
-          "minor_credits": 24
+          "minor_credits": 24,
+          "open_credits": 30
         },
         {
           "year": 4,
@@ -35661,6 +36604,32 @@
         ],
         "multi_minor": true,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie. Ce programme comporte plusieurs mineures."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG1"
+          },
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG4"
+          },
+          {
+            "ofg": "OFG5"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG9"
+          }
+        ],
+        "fulfilled": {}
       }
     },
     {
@@ -35789,14 +36758,16 @@
           "label": "Année 3",
           "credits": 30,
           "courses": [],
-          "minor_credits": 21
+          "minor_credits": 21,
+          "open_credits": 30
         },
         {
           "year": 4,
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 15
+          "minor_credits": 15,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -35891,6 +36862,41 @@
         ],
         "multi_minor": true,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie. Ce programme comporte plusieurs mineures."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG4": [
+            "STAT2603",
+            "STAT2673"
+          ],
+          "OFG5": [
+            "MATH1073"
+          ],
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -37419,6 +38425,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG5"
+          },
+          {
+            "ofg": "OFG7"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG4": [
+            "MUSI4432"
+          ],
+          "OFG6": [
+            "MUSI3432"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -38330,6 +39370,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "NUAL3201"
+          ],
+          "OFG3": [
+            "NUAL4100"
+          ],
+          "OFG4": [
+            "PSYC2650"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "NUEF4083"
+          ],
+          "OFG1": [
+            "SANT1003"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1032"
+          ]
+        }
       }
     },
     {
@@ -38343,7 +39417,8 @@
           "label": "Année 1",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 2,
@@ -38379,7 +39454,8 @@
           "label": "Année 3",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 4,
@@ -39034,6 +40110,41 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG5"
+          }
+        ],
+        "fulfilled": {
+          "OFG3": [
+            "PHIL2235"
+          ],
+          "OFG4": [
+            "HIST1501",
+            "HIST1800",
+            "HIST2810",
+            "HIST2872"
+          ],
+          "OFG6": [
+            "PHIL2241",
+            "PHIL4672"
+          ],
+          "OFG7": [
+            "PHIL2270",
+            "PHIL2280"
+          ],
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -39300,7 +40411,8 @@
           "label": "Année 3",
           "credits": 30,
           "courses": [],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "open_credits": 30
         },
         {
           "year": 4,
@@ -39611,6 +40723,41 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG4": [
+            "CHIM1113",
+            "CHIM1114"
+          ],
+          "OFG5": [
+            "MATH1073"
+          ],
+          "OFG7": [
+            "PHYS3503"
+          ],
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -40517,6 +41664,40 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "SANT1003"
+          ],
+          "OFG4": [
+            "BIOL1143"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1031"
+          ],
+          "OFG2": [
+            "PSYC1700"
+          ],
+          "OFG7": [
+            "PSYC2001"
+          ],
+          "OFG5": [
+            "PSYC2002"
+          ]
+        }
       }
     },
     {
@@ -40530,7 +41711,8 @@
           "label": "Passerelle",
           "credits": 30,
           "courses": [],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "open_credits": 30
         },
         {
           "year": 4,
@@ -40948,6 +42130,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG9"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "SANT1003"
+          ],
+          "OFG3": [
+            "SOCI1001"
+          ],
+          "OFG4": [
+            "SINF4823"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "SANT3023"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -41102,7 +42318,8 @@
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -41234,6 +42451,40 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG4"
+          },
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "SCPO2340"
+          ],
+          "OFG3": [
+            "SCPO1020"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "SCPO1021"
+          ],
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG9": [
+            "ANGL1031"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -41634,6 +42885,42 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "SOCI3620",
+            "SOCI4575",
+            "SOCI4640"
+          ],
+          "OFG3": [
+            "SOCI2050"
+          ],
+          "OFG4": [
+            "SOCI4080"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "PHIL3430"
+          ],
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG9": [
+            "ANGL1031"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ]
+        }
       }
     },
     {
@@ -41758,14 +43045,6 @@
               "prerequisites": [
                 "FRAN1500"
               ],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "FRAN1600",
-              "name": "avec au moins un B)",
-              "credits": 3,
-              "prerequisites": [],
               "corequisites": [],
               "type": "obligatoire"
             },
@@ -42207,6 +43486,40 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG5"
+          }
+        ],
+        "fulfilled": {
+          "OFG2": [
+            "ALLE1611",
+            "ESPA1611"
+          ],
+          "OFG4": [
+            "TRAD4785"
+          ],
+          "OFG6": [
+            "TRAD4735"
+          ],
+          "OFG7": [
+            "TRAD2535"
+          ],
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG9": [
+            "ANGL1042"
+          ],
+          "OFG8": [
+            "FRAN1500"
+          ]
+        }
       }
     },
     {
@@ -42984,6 +44297,10 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [],
+        "fulfilled": {}
       }
     },
     {
@@ -43750,6 +45067,26 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG2"
+          },
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG4"
+          },
+          {
+            "ofg": "OFG6"
+          },
+          {
+            "ofg": "OFG9"
+          }
+        ],
+        "fulfilled": {}
       }
     },
     {
@@ -44118,6 +45455,10 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [],
+        "fulfilled": {}
       }
     },
     {
@@ -44451,6 +45792,10 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [],
+        "fulfilled": {}
       }
     },
     {
@@ -44986,22 +46331,6 @@
               "code": "KNEP4202",
               "name": "Entraînement sportif II",
               "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "EPAP2103",
-              "name": "Lutte Olympique I",
-              "credits": 1,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "EPAP2205",
-              "name": "Judo I",
-              "credits": 1,
               "prerequisites": [],
               "corequisites": [],
               "type": "obligatoire"
@@ -45858,6 +47187,14 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {}
       }
     },
     {
@@ -46360,28 +47697,6 @@
               "option_label": "Choisir 3 cr"
             },
             {
-              "code": "EDDP4713",
-              "name": "Langue seconde au primaire",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
-            },
-            {
-              "code": "EDDP4933",
-              "name": "Intervention à la maternelle",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
-            },
-            {
               "code": "EDUC3023",
               "name": "Éducation aux droits humains",
               "credits": 3,
@@ -46549,17 +47864,6 @@
             {
               "code": "EDUC5353",
               "name": "Recherche en éducation",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
-            },
-            {
-              "code": "LING1810",
-              "name": "Intro à l'étude du langage",
               "credits": 3,
               "prerequisites": [],
               "corequisites": [],
@@ -47998,6 +49302,17 @@
         "total_credits": 0,
         "slots": [],
         "how_it_works": "Ce programme ne comporte pas de mineure."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG4"
+          }
+        ],
+        "fulfilled": {}
       }
     },
     {
@@ -49125,6 +50440,41 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG2": [
+            "EDUC4323"
+          ],
+          "OFG3": [
+            "EDUC3113"
+          ],
+          "OFG4": [
+            "PHIL2235",
+            "SOCI2480"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "EDUC5903"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1145"
+          ]
+        }
       }
     },
     {
@@ -49478,30 +50828,8 @@
               "option_label": "Choisir 3 cr"
             },
             {
-              "code": "BIOL2141",
-              "name": "Travaux pratiques en botanique",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 1,
-              "option_label": "Choisir 1 cr"
-            },
-            {
               "code": "BIOL2161",
               "name": "T.P. sur les invertébrés",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 1,
-              "option_label": "Choisir 1 cr"
-            },
-            {
-              "code": "BIOL2311",
-              "name": "T.P. de biologie cellulaire",
               "credits": 3,
               "prerequisites": [],
               "corequisites": [],
@@ -49514,17 +50842,6 @@
               "code": "BIOL2361",
               "name": "T.P. sur les vertébrés",
               "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 1,
-              "option_label": "Choisir 1 cr"
-            },
-            {
-              "code": "BIOL2611",
-              "name": "Travaux pratiques en génétique",
-              "credits": 1,
               "prerequisites": [],
               "corequisites": [],
               "type": "option",
@@ -49731,28 +51048,6 @@
               "option_group": 1,
               "option_credits": 3,
               "option_label": "Choisir 3 cr"
-            },
-            {
-              "code": "CHIM1113",
-              "name": "(1) Chimie générale IA",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 12,
-              "option_label": "Choisir 12 cr"
-            },
-            {
-              "code": "CHIM1123",
-              "name": "Chimie générale IIA",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 12,
-              "option_label": "Choisir 12 cr"
             },
             {
               "code": "MATH1073",
@@ -50335,6 +51630,41 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG2": [
+            "EDUC4323"
+          ],
+          "OFG3": [
+            "EDUC3113"
+          ],
+          "OFG4": [
+            "PHIL2235",
+            "SOCI2480"
+          ],
+          "OFG5": [
+            "STAT2603"
+          ],
+          "OFG7": [
+            "EDUC5903"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -50697,28 +52027,6 @@
               "option_label": "Choisir 3 cr"
             },
             {
-              "code": "CHIM2482",
-              "name": "Labo de synthèses chimiques",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 2,
-              "option_label": "Choisir 2 cr"
-            },
-            {
-              "code": "CHIM2582",
-              "name": "Labo de chimie analytique",
-              "credits": 2,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 2,
-              "option_label": "Choisir 2 cr"
-            },
-            {
               "code": "BIOL2313",
               "name": "Biologie cellulaire",
               "credits": 3,
@@ -50849,30 +52157,6 @@
             {
               "code": "BIOL1143",
               "name": "Anat. physiol. humaines I",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "BIOL1243",
-              "name": "Anat. physiol. humaines II",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "BIOL1123",
-              "name": "Introduction à la biologie I",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "BIOL1223",
-              "name": "Introduction à la biologie II",
               "credits": 3,
               "prerequisites": [],
               "corequisites": [],
@@ -51346,6 +52630,41 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG2": [
+            "EDUC4323"
+          ],
+          "OFG3": [
+            "EDUC3113"
+          ],
+          "OFG4": [
+            "PHIL2235",
+            "SOCI2480"
+          ],
+          "OFG5": [
+            "STAT2603"
+          ],
+          "OFG7": [
+            "EDUC5903"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -52466,6 +53785,41 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG2": [
+            "EDUC4323"
+          ],
+          "OFG3": [
+            "EDUC3113"
+          ],
+          "OFG4": [
+            "PHIL2235",
+            "SOCI2480"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "EDUC5903"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -53278,6 +54632,41 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG2": [
+            "EDUC4323"
+          ],
+          "OFG3": [
+            "EDUC3113"
+          ],
+          "OFG4": [
+            "PHIL2235",
+            "SOCI2480"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "EDUC5903"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -53868,30 +55257,6 @@
             {
               "code": "BIOL1143",
               "name": "Anat. physiol. humaines I",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "BIOL1243",
-              "name": "Anat. physiol. humaines II",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "BIOL1123",
-              "name": "Introduction à la biologie I",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "obligatoire"
-            },
-            {
-              "code": "BIOL1223",
-              "name": "Introduction à la biologie II",
               "credits": 3,
               "prerequisites": [],
               "corequisites": [],
@@ -54561,6 +55926,41 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG2": [
+            "EDUC4323"
+          ],
+          "OFG3": [
+            "EDUC3113"
+          ],
+          "OFG4": [
+            "PHIL2235",
+            "SOCI2480"
+          ],
+          "OFG5": [
+            "STAT2603"
+          ],
+          "OFG7": [
+            "EDUC5903"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -54839,50 +56239,6 @@
               "type": "obligatoire"
             },
             {
-              "code": "MUED1011",
-              "name": "Pédagogie de la musique vocale Ou",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 1,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
-            },
-            {
-              "code": "MUED2011",
-              "name": "Pédagogie des percussions",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 1,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
-            },
-            {
-              "code": "MUED1012",
-              "name": "Péd.-musique au primaire I Ou",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
-            },
-            {
-              "code": "MUED2022",
-              "name": "Pédagogie des cuivres",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
-            },
-            {
               "code": "MUSI2051",
               "name": "Solfège et dictée III",
               "credits": 2,
@@ -55134,28 +56490,6 @@
               "prerequisites": [],
               "corequisites": [],
               "type": "obligatoire"
-            },
-            {
-              "code": "MUED3012",
-              "name": "Péd.-musique instrumentale ou",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 1,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
-            },
-            {
-              "code": "MUED4011",
-              "name": "Péd.-musique au primaire II",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 1,
-              "option_credits": 3,
-              "option_label": "Choisir 3 cr"
             },
             {
               "code": "EDDS4593",
@@ -55875,6 +57209,37 @@
         "slots": [],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [],
+        "fulfilled": {
+          "OFG2": [
+            "EDUC4323"
+          ],
+          "OFG3": [
+            "EDUC3113"
+          ],
+          "OFG4": [
+            "PHIL2235",
+            "SOCI2480"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG6": [
+            "MUSI3432"
+          ],
+          "OFG7": [
+            "MUSI3123"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -56423,39 +57788,6 @@
             {
               "code": "BIOL1143",
               "name": "Anat. physiol. humaines I",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 6,
-              "option_label": "Choisir 6 cr"
-            },
-            {
-              "code": "BIOL1243",
-              "name": "Anat. physiol. humaines II",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 6,
-              "option_label": "Choisir 6 cr"
-            },
-            {
-              "code": "BIOL1123",
-              "name": "Introduction à la biologie I",
-              "credits": 3,
-              "prerequisites": [],
-              "corequisites": [],
-              "type": "option",
-              "option_group": 2,
-              "option_credits": 6,
-              "option_label": "Choisir 6 cr"
-            },
-            {
-              "code": "BIOL1223",
-              "name": "Introduction à la biologie II",
               "credits": 3,
               "prerequisites": [],
               "corequisites": [],
@@ -57055,6 +58387,41 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FSCI1003"
+          ],
+          "OFG2": [
+            "EDUC4323"
+          ],
+          "OFG3": [
+            "EDUC3113"
+          ],
+          "OFG4": [
+            "PHIL2235",
+            "SOCI2480"
+          ],
+          "OFG5": [
+            "STAT2603"
+          ],
+          "OFG7": [
+            "EDUC5903"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -58807,6 +60174,41 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG6"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG2": [
+            "EDUC4323"
+          ],
+          "OFG3": [
+            "EDUC3113"
+          ],
+          "OFG4": [
+            "PHIL2235",
+            "SOCI2480"
+          ],
+          "OFG5": [
+            "STAT2653"
+          ],
+          "OFG7": [
+            "EDUC5903"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     },
     {
@@ -58928,14 +60330,16 @@
           "label": "Année 3",
           "credits": 30,
           "courses": [],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "open_credits": 30
         },
         {
           "year": 4,
           "label": "Année 4",
           "credits": 30,
           "courses": [],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "open_credits": 30
         }
       ],
       "all_courses": [
@@ -59055,6 +60459,40 @@
         ],
         "multi_minor": false,
         "how_it_works": "Les crédits de la mineure sont comblés par n'importe quel cours de la discipline de la mineure choisie."
+      },
+      "ofg_requirements": {
+        "open": [
+          {
+            "ofg": "OFG3"
+          },
+          {
+            "ofg": "OFG5"
+          }
+        ],
+        "fulfilled": {
+          "OFG1": [
+            "FASS1000"
+          ],
+          "OFG2": [
+            "LITT2403"
+          ],
+          "OFG4": [
+            "LING1810"
+          ],
+          "OFG6": [
+            "LITT1404"
+          ],
+          "OFG7": [
+            "LING1811"
+          ],
+          "OFG8": [
+            "FRAN1500",
+            "FRAN1600"
+          ],
+          "OFG9": [
+            "ANGL1022"
+          ]
+        }
       }
     }
   ]
