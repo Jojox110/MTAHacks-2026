@@ -8,32 +8,24 @@ import CourseCatalog from './components/CourseCatalog';
 import ScheduleGrid from './components/ScheduleGrid';
 import ProgressView from './components/ProgressView';
 import ProgramView from './components/ProgramView';
-import { fetchCourses, fetchPrograms, updateProfile, getCurrentUser, saveSchedule, loadSchedule } from './data/api';
+import { fetchCourses, fetchPrograms, fetchSessionSchedule, updateProfile, getCurrentUser, saveSchedule, loadSchedule } from './data/api';
 
-const SESSIONS = ['Fall', 'Spring', 'Summer'];
-const START_YEAR = 2026;
-const NUM_YEARS = 4;
-
-function buildSemesters() {
-  const semesters = [];
-  for (let y = START_YEAR; y < START_YEAR + NUM_YEARS; y++) {
-    for (const s of SESSIONS) {
-      semesters.push(`${s} ${y}`);
-    }
-  }
-  return semesters;
-}
-
-const ALL_SEMESTERS = buildSemesters();
+const ALL_SEMESTERS = ['Hiver 2026', 'Printemps-Été 2026', 'Automne 2026'];
 
 function App() {
   const [user, setUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
   const [courses, setCourses] = useState([]);
-  const [scheduleMap, setScheduleMap] = useState({}); // { "Fall 2026": ["CS101", ...] }
+  const [scheduleMap, setScheduleMap] = useState({}); // { "Automne 2026": ["INFO1001", ...] }
   const [activeSemester, setActiveSemester] = useState(ALL_SEMESTERS[0]);
   const [activeTab, setActiveTab] = useState('schedule');
   const [programData, setProgramData] = useState(null);
+  const [sessionData, setSessionData] = useState([]); // timetable data for active session
+
+  // Load session schedule data when semester changes
+  useEffect(() => {
+    fetchSessionSchedule(activeSemester).then(setSessionData);
+  }, [activeSemester]);
 
   // Derive selected courses for the active semester
   const selectedCourses = useMemo(() => {
@@ -86,7 +78,6 @@ function App() {
       if (data.schedule) {
         setScheduleMap(data.schedule);
       } else if (data.courseIds && data.courseIds.length > 0) {
-        // Backwards compat: old format had flat courseIds
         setScheduleMap({ [ALL_SEMESTERS[0]]: data.courseIds });
       }
     }).catch(() => {});
@@ -237,7 +228,7 @@ function App() {
             className={`nav-tab ${activeTab === 'schedule' ? 'active' : ''}`}
             onClick={() => setActiveTab('schedule')}
           >
-            Schedule
+            Horaire
             {selectedCourses.length > 0 && (
               <span className="badge">{selectedCourses.length}</span>
             )}
@@ -246,13 +237,13 @@ function App() {
             className={`nav-tab ${activeTab === 'program' ? 'active' : ''}`}
             onClick={() => setActiveTab('program')}
           >
-            Program
+            Programme
           </button>
           <button
             className={`nav-tab ${activeTab === 'progress' ? 'active' : ''}`}
             onClick={() => setActiveTab('progress')}
           >
-            Progress
+            Progrès
           </button>
 
           <div className="semester-picker">
@@ -276,6 +267,7 @@ function App() {
           <ScheduleGrid
             selectedCourses={selectedCourses}
             onRemoveCourse={removeCourse}
+            sessionData={sessionData}
           />
         )}
         {activeTab === 'program' && (

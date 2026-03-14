@@ -53,18 +53,38 @@ export default function ProgramView({ programData, courses = [], userMajor, user
       for (const og of (y.option_groups || [])) {
         optTotalCredits += og.credits_required;
         const groupCourses = y.courses.filter((c) => c.option_group === og.id);
-        const scheduledCr = groupCourses.filter((c) => allScheduledIds.has(c.code)).reduce((s, c) => s + c.credits, 0);
+        const ogCodes = og.codes || [];
+        const ogPrefix = og.prefix || '';
+        const matching = courses.filter((c) => {
+          if (!allScheduledIds.has(c.id)) return false;
+          if (groupCourses.some((gc) => gc.code === c.id)) return true;
+          if (ogCodes.length > 0 && ogCodes.includes(c.id)) return true;
+          if (ogPrefix && c.id.startsWith(ogPrefix)) return true;
+          return false;
+        });
+        const scheduledCr = matching.reduce((s, c) => s + c.credits, 0);
         optScheduledCredits += Math.min(scheduledCr, og.credits_required);
       }
     }
 
     // Open OFG credits (1 course per OFG, 3 cr each)
+    // Each course can only fill one OFG; program-required courses don't count
     const openOfgs = program.ofg_requirements?.open || [];
-    const ofgTotalCredits = openOfgs.reduce((s, o) => s + o.credits, 0);
+    const ofgTotalCredits = openOfgs.length * 3;
     let ofgScheduledCredits = 0;
+    const progCodes = new Set(program.all_courses.map((c) => c.code));
+    const ofgUsed = new Set();
     for (const ofg of openOfgs) {
-      const ofgCourses = courses.filter((c) => c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg));
-      if (ofgCourses.some((c) => allScheduledIds.has(c.id))) ofgScheduledCredits += ofg.credits;
+      const match = courses.find((c) =>
+        c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg)
+        && allScheduledIds.has(c.id)
+        && !progCodes.has(c.id)
+        && !ofgUsed.has(c.id)
+      );
+      if (match) {
+        ofgScheduledCredits += 3;
+        ofgUsed.add(match.id);
+      }
     }
 
     const totalCredits = reqCredits + optTotalCredits + ofgTotalCredits;
@@ -259,8 +279,17 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                   {/* Option groups */}
                   {optionGroups.map((og) => {
                     const groupCourses = year.courses.filter((c) => c.option_group === og.id);
-                    const scheduled = groupCourses.filter((c) => allScheduledIds.has(c.code));
-                    const scheduledCr = scheduled.reduce((s, c) => s + c.credits, 0);
+                    // Also check if scheduled courses match option group codes or prefix
+                    const ogCodes = og.codes || [];
+                    const ogPrefix = og.prefix || '';
+                    const matchingScheduled = courses.filter((c) => {
+                      if (!allScheduledIds.has(c.id)) return false;
+                      if (groupCourses.some((gc) => gc.code === c.id)) return true;
+                      if (ogCodes.length > 0 && ogCodes.includes(c.id)) return true;
+                      if (ogPrefix && c.id.startsWith(ogPrefix)) return true;
+                      return false;
+                    });
+                    const scheduledCr = matchingScheduled.reduce((s, c) => s + c.credits, 0);
                     const fulfilled = scheduledCr >= og.credits_required;
                     return (
                       <div key={og.id} className="program-option-group">
@@ -282,6 +311,27 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                               </div>
                             );
                           })}
+                          {/* Show matched scheduled courses not in groupCourses */}
+                          {matchingScheduled
+                            .filter((c) => !groupCourses.some((gc) => gc.code === c.id))
+                            .map((c) => (
+                              <div key={c.id} className="program-course-item scheduled">
+                                <span className="program-course-code">{c.id}</span>
+                                <span className="program-course-name">{c.name}</span>
+                                <span className="program-course-cr">{c.credits} cr</span>
+                                <span className="program-course-check">&#10003;</span>
+                              </div>
+                            ))
+                          }
+                          {/* Show available options from codes if no groupCourses */}
+                          {groupCourses.length === 0 && ogCodes.length > 0 && matchingScheduled.length === 0 && (
+                            <div className="program-ofg-options" style={{ padding: '6px 12px' }}>
+                              {ogCodes.slice(0, 10).map((code) => (
+                                <span key={code} className={`dept-course-chip ${allScheduledIds.has(code) ? 'enrolled' : ''}`}>{code}</span>
+                              ))}
+                              {ogCodes.length > 10 && <span className="program-ofg-more">+{ogCodes.length - 10} more</span>}
+                            </div>
+                          )}
                         </div>
                       </div>
                     );
@@ -304,61 +354,92 @@ export default function ProgramView({ programData, courses = [], userMajor, user
         </>
       )}
 
-      {/* ─── OFG Requirements ─── */}
-      {program && program.ofg_requirements && program.ofg_requirements.open && program.ofg_requirements.open.length > 0 && (
+      {/* ─── OFG Requirements (open only) ─── */}
+      {program && program.ofg_requirements?.open?.length > 0 && (
         <>
           <h3 className="progress-section-heading">OFG — Formation g&eacute;n&eacute;rale</h3>
-          <div className="program-ofg-grid">
-            {program.ofg_requirements.open.map((ofg) => {
-              const ofgCourses = courses.filter((c) => c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg));
-              const scheduled = ofgCourses.filter((c) => allScheduledIds.has(c.id));
-              const fulfilled = scheduled.length > 0;
-              return (
-                <motion.div
-                  key={ofg.ofg}
-                  className={`program-ofg-card ${fulfilled ? 'fulfilled' : ''}`}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  <div className="program-ofg-header">
-                    <span className="program-ofg-tag">{ofg.ofg}</span>
-                    <span className="program-ofg-status">{fulfilled ? '\u2713' : `${ofg.credits} cr`}</span>
-                  </div>
-                  <div className="program-ofg-name">{ofg.name}</div>
-                  {fulfilled ? (
-                    <div className="program-ofg-fulfilled">
-                      {scheduled.map((c) => (
-                        <span key={c.id} className="dept-course-chip enrolled">{c.id}</span>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="program-ofg-options">
-                      {ofgCourses.slice(0, 8).map((c) => (
-                        <span key={c.id} className="dept-course-chip">{c.id}</span>
-                      ))}
-                      {ofgCourses.length > 8 && (
-                        <span className="program-ofg-more">+{ofgCourses.length - 8} more</span>
-                      )}
-                    </div>
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
+          {(() => {
+            const OFG_NAMES = {
+              OFG1: 'Initiation au travail intellectuel universitaire',
+              OFG2: 'Ouverture à l\'Autre et/ou internationalisation',
+              OFG3: 'Initiation à la responsabilité sociale et citoyenne',
+              OFG4: 'Initiation à la multidisciplinarité et/ou l\'interdisciplinarité',
+              OFG5: 'Connaissances en mathématiques et/ou sciences',
+              OFG6: 'Sensibilité aux arts et lettres',
+              OFG7: 'Capacité de penser logiquement et de manière critique',
+              OFG8: 'Capacité de s\'exprimer en français',
+              OFG9: 'Capacité de s\'exprimer en anglais',
+            };
+            const openOfgs = program.ofg_requirements.open;
 
-          {/* Fulfilled OFGs (by required courses) */}
-          {program.ofg_requirements.fulfilled && Object.keys(program.ofg_requirements.fulfilled).length > 0 && (
-            <div className="program-ofg-fulfilled-list">
-              {Object.entries(program.ofg_requirements.fulfilled).map(([ofgKey, codes]) => (
-                <div key={ofgKey} className="program-ofg-fulfilled-row">
-                  <span className="program-ofg-tag small">{ofgKey}</span>
-                  <span className="program-ofg-fulfilled-by">
-                    {codes.join(', ')}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
+            // Build set of course IDs already used by program requirements / option groups
+            const programCourseIds = new Set(program.all_courses.map((c) => c.code));
+
+            // Assign each scheduled course to at most one OFG (first match wins)
+            // Priority: program courses are excluded, then each extra course fills one OFG only
+            const usedCourseIds = new Set();
+            const ofgFulfilledBy = {}; // ofgKey -> course that fills it
+
+            for (const ofg of openOfgs) {
+              const ofgKey = ofg.ofg;
+              const ofgCourses = courses.filter((c) =>
+                c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofgKey)
+                && allScheduledIds.has(c.id)
+                && !programCourseIds.has(c.id) // don't count program-required courses
+                && !usedCourseIds.has(c.id)    // don't double-count across OFGs
+              );
+              if (ofgCourses.length > 0) {
+                ofgFulfilledBy[ofgKey] = ofgCourses[0];
+                usedCourseIds.add(ofgCourses[0].id);
+              }
+            }
+
+            return (
+              <div className="program-ofg-grid">
+                {openOfgs.map((ofg) => {
+                  const ofgKey = ofg.ofg;
+                  const filledBy = ofgFulfilledBy[ofgKey];
+                  const isDone = !!filledBy;
+                  // Available courses: exclude program courses and courses already assigned to another OFG
+                  const ofgCourses = courses.filter((c) =>
+                    c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofgKey)
+                    && !programCourseIds.has(c.id)
+                  );
+
+                  return (
+                    <motion.div
+                      key={ofgKey}
+                      className={`program-ofg-card ${isDone ? 'fulfilled' : ''}`}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                    >
+                      <div className="program-ofg-header">
+                        <span className="program-ofg-tag">{ofgKey}</span>
+                        <span className="program-ofg-status">
+                          {isDone ? '\u2713' : '3 cr needed'}
+                        </span>
+                      </div>
+                      <div className="program-ofg-name">{OFG_NAMES[ofgKey] || ofgKey}</div>
+                      {isDone ? (
+                        <div className="program-ofg-fulfilled">
+                          <span className="dept-course-chip enrolled">{filledBy.id}</span>
+                        </div>
+                      ) : (
+                        <div className="program-ofg-options">
+                          {ofgCourses.slice(0, 8).map((c) => (
+                            <span key={c.id} className="dept-course-chip">{c.id}</span>
+                          ))}
+                          {ofgCourses.length > 8 && (
+                            <span className="program-ofg-more">+{ofgCourses.length - 8} more</span>
+                          )}
+                        </div>
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </div>
+            );
+          })()}
         </>
       )}
 

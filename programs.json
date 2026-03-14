@@ -14798,7 +14798,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -14872,7 +14880,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -14930,7 +14952,37 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ADMN1000"
+              ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ADMN1000"
+              ]
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -15416,7 +15468,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -15491,7 +15551,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -15565,7 +15639,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -16134,7 +16222,33 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -16198,7 +16312,27 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -16682,7 +16816,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -16737,6 +16879,31 @@
               "codes": [
                 "DROI2000"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours ADCO (3 cr)",
+              "codes": [],
+              "prefix": "ADCO"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
             }
           ]
         },
@@ -16788,7 +16955,40 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours ADCO (3 cr)",
+              "codes": [],
+              "prefix": "ADCO"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG 3",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -17227,7 +17427,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -17267,7 +17481,41 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours ADFI (3 cr)",
+              "codes": [],
+              "prefix": "ADFI"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours ADFS (3 cr)",
+              "codes": [],
+              "prefix": "ADFS"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -17307,7 +17555,47 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours ADRH (3 cr)",
+              "codes": [],
+              "prefix": "ADRH"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours ADGO (3 cr)",
+              "codes": [],
+              "prefix": "ADGO"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Banque OFG 6",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -17733,7 +18021,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -17807,7 +18103,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -17857,7 +18167,40 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours ADCO (3 cr)",
+              "codes": [],
+              "prefix": "ADCO"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG 3",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -18335,7 +18678,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -18409,7 +18760,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -18449,7 +18814,45 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Banque OFG 6",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -18917,7 +19320,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -18981,7 +19392,27 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -19029,7 +19460,40 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours ADCO (3 cr)",
+              "codes": [],
+              "prefix": "ADCO"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG 3",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -19519,7 +19983,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 2,
+              "label": "Cours au choix ou à option (2 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -19599,7 +20071,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -19671,7 +20151,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 8,
+              "label": "Cours au choix ou à option (8 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -20089,7 +20577,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 12,
+              "label": "Cours au choix ou à option (12 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -20121,7 +20617,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 21,
+              "label": "Cours au choix ou à option (21 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -20137,7 +20641,39 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG 5",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 18,
+              "label": "Cours au choix ou à option (18 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -20616,7 +21152,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -21056,7 +21600,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 9,
+              "label": "Cours au choix ou à option (9 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -21104,7 +21656,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 15,
+              "label": "Cours au choix ou à option (15 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -21136,7 +21696,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 21,
+              "label": "Cours au choix ou à option (21 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -21160,7 +21728,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 24,
+              "label": "Cours au choix ou à option (24 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -21578,7 +22154,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -21860,7 +22450,33 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -22704,7 +23320,29 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "FSCI1003"
+              ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 9,
+              "label": "Cours au choix (9 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -23470,7 +24108,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 15,
+              "label": "Cours au choix ou à option (15 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -23488,7 +24140,27 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 18
+          "minor_credits": 18,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -23786,7 +24458,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 21,
+              "label": "Cours au choix ou à option (21 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -23818,7 +24498,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 21,
+              "label": "Cours au choix ou à option (21 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -23842,7 +24530,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 24,
+              "label": "Cours au choix ou à option (24 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -24034,7 +24730,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -24168,7 +24872,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -24298,7 +25010,25 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "BICH2023",
+                "CHIM2413",
+                "FSCI2013",
+                "CHIM1023",
+                "CHIM1123",
+                "FSCI3803",
+                "STAT2603",
+                "STAT2633",
+                "STAT2673"
+              ]
+            }
+          ]
         },
         {
           "year": 4,
@@ -24392,7 +25122,55 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "FSCI3903",
+                "BICH2023",
+                "BIOL2363",
+                "BIOT2999",
+                "CHIM2423",
+                "INFO2014",
+                "MATH2013",
+                "PHYS2523"
+              ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "FSCI3903",
+                "BICH2023",
+                "BIOL2363",
+                "BIOT2999",
+                "CHIM2423",
+                "INFO2014",
+                "MATH2013",
+                "PHYS2523"
+              ]
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "FSCI1003",
+                "FSCI2013",
+                "FSCI3903"
+              ]
+            },
+            {
+              "id": 4,
+              "credits_required": 6,
+              "label": "Cours au choix (6 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -24958,7 +25736,53 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 9
+          "minor_credits": 9,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours CRIM niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "CRIM",
+              "levels": "3000"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours CRIM niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "CRIM",
+              "levels": "3000"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours CRIM niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "CRIM",
+              "levels": "3000"
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours CRIM niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "CRIM",
+              "levels": "3000"
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -24966,7 +25790,53 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 12,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours CRIM niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "CRIM",
+              "levels": "3000"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours CRIM niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "CRIM",
+              "levels": "3000"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours CRIM niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "CRIM",
+              "levels": "3000"
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours CRIM niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "CRIM",
+              "levels": "3000"
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -26333,7 +27203,40 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours ARVI (6 cr)",
+              "codes": [],
+              "prefix": "ARVI"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG 3",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG 5",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Banque OFG 7",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 6,
+              "label": "Cours au choix (6 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -26872,7 +27775,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -27322,7 +28233,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -27378,7 +28297,27 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -27410,7 +28349,33 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 12,
+              "label": "Cours au choix ou à option (12 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -27865,6 +28830,23 @@
                 "INFO1102",
                 "STAT2633"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ADCO1010",
+                "INFO1101",
+                "INFO1102",
+                "STAT2633"
+              ]
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG 6",
+              "codes": []
             }
           ]
         },
@@ -27938,7 +28920,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -27970,7 +28966,59 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ADMN1000"
+              ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ADMN1000"
+              ]
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ADMN1000"
+              ]
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ADMN1000"
+              ]
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG 2",
+              "codes": []
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 7,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -28348,6 +29396,23 @@
                 "SANT1003",
                 "ANGL1022"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ECON1011",
+                "PHIL1100",
+                "PSYC1000",
+                "SCPO1000",
+                "SCPO1050",
+                "SOCI1001",
+                "FRAN1500",
+                "FRAN1600",
+                "SANT1003",
+                "ANGL1022"
+              ]
             }
           ]
         },
@@ -28421,7 +29486,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -28469,7 +29542,27 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 9,
+              "label": "Cours au choix ou à option (9 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -28485,7 +29578,51 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Banque OFG 2",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG 6",
+              "codes": []
+            },
+            {
+              "id": 6,
+              "credits_required": 6,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 7,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -28725,7 +29862,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -28741,7 +29886,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 27,
+              "label": "Cours au choix ou à option (27 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -29149,7 +30302,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 5,
@@ -29157,7 +30318,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -29615,7 +30784,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -29623,7 +30800,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -29983,7 +31168,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 5,
@@ -29991,7 +31184,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -30793,7 +31994,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 27,
+              "label": "Cours au choix ou à option (27 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -30801,7 +32010,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -30809,7 +32026,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 5,
@@ -30817,7 +32042,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -31387,7 +32620,29 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours GEOG niveau 2000 6 (6 cr)",
+              "codes": [],
+              "prefix": "GEOG",
+              "levels": "2000 6"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG 6",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -31403,7 +32658,28 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 9
+          "minor_credits": 9,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours GEOG (6 cr)",
+              "codes": [],
+              "prefix": "GEOG"
+            },
+            {
+              "id": 2,
+              "credits_required": 6,
+              "label": "Cours à option (6 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 6,
+              "label": "Cours au choix (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -31419,7 +32695,28 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 9
+          "minor_credits": 9,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours GEOG (6 cr)",
+              "codes": [],
+              "prefix": "GEOG"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 9,
+              "label": "Cours au choix (9 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -31755,6 +33052,38 @@
                 "PHIL3400",
                 "HIST1800"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 9,
+              "label": "Cours HIST (9 cr)",
+              "codes": [
+                "HIST1501",
+                "HIST1800",
+                "HIST2422",
+                "HIST2810",
+                "HIST2863"
+              ],
+              "prefix": "HIST"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours HIST (3 cr)",
+              "codes": [
+                "HIST1501",
+                "HIST1800",
+                "HIST2422",
+                "HIST2810",
+                "HIST2863"
+              ],
+              "prefix": "HIST"
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
             }
           ]
         },
@@ -31764,7 +33093,35 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 6,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 9,
+              "label": "Cours HIST (9 cr)",
+              "codes": [],
+              "prefix": "HIST"
+            },
+            {
+              "id": 2,
+              "credits_required": 6,
+              "label": "Cours HIST (6 cr)",
+              "codes": [],
+              "prefix": "HIST"
+            },
+            {
+              "id": 3,
+              "credits_required": 6,
+              "label": "Cours à option (6 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -31782,7 +33139,42 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours HIST (6 cr)",
+              "codes": [],
+              "prefix": "HIST"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours HIST (3 cr)",
+              "codes": [],
+              "prefix": "HIST"
+            },
+            {
+              "id": 3,
+              "credits_required": 6,
+              "label": "Cours à option (6 cr)",
+              "codes": [
+                "FASS1000",
+                "HIST1501",
+                "HIST1800",
+                "HIST2422",
+                "HIST2810",
+                "HIST2863"
+              ]
+            },
+            {
+              "id": 4,
+              "credits_required": 6,
+              "label": "Cours au choix (6 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -32006,7 +33398,16 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 9,
+              "label": "Cours ADMK (9 cr)",
+              "codes": [],
+              "prefix": "ADMK"
+            }
+          ]
         },
         {
           "year": 2,
@@ -32272,7 +33673,41 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 9
+          "minor_credits": 9,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ICOM2230",
+                "ICOM2771",
+                "ICOM3101",
+                "ICOM3102",
+                "ICOM3120",
+                "ICOM2782",
+                "ICOM2120",
+                "ICOM2330",
+                "ICOM2340",
+                "ICOM3100",
+                "ICOM3230",
+                "ICOM3320",
+                "ICOM4601"
+              ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 12,
+              "label": "Cours au choix (12 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -32786,6 +34221,18 @@
                 "STAT2603",
                 "STAT2633"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "STAT2603",
+                "MATH1173",
+                "STAT2633",
+                "MATH1153",
+                "MATH1073"
+              ]
             }
           ]
         },
@@ -33173,7 +34620,23 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 21,
+              "label": "Cours INFO niveau 4000 (21 cr)",
+              "codes": [],
+              "prefix": "INFO",
+              "levels": "4000"
+            },
+            {
+              "id": 2,
+              "credits_required": 9,
+              "label": "Cours au choix (9 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -33983,7 +35446,35 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 6,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 12,
+              "label": "Cours INFO niveau 4000 (12 cr)",
+              "codes": [],
+              "prefix": "INFO",
+              "levels": "4000"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 6,
+              "label": "Cours au choix (6 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -34363,7 +35854,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -34443,7 +35942,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -34534,6 +36041,12 @@
               "codes": [
                 "SANT3023"
               ]
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
             }
           ]
         },
@@ -35304,6 +36817,17 @@
               "codes": [
                 "STAT3703"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 9,
+              "label": "Cours MATH niveau 3000 (9 cr)",
+              "codes": [
+                "MATH2613",
+                "MATH3903"
+              ],
+              "prefix": "MATH",
+              "levels": "3000"
             }
           ]
         },
@@ -35323,7 +36847,36 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 9
+          "minor_credits": 9,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 9,
+              "label": "Cours MATH niveau 3000 (9 cr)",
+              "codes": [],
+              "prefix": "MATH",
+              "levels": "3000"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours ADFI (3 cr)",
+              "codes": [],
+              "prefix": "ADFI"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -35681,7 +37234,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -35689,7 +37250,21 @@
           "credits": 6,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 6
+          "open_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -36186,7 +37761,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 27,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -36194,7 +37777,27 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 21,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -36475,7 +38078,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 21,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 9,
+              "label": "Cours au choix ou à option (9 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -36483,7 +38094,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 24,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -36511,6 +38130,12 @@
               "codes": [
                 "MULT4003"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
             }
           ]
         }
@@ -36759,7 +38384,21 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 21,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -36767,7 +38406,39 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 15,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -38680,7 +40351,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 2,
+              "label": "Cours au choix ou à option (2 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -38781,7 +40460,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -38965,7 +40652,39 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG 6",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 18,
+              "label": "Cours au choix ou à option (18 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -39418,7 +41137,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -39446,6 +41173,30 @@
               "codes": [
                 "PHIL4020"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 6,
+              "label": "Cours au choix (6 cr)",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG 6",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 9,
+              "label": "Cours au choix ou à option (9 cr)",
+              "codes": []
             }
           ]
         },
@@ -39455,7 +41206,21 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours au choix (6 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 24,
+              "label": "Cours au choix ou à option (24 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -40412,7 +42177,50 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 6,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 9,
+              "label": "Cours à option (9 cr)",
+              "codes": [
+                "PHYS3503",
+                "MATH3503",
+                "MATH2013",
+                "MATH2023",
+                "ANGL1022"
+              ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "MATH3503",
+                "MATH2013",
+                "MATH2023",
+                "ANGL1022"
+              ]
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -40836,7 +42644,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -40926,7 +42742,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -40964,7 +42788,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 21,
+              "label": "Cours au choix ou à option (21 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -41712,7 +43544,15 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 0,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 30,
+              "label": "Cours au choix ou à option (30 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -42234,7 +44074,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -42294,6 +44142,21 @@
               "codes": [
                 "STAT2653"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours SCPO niveau 2000   3 (3 cr)",
+              "codes": [],
+              "prefix": "SCPO",
+              "levels": "2000   3"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours PHIL (3 cr)",
+              "codes": [],
+              "prefix": "PHIL"
             }
           ]
         },
@@ -42311,7 +44174,39 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 9,
+              "label": "Cours au choix ou à option (9 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -42319,7 +44214,65 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 6,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours SCPO niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "SCPO",
+              "levels": "3000"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours SCPO niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "SCPO",
+              "levels": "3000"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours SCPO niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "SCPO",
+              "levels": "3000"
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours SCPO niveau 3000 (3 cr)",
+              "codes": [],
+              "prefix": "SCPO",
+              "levels": "3000"
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 7,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 8,
+              "credits_required": 3,
+              "label": "Banque OFG 6",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -42633,6 +44586,19 @@
               "codes": [
                 "PHIL3430"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours SOCI (3 cr)",
+              "codes": [],
+              "prefix": "SOCI"
+            },
+            {
+              "id": 3,
+              "credits_required": 6,
+              "label": "Cours au choix (6 cr)",
+              "codes": []
             }
           ]
         },
@@ -42665,7 +44631,28 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 9,
+              "label": "Cours SOCI (9 cr)",
+              "codes": [],
+              "prefix": "SOCI"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -42703,6 +44690,29 @@
               "codes": [
                 "SOCI4575"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 9,
+              "label": "Cours SOCI (9 cr)",
+              "codes": [
+                "SOCI3620",
+                "SOCI4575",
+                "SOCI4640"
+              ],
+              "prefix": "SOCI"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 6,
+              "label": "Cours au choix (6 cr)",
+              "codes": []
             }
           ]
         }
@@ -43198,7 +45208,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 24,
+              "label": "Cours au choix ou à option (24 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -43231,7 +45249,57 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 7,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 8,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -43606,7 +45674,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -44371,7 +46453,26 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours à option (6 cr)",
+              "codes": [
+                "FASS1000",
+                "FRAN1500",
+                "FRAN1600",
+                "ANGL1031"
+              ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -44439,6 +46540,19 @@
                 "ADGO3461",
                 "PHIL2270"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 6,
+              "label": "Cours ECON (6 cr)",
+              "codes": [],
+              "prefix": "ECON"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": []
             }
           ]
         },
@@ -44480,7 +46594,42 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours ECON (6 cr)",
+              "codes": [
+                "ECON2150",
+                "ECON3600"
+              ],
+              "prefix": "ECON"
+            },
+            {
+              "id": 2,
+              "credits_required": 6,
+              "label": "Cours à option (6 cr)",
+              "codes": [
+                "ECON2150",
+                "ECON3600",
+                "ECON2040",
+                "ECON3120"
+              ]
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Banque OFG ?",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -45277,7 +47426,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 12,
+              "label": "Cours au choix ou à option (12 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -45637,6 +47794,12 @@
               "codes": [
                 "EPED4103"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 17,
+              "label": "Cours au choix ou à option (17 cr)",
+              "codes": []
             }
           ]
         }
@@ -46162,7 +48325,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 1,
+              "label": "Cours au choix ou à option (1 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -46218,7 +48389,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 5,
@@ -47293,6 +49472,24 @@
                 "FRAN1500",
                 "FRAN1600"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Banque OFG 3",
+              "codes": []
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
             }
           ]
         },
@@ -49535,7 +51732,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 8,
+              "label": "Cours au choix ou à option (8 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -49610,6 +51815,12 @@
               "codes": [
                 "ANGL4320"
               ]
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
             }
           ]
         },
@@ -51751,7 +53962,8 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 6,
+          "option_groups": []
         },
         {
           "year": 2,
@@ -51855,7 +54067,8 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 6,
+          "option_groups": []
         },
         {
           "year": 3,
@@ -52049,7 +54262,7 @@
               "option_label": "Choisir 3 cr"
             }
           ],
-          "minor_credits": 0,
+          "minor_credits": 9,
           "option_groups": [
             {
               "id": 1,
@@ -52956,7 +55169,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 2,
+              "label": "Cours au choix ou à option (2 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -53012,6 +55233,12 @@
                 "STAT2653",
                 "GEOG4704"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 9,
+              "label": "Cours au choix ou à option (9 cr)",
+              "codes": []
             }
           ]
         },
@@ -53970,7 +56197,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 2,
+              "label": "Cours au choix ou à option (2 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -54034,7 +56269,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 5,
+              "label": "Cours au choix ou à option (5 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -54090,6 +56333,12 @@
                 "STAT2653",
                 "HIST3003"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
             }
           ]
         },
@@ -54753,7 +57002,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix ou à option (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 2,
@@ -55056,6 +57313,12 @@
                 "BIOL2313",
                 "BIOL2613"
               ]
+            },
+            {
+              "id": 3,
+              "credits_required": 6,
+              "label": "Cours au choix ou à option (6 cr)",
+              "codes": []
             }
           ]
         },
@@ -56710,7 +58973,21 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 0
+          "minor_credits": 0,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 2,
+              "credits_required": 9,
+              "label": "Cours au choix ou à option (9 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [
@@ -58700,7 +60977,15 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 2,
+              "label": "Cours au choix ou à option (2 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -58744,6 +61029,12 @@
               "codes": [
                 "STAT2653"
               ]
+            },
+            {
+              "id": 2,
+              "credits_required": 12,
+              "label": "Cours au choix ou à option (12 cr)",
+              "codes": []
             }
           ]
         },
@@ -60323,7 +62614,50 @@
               "type": "obligatoire"
             }
           ],
-          "minor_credits": 6
+          "minor_credits": 6,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours ALLE (3 cr)",
+              "codes": [],
+              "prefix": "ALLE"
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ANGL1011"
+              ]
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Banque OFG 3",
+              "codes": []
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 3,
@@ -60331,7 +62665,65 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 6,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ANGL1011"
+              ]
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ANGL1011"
+              ]
+            },
+            {
+              "id": 7,
+              "credits_required": 3,
+              "label": "Banque OFG 5",
+              "codes": []
+            },
+            {
+              "id": 8,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         },
         {
           "year": 4,
@@ -60339,7 +62731,65 @@
           "credits": 30,
           "courses": [],
           "minor_credits": 6,
-          "open_credits": 30
+          "open_credits": 30,
+          "option_groups": [
+            {
+              "id": 1,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 2,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 3,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 4,
+              "credits_required": 3,
+              "label": "Cours LING (3 cr)",
+              "codes": [],
+              "prefix": "LING"
+            },
+            {
+              "id": 5,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ANGL1011"
+              ]
+            },
+            {
+              "id": 6,
+              "credits_required": 3,
+              "label": "Cours à option (3 cr)",
+              "codes": [
+                "ANGL1011"
+              ]
+            },
+            {
+              "id": 7,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            },
+            {
+              "id": 8,
+              "credits_required": 3,
+              "label": "Cours au choix (3 cr)",
+              "codes": []
+            }
+          ]
         }
       ],
       "all_courses": [

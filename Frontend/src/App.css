@@ -573,74 +573,221 @@
   letter-spacing: 1px;
 }
 
-/* ─── Semester Course List ─── */
-.semester-course-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.semester-dept-group {
-  background: var(--bg-surface);
+/* ─── Weekly Calendar ─── */
+.cal-container {
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
+  background: var(--bg-surface);
 }
 
-.semester-dept-label {
-  padding: 8px 16px;
-  font-size: 0.688rem;
+.cal-grid {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.cal-corner {
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.cal-day-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--text-muted);
+  letter-spacing: 1px;
+  color: var(--text-secondary);
   background: var(--bg-raised);
   border-bottom: 1px solid var(--border);
 }
 
-.semester-course-item {
+/* Put all 5 day headers in a single row */
+.cal-grid {
+  display: grid;
+  grid-template-columns: 60px repeat(5, 1fr);
+  grid-template-rows: auto 1fr;
+}
+
+.cal-time-gutter {
+  grid-column: 1;
+  grid-row: 2;
+  border-right: 1px solid var(--border);
+}
+
+.cal-time-label {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 2px 8px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.cal-body {
+  grid-column: 2 / -1;
+  grid-row: 2;
+  position: relative;
+  min-height: calc(14 * 60px); /* 14 hours * 60px */
+}
+
+.cal-hour-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  pointer-events: none;
+}
+
+.cal-day-col {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid var(--border);
+  pointer-events: none;
+}
+
+.cal-day-col:last-child {
+  border-right: none;
+}
+
+/* Course blocks */
+.cal-block {
+  position: absolute;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid;
+  background: color-mix(in srgb, var(--block-color) 15%, var(--bg-surface));
+  padding: 4px 6px;
+  overflow: hidden;
+  cursor: default;
+  transition: box-shadow 0.15s, transform 0.15s;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.cal-block:hover,
+.cal-block.hovered {
+  z-index: 5;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transform: scale(1.02);
+}
+
+.cal-block.conflict {
+  background: rgba(224, 92, 92, 0.15);
+  border-left-color: var(--danger) !important;
+  animation: conflict-pulse 2s ease-in-out infinite;
+}
+
+@keyframes conflict-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(224, 92, 92, 0); }
+  50% { box-shadow: 0 0 0 3px rgba(224, 92, 92, 0.2); }
+}
+
+.cal-block-id {
+  font-family: var(--font-mono);
+  font-size: 0.688rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cal-block-name {
+  font-size: 0.625rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+.cal-block-location {
+  font-family: var(--font-mono);
+  font-size: 0.563rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cal-block-remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  padding: 0 4px;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.cal-block:hover .cal-block-remove {
+  opacity: 1;
+}
+
+.cal-block-remove:hover {
+  color: var(--danger);
+  background: rgba(224, 92, 92, 0.2);
+}
+
+/* Unscheduled courses */
+.cal-unscheduled {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.cal-unscheduled h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.cal-unscheduled-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cal-unscheduled-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  border-left: 3px solid transparent;
-  border-bottom: 1px solid var(--border);
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
   transition: background 0.15s;
 }
 
-.semester-course-item:last-child {
-  border-bottom: none;
-}
-
-.semester-course-item:hover {
+.cal-unscheduled-item:hover {
   background: var(--bg-hover);
 }
 
-.semester-course-main {
-  flex: 1;
-  min-width: 0;
-}
-
-.semester-course-top {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 2px;
-}
-
-.semester-course-id {
+.cal-unscheduled-id {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
+  min-width: 80px;
 }
 
-.semester-course-credits {
-  font-family: var(--font-mono);
-  font-size: 0.688rem;
-  color: var(--text-muted);
-}
-
-.semester-course-name {
+.cal-unscheduled-name {
+  flex: 1;
   font-size: 0.813rem;
   color: var(--text-secondary);
   white-space: nowrap;
@@ -648,13 +795,13 @@
   text-overflow: ellipsis;
 }
 
-.semester-course-prereqs {
+.cal-unscheduled-cr {
+  font-family: var(--font-mono);
   font-size: 0.688rem;
   color: var(--text-muted);
-  font-style: italic;
-  margin-top: 2px;
 }
 
+/* Keep semester-course-remove for unscheduled items */
 .semester-course-remove {
   font-size: 1.25rem;
   color: var(--text-muted);

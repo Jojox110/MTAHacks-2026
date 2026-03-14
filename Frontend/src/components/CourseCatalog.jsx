@@ -11,7 +11,7 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
 
   const selectedIds = selectedCourses.map((c) => c.id);
 
-  // Build set of courses needed for program/minor that aren't yet scheduled
+  // Build set of courses needed for program/minor (OFG handled separately by neededOfgIds)
   const programCourseIds = useMemo(() => {
     if (!programData) return new Set();
     const ids = new Set();
@@ -19,11 +19,6 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
       const prog = programData.programs?.find((p) => p.name === userMajor);
       if (prog) {
         prog.all_courses.forEach((c) => ids.add(c.code));
-        // Include OFG courses
-        for (const ofg of (prog.ofg_requirements?.open || [])) {
-          courses.filter((c) => c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg))
-            .forEach((c) => ids.add(c.id));
-        }
       }
     }
     if (userMinor) {
@@ -31,7 +26,7 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
       if (min) min.all_courses.forEach((c) => ids.add(c.code));
     }
     return ids;
-  }, [programData, userMajor, userMinor, courses]);
+  }, [programData, userMajor, userMinor]);
 
   // Find option courses in fulfilled groups (no longer needed)
   const fulfilledOptionCodes = useMemo(() => {
@@ -56,16 +51,23 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
   }, [programData, userMajor, allScheduledIds]);
 
   // Open OFG courses needed (1 per OFG, exclude fulfilled OFGs)
+  // Program-required courses don't count; each course fills only one OFG
   const neededOfgIds = useMemo(() => {
     const needed = new Set();
     if (!programData || !userMajor) return needed;
     const prog = programData.programs?.find((p) => p.name === userMajor);
     if (!prog || !prog.ofg_requirements?.open) return needed;
+    const progCodes = new Set(prog.all_courses.map((c) => c.code));
+    const usedIds = new Set();
     for (const ofg of prog.ofg_requirements.open) {
-      const ofgCourses = courses.filter((c) => c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg));
-      const alreadyHasOne = ofgCourses.some((c) => allScheduledIds.has(c.id));
-      if (!alreadyHasOne) {
-        // Add all courses for this OFG as potential options
+      const ofgCourses = courses.filter((c) =>
+        c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg)
+        && !progCodes.has(c.id)
+      );
+      const match = ofgCourses.find((c) => allScheduledIds.has(c.id) && !usedIds.has(c.id));
+      if (match) {
+        usedIds.add(match.id);
+      } else {
         ofgCourses.forEach((c) => needed.add(c.id));
       }
     }

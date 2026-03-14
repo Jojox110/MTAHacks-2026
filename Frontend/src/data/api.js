@@ -91,6 +91,31 @@ export async function getAIRecommendation(prompt, currentCourses = [], major = n
   });
 }
 
+// ─── Session schedule data (timetable) ───
+
+const SESSION_FILES = {
+  'Hiver 2026': '/schedule_hiver_2026_moncton_fix.json',
+  'Printemps-Été 2026': '/schedule_printemps_ete_2026_moncton_fix.json',
+  'Automne 2026': '/schedule_automne_2026_moncton_fix.json',
+};
+
+const sessionCache = {};
+
+export async function fetchSessionSchedule(session) {
+  if (sessionCache[session]) return sessionCache[session];
+  const file = SESSION_FILES[session];
+  if (!file) return [];
+  try {
+    const res = await fetch(file);
+    if (!res.ok) throw new Error('Failed');
+    const data = await res.json();
+    sessionCache[session] = data;
+    return data;
+  } catch {
+    return [];
+  }
+}
+
 // ─── Schedule persistence ───
 // scheduleMap: { "Fall 2026": ["CS101", ...], "Spring 2027": [...] }
 

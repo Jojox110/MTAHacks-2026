@@ -49,13 +49,24 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       }
     }
 
-    // Open OFG credits
+    // Open OFG credits (1 course per OFG, 3 cr each)
+    // Each course can only fill one OFG; program-required courses don't count
     const openOfgs = program.ofg_requirements?.open || [];
-    const ofgTotalCredits = openOfgs.reduce((s, o) => s + o.credits, 0);
+    const ofgTotalCredits = openOfgs.length * 3;
     let ofgScheduledCredits = 0;
+    const progCodes = new Set(program.all_courses.map((c) => c.code));
+    const ofgUsed = new Set();
     for (const ofg of openOfgs) {
-      const ofgCourses = courses.filter((c) => c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg));
-      if (ofgCourses.some((c) => selectedIds.includes(c.id))) ofgScheduledCredits += ofg.credits;
+      const match = courses.find((c) =>
+        c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg)
+        && selectedIds.includes(c.id)
+        && !progCodes.has(c.id)
+        && !ofgUsed.has(c.id)
+      );
+      if (match) {
+        ofgScheduledCredits += 3;
+        ofgUsed.add(match.id);
+      }
     }
 
     const totalCredits = reqCredits + optTotalCredits + openCredits + ofgTotalCredits;
