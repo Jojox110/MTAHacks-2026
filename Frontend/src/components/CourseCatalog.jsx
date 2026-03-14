@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { DEPT_NAMES } from '../data/courses';
 
 export default function CourseCatalog({ courses, selectedCourses, onToggleCourse, userMajor, priorCourseIds = new Set() }) {
   const [dept, setDept] = useState(userMajor || 'All');
@@ -21,10 +22,12 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
       if (dept !== 'All' && c.dept !== dept) return false;
       if (search) {
         const q = search.toLowerCase();
+        const deptName = (DEPT_NAMES[c.dept] || '').toLowerCase();
         return (
           c.id.toLowerCase().includes(q) ||
           c.name.toLowerCase().includes(q) ||
           c.dept.toLowerCase().includes(q) ||
+          deptName.includes(q) ||
           (c.description || '').toLowerCase().includes(q)
         );
       }
@@ -47,7 +50,7 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
         <select value={dept} onChange={(e) => setDept(e.target.value)}>
           <option value="All">All Departments ({courses.length})</option>
           {departments.map((d) => (
-            <option key={d} value={d}>{d}</option>
+            <option key={d} value={d}>{d} – {DEPT_NAMES[d] || d}</option>
           ))}
         </select>
       </div>

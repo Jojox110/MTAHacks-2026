@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DEPARTMENTS } from '../data/courses';
+import { DEPARTMENTS, DEPT_NAMES } from '../data/courses';
 import { registerUser, loginUser } from '../data/api';
 
 export default function LoginScreen({ onComplete }) {
@@ -123,7 +123,7 @@ export default function LoginScreen({ onComplete }) {
                 <select value={major} onChange={(e) => setMajor(e.target.value)}>
                   <option value="">Select your major</option>
                   {DEPARTMENTS.map((d) => (
-                    <option key={d} value={d}>{d}</option>
+                    <option key={d} value={d}>{d} – {DEPT_NAMES[d] || d}</option>
                   ))}
                 </select>
               </div>
@@ -133,7 +133,7 @@ export default function LoginScreen({ onComplete }) {
                 <select value={minor} onChange={(e) => setMinor(e.target.value)}>
                   <option value="">No minor</option>
                   {DEPARTMENTS.map((d) => (
-                    <option key={d} value={d}>{d}</option>
+                    <option key={d} value={d}>{d} – {DEPT_NAMES[d] || d}</option>
                   ))}
                 </select>
               </div>
