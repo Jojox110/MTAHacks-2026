@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 from config import CORS_ORIGINS
 from database import init_db
 from seed import seed
-from routers import auth, courses, career_paths, schedules, recommendations
+from routers import auth, courses, schedules, recommendations
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -25,6 +25,5 @@ app.add_middleware(
 
 app.include_router(auth.router)
 app.include_router(courses.router)
-app.include_router(career_paths.router)
 app.include_router(schedules.router)
 app.include_router(recommendations.router)

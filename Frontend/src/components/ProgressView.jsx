@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { DEPARTMENTS } from '../data/courses';
 
 function getAcademicYear(semester) {
   const [session, yearStr] = semester.split(' ');
@@ -17,13 +16,18 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
   const targetCredits = 120;
   const creditPercent = Math.min(100, (totalCredits / targetCredits) * 100);
 
-  // Group by department
+  // Group by department (derived from course data, not static list)
   const deptProgress = useMemo(() => {
-    return DEPARTMENTS.map((dept) => {
-      const deptCourses = courses.filter((c) => c.dept === dept);
-      const enrolled = deptCourses.filter((c) => selectedIds.includes(c.id));
-      return { dept, total: deptCourses.length, enrolled: enrolled.length, courses: deptCourses };
-    }).filter((d) => d.total > 0);
+    const deptMap = {};
+    for (const c of courses) {
+      if (!deptMap[c.dept]) deptMap[c.dept] = { dept: c.dept, total: 0, enrolled: 0, courses: [] };
+      deptMap[c.dept].total++;
+      deptMap[c.dept].courses.push(c);
+      if (selectedIds.includes(c.id)) deptMap[c.dept].enrolled++;
+    }
+    return Object.values(deptMap)
+      .filter((d) => d.enrolled > 0)
+      .sort((a, b) => b.enrolled - a.enrolled);
   }, [courses, selectedIds]);
 
   // Group by semester

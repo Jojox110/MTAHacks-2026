@@ -66,43 +66,10 @@ export async function fetchCareerPaths() {
 // ─── AI Advisor ───
 
 export async function getAIRecommendation(prompt, currentCourses = [], major = null, minor = null) {
-  try {
-    return await authFetch('/ai/recommend', {
-      method: 'POST',
-      body: JSON.stringify({ prompt, currentCourses, major, minor }),
-    });
-  } catch {
-    // Fallback: local keyword matching
-    const { CAREER_PATHS } = await import('./courses.js');
-    await new Promise(r => setTimeout(r, 1500));
-
-    const lower = prompt.toLowerCase();
-    const keywords = {
-      'Software Engineer': ['software', 'web', 'app', 'code', 'programming', 'developer', 'full stack', 'frontend', 'backend'],
-      'Data Scientist': ['data', 'analytics', 'statistics', 'analysis', 'insight'],
-      'Cybersecurity Analyst': ['security', 'cyber', 'hacking', 'network', 'protect'],
-      'AI/ML Engineer': ['ai', 'machine learning', 'ml', 'artificial intelligence', 'deep learning', 'neural'],
-      'Product Manager': ['product', 'manage', 'lead', 'strategy', 'pm'],
-      'Financial Analyst': ['finance', 'financial', 'investment', 'banking', 'accounting', 'money'],
-      'Biomedical Engineer': ['biomedical', 'medical', 'health', 'bio', 'healthcare'],
-      'UX Researcher': ['ux', 'user experience', 'design', 'research', 'usability'],
-    };
-
-    let bestMatch = 'Software Engineer';
-    let bestScore = 0;
-    for (const [path, words] of Object.entries(keywords)) {
-      const score = words.filter(w => lower.includes(w)).length;
-      if (score > bestScore) { bestScore = score; bestMatch = path; }
-    }
-
-    const pathData = CAREER_PATHS[bestMatch];
-    return {
-      careerPath: bestMatch,
-      description: pathData.description,
-      required: pathData.required,
-      recommended: pathData.recommended,
-    };
-  }
+  return authFetch('/ai/recommend', {
+    method: 'POST',
+    body: JSON.stringify({ prompt, currentCourses, major, minor }),
+  });
 }
 
 // ─── Schedule persistence ───

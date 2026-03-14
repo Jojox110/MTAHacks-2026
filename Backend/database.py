@@ -27,17 +27,11 @@ def init_db():
             id TEXT PRIMARY KEY,
             name TEXT NOT NULL,
             department TEXT NOT NULL,
-            credits INTEGER NOT NULL,
+            credits INTEGER NOT NULL DEFAULT 3,
             prereqs TEXT DEFAULT '[]',
-            schedule TEXT NOT NULL,
+            description TEXT DEFAULT '',
+            ofg TEXT,
             color TEXT
-        );
-
-        CREATE TABLE IF NOT EXISTS career_paths (
-            name TEXT PRIMARY KEY,
-            description TEXT NOT NULL,
-            required TEXT NOT NULL,
-            recommended TEXT NOT NULL
         );
 
         CREATE TABLE IF NOT EXISTS user_schedules (

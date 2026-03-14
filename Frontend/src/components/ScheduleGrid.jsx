@@ -1,17 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { DAYS, TIME_SLOTS, getTimeSpan } from '../data/courses';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ScheduleGrid({ selectedCourses, onRemoveCourse }) {
   const totalCredits = selectedCourses.reduce((sum, c) => sum + c.credits, 0);
 
-  // Build time rows (8 AM to 7 PM = 22 half-hour slots)
-  const timeLabels = TIME_SLOTS;
+  // Group by department
+  const byDept = {};
+  for (const c of selectedCourses) {
+    if (!byDept[c.dept]) byDept[c.dept] = [];
+    byDept[c.dept].push(c);
+  }
+  const deptEntries = Object.entries(byDept).sort((a, b) => a[0].localeCompare(b[0]));
 
   return (
     <div className="schedule-view">
       <div className="schedule-header">
-        <h2>Your Schedule</h2>
+        <h2>Semester Courses</h2>
         <div className="schedule-stats">
           <div className="stat">
             <div className="stat-value accent">{selectedCourses.length}</div>
@@ -34,67 +37,52 @@ export default function ScheduleGrid({ selectedCourses, onRemoveCourse }) {
           </p>
         </div>
       ) : (
-        <div className="schedule-grid">
-          {/* Header row */}
-          <div className="grid-corner" />
-          {DAYS.map((day) => (
-            <div key={day} className="grid-day-header">{day}</div>
-          ))}
-
-          {/* Time rows */}
-          {timeLabels.map((time, i) => {
-            const isHour = !time.includes(':30');
-            return (
-              <React.Fragment key={time}>
-                <div className={`grid-time-label ${isHour ? 'hour' : ''}`}>
-                  {isHour ? time : ''}
-                </div>
-                {DAYS.map((day) => (
-                  <div key={`${day}-${time}`} className={`grid-cell ${isHour ? 'hour' : ''}`}>
-                    {/* Course blocks are rendered on the first cell of their time span */}
-                    {selectedCourses
-                      .filter(
-                        (c) =>
-                          c.schedule.days.includes(day) &&
-                          c.schedule.start === time
-                      )
-                      .map((course) => {
-                        const span = getTimeSpan(course.schedule.start, course.schedule.end);
-                        const height = span * 32;
-                        return (
-                          <motion.div
-                            key={course.id}
-                            className="schedule-block"
-                            style={{
-                              height: `${height - 4}px`,
-                              background: `${course.color}22`,
-                              borderColor: `${course.color}44`,
-                              color: course.color,
-                            }}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.9 }}
-                            transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                            onClick={() => onRemoveCourse(course)}
-                            title={`Click to remove ${course.id}`}
-                          >
-                            <div className="schedule-block-id">{course.id}</div>
-                            {height > 50 && (
-                              <div className="schedule-block-name">{course.name}</div>
-                            )}
-                            {height > 70 && (
-                              <div className="schedule-block-time">
-                                {course.schedule.start}–{course.schedule.end}
-                              </div>
-                            )}
-                          </motion.div>
-                        );
-                      })}
-                  </div>
+        <div className="semester-course-list">
+          <AnimatePresence mode="popLayout">
+            {deptEntries.map(([dept, courses]) => (
+              <motion.div
+                key={dept}
+                className="semester-dept-group"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+              >
+                <div className="semester-dept-label">{dept}</div>
+                {courses.map((course) => (
+                  <motion.div
+                    key={course.id}
+                    className="semester-course-item"
+                    style={{ borderLeftColor: course.color }}
+                    initial={{ opacity: 0, x: -8 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 8 }}
+                    transition={{ duration: 0.15 }}
+                    title={course.description || course.name}
+                  >
+                    <div className="semester-course-main">
+                      <div className="semester-course-top">
+                        <span className="semester-course-id" style={{ color: course.color }}>{course.id}</span>
+                        <span className="semester-course-credits">{course.credits} cr</span>
+                      </div>
+                      <div className="semester-course-name">{course.name}</div>
+                      {course.prereqs && course.prereqs.length > 0 && (
+                        <div className="semester-course-prereqs">
+                          Prereqs: {course.prereqs.join(', ')}
+                        </div>
+                      )}
+                    </div>
+                    <button
+                      className="semester-course-remove"
+                      onClick={() => onRemoveCourse(course)}
+                      title={`Remove ${course.id}`}
+                    >
+                      &times;
+                    </button>
+                  </motion.div>
                 ))}
-              </React.Fragment>
-            );
-          })}
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       )}
     </div>

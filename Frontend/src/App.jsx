@@ -8,7 +8,6 @@ import CourseCatalog from './components/CourseCatalog';
 import ScheduleGrid from './components/ScheduleGrid';
 import ProgressView from './components/ProgressView';
 import { fetchCourses, getCurrentUser, saveSchedule, loadSchedule } from './data/api';
-import { hasConflict } from './data/courses';
 
 const SESSIONS = ['Fall', 'Spring', 'Summer'];
 const START_YEAR = 2026;
@@ -115,24 +114,20 @@ function App() {
         if (ids.includes(course.id)) {
           return ids.filter((id) => id !== course.id);
         }
-        const currentCourses = ids.map((id) => courses.find((c) => c.id === id)).filter(Boolean);
-        if (hasConflict(course, currentCourses)) return ids;
         return [...ids, course.id];
       });
     },
-    [updateSemesterCourses, courses]
+    [updateSemesterCourses]
   );
 
   const addCourse = useCallback(
     (course) => {
       updateSemesterCourses((ids) => {
         if (ids.includes(course.id)) return ids;
-        const currentCourses = ids.map((id) => courses.find((c) => c.id === id)).filter(Boolean);
-        if (hasConflict(course, currentCourses)) return ids;
         return [...ids, course.id];
       });
     },
-    [updateSemesterCourses, courses]
+    [updateSemesterCourses]
   );
 
   const removeCourse = useCallback((course) => {
