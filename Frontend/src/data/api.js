@@ -106,15 +106,17 @@ export async function getAIRecommendation(prompt, currentCourses = [], major = n
 }
 
 // ─── Schedule persistence ───
+// scheduleMap: { "Fall 2026": ["CS101", ...], "Spring 2027": [...] }
 
-export async function saveSchedule(courseIds) {
+export async function saveSchedule(scheduleMap) {
   try {
     return await authFetch('/schedule', {
       method: 'POST',
-      body: JSON.stringify({ courseIds }),
+      body: JSON.stringify({ schedule: scheduleMap }),
     });
   } catch {
-    console.log('Schedule saved (local fallback):', courseIds);
+    // Fallback: persist in localStorage
+    localStorage.setItem('courseforge_schedule', JSON.stringify(scheduleMap));
     return { success: true };
   }
 }
@@ -123,6 +125,11 @@ export async function loadSchedule() {
   try {
     return await authFetch('/schedule');
   } catch {
-    return { courseIds: [] };
+    // Fallback: load from localStorage
+    const saved = localStorage.getItem('courseforge_schedule');
+    if (saved) {
+      return { schedule: JSON.parse(saved) };
+    }
+    return { schedule: {} };
   }
 }

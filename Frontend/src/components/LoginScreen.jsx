@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DEPARTMENTS } from '../data/courses';
-import { registerUser } from '../data/api';
+import { registerUser, loginUser } from '../data/api';
 
 export default function LoginScreen({ onComplete }) {
   const [step, setStep] = useState(1);
@@ -12,9 +12,22 @@ export default function LoginScreen({ onComplete }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleContinue = (e) => {
+  const handleContinue = async (e) => {
     e.preventDefault();
     if (!name.trim() || !email.trim()) return;
+    setLoading(true);
+    setError('');
+    try {
+      // Try login first — if the email exists, skip to dashboard
+      const user = await loginUser(email);
+      localStorage.setItem('courseforge_token', user.token);
+      onComplete(user);
+      return;
+    } catch {
+      // Email not found — this is a new user, show step 2
+    } finally {
+      setLoading(false);
+    }
     setStep(2);
   };
 
@@ -86,8 +99,8 @@ export default function LoginScreen({ onComplete }) {
                 />
               </div>
 
-              <button type="submit" className="login-button" disabled={!name.trim() || !email.trim()}>
-                Continue
+              <button type="submit" className="login-button" disabled={!name.trim() || !email.trim() || loading}>
+                {loading ? 'Checking...' : 'Continue'}
               </button>
             </motion.form>
           )}

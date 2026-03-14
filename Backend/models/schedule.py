@@ -1,8 +1,8 @@
 from pydantic import BaseModel
-from typing import List
+from typing import Dict, List
 
 class SaveScheduleRequest(BaseModel):
-    courseIds: List[str]
+    schedule: Dict[str, List[str]]  # { "Fall 2026": ["CS101", ...] }
 
 class ScheduleResponse(BaseModel):
-    courseIds: List[str]
+    schedule: Dict[str, List[str]]

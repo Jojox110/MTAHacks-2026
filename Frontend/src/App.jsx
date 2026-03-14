@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import './App.css';
 
@@ -10,12 +10,54 @@ import ProgressView from './components/ProgressView';
 import { fetchCourses, getCurrentUser, saveSchedule, loadSchedule } from './data/api';
 import { hasConflict } from './data/courses';
 
+const SESSIONS = ['Fall', 'Spring', 'Summer'];
+const START_YEAR = 2026;
+const NUM_YEARS = 4;
+
+function buildSemesters() {
+  const semesters = [];
+  for (let y = START_YEAR; y < START_YEAR + NUM_YEARS; y++) {
+    for (const s of SESSIONS) {
+      semesters.push(`${s} ${y}`);
+    }
+  }
+  return semesters;
+}
+
+const ALL_SEMESTERS = buildSemesters();
+
 function App() {
   const [user, setUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
   const [courses, setCourses] = useState([]);
-  const [selectedCourses, setSelectedCourses] = useState([]);
+  const [scheduleMap, setScheduleMap] = useState({}); // { "Fall 2026": ["CS101", ...] }
+  const [activeSemester, setActiveSemester] = useState(ALL_SEMESTERS[0]);
   const [activeTab, setActiveTab] = useState('schedule');
+
+  // Derive selected courses for the active semester
+  const selectedCourses = useMemo(() => {
+    const ids = scheduleMap[activeSemester] || [];
+    return ids.map((id) => courses.find((c) => c.id === id)).filter(Boolean);
+  }, [scheduleMap, activeSemester, courses]);
+
+  // All courses across all semesters (for progress)
+  const allSelectedCourses = useMemo(() => {
+    const allIds = [...new Set(Object.values(scheduleMap).flat())];
+    return allIds.map((id) => courses.find((c) => c.id === id)).filter(Boolean);
+  }, [scheduleMap, courses]);
+
+  // Course IDs from semesters BEFORE the active one (completed prereqs)
+  const priorCourseIds = useMemo(() => {
+    const activeIdx = ALL_SEMESTERS.indexOf(activeSemester);
+    const ids = new Set();
+    for (let i = 0; i < activeIdx; i++) {
+      const sem = ALL_SEMESTERS[i];
+      for (const id of (scheduleMap[sem] || [])) {
+        ids.add(id);
+      }
+    }
+    return ids;
+  }, [scheduleMap, activeSemester]);
 
   // Restore session from localStorage
   useEffect(() => {
@@ -38,60 +80,69 @@ function App() {
   // Load saved schedule when user logs in
   useEffect(() => {
     if (!user || courses.length === 0) return;
-    loadSchedule().then(({ courseIds }) => {
-      if (courseIds.length > 0) {
-        const saved = courseIds
-          .map((id) => courses.find((c) => c.id === id))
-          .filter(Boolean);
-        setSelectedCourses(saved);
+    loadSchedule().then((data) => {
+      if (data.schedule) {
+        setScheduleMap(data.schedule);
+      } else if (data.courseIds && data.courseIds.length > 0) {
+        // Backwards compat: old format had flat courseIds
+        setScheduleMap({ [ALL_SEMESTERS[0]]: data.courseIds });
       }
     }).catch(() => {});
   }, [user, courses]);
 
   // Auto-save schedule when it changes
   useEffect(() => {
-    if (!user || selectedCourses.length === 0) return;
-    const ids = selectedCourses.map((c) => c.id);
-    saveSchedule(ids).catch(() => {});
-  }, [user, selectedCourses]);
+    if (!user) return;
+    const hasAnyCourses = Object.values(scheduleMap).some((ids) => ids.length > 0);
+    if (!hasAnyCourses) return;
+    saveSchedule(scheduleMap).catch(() => {});
+  }, [user, scheduleMap]);
 
   const selectedIds = selectedCourses.map((c) => c.id);
 
+  const updateSemesterCourses = useCallback((updater) => {
+    setScheduleMap((prev) => {
+      const currentIds = prev[activeSemester] || [];
+      const newIds = updater(currentIds);
+      if (newIds === currentIds) return prev;
+      return { ...prev, [activeSemester]: newIds };
+    });
+  }, [activeSemester]);
+
   const toggleCourse = useCallback(
     (course) => {
-      setSelectedCourses((prev) => {
-        const exists = prev.find((c) => c.id === course.id);
-        if (exists) {
-          return prev.filter((c) => c.id !== course.id);
+      updateSemesterCourses((ids) => {
+        if (ids.includes(course.id)) {
+          return ids.filter((id) => id !== course.id);
         }
-        const conflict = hasConflict(course, prev);
-        if (conflict) return prev;
-        return [...prev, course];
+        const currentCourses = ids.map((id) => courses.find((c) => c.id === id)).filter(Boolean);
+        if (hasConflict(course, currentCourses)) return ids;
+        return [...ids, course.id];
       });
     },
-    []
+    [updateSemesterCourses, courses]
   );
 
   const addCourse = useCallback(
     (course) => {
-      setSelectedCourses((prev) => {
-        if (prev.find((c) => c.id === course.id)) return prev;
-        const conflict = hasConflict(course, prev);
-        if (conflict) return prev;
-        return [...prev, course];
+      updateSemesterCourses((ids) => {
+        if (ids.includes(course.id)) return ids;
+        const currentCourses = ids.map((id) => courses.find((c) => c.id === id)).filter(Boolean);
+        if (hasConflict(course, currentCourses)) return ids;
+        return [...ids, course.id];
       });
     },
-    []
+    [updateSemesterCourses, courses]
   );
 
   const removeCourse = useCallback((course) => {
-    setSelectedCourses((prev) => prev.filter((c) => c.id !== course.id));
-  }, []);
+    updateSemesterCourses((ids) => ids.filter((id) => id !== course.id));
+  }, [updateSemesterCourses]);
 
   const handleLogout = () => {
     localStorage.removeItem('courseforge_token');
     setUser(null);
-    setSelectedCourses([]);
+    setScheduleMap({});
   };
 
   // Show nothing until auth check completes
@@ -136,6 +187,7 @@ function App() {
             selectedCourses={selectedCourses}
             onToggleCourse={toggleCourse}
             userMajor={user.major}
+            priorCourseIds={priorCourseIds}
           />
         </div>
 
@@ -183,6 +235,22 @@ function App() {
           >
             Progress
           </button>
+
+          <div className="semester-picker">
+            <select
+              value={activeSemester}
+              onChange={(e) => setActiveSemester(e.target.value)}
+            >
+              {ALL_SEMESTERS.map((sem) => {
+                const count = (scheduleMap[sem] || []).length;
+                return (
+                  <option key={sem} value={sem}>
+                    {sem}{count > 0 ? ` (${count})` : ''}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
         </nav>
 
         {activeTab === 'schedule' && (
@@ -194,7 +262,8 @@ function App() {
         {activeTab === 'progress' && (
           <ProgressView
             courses={courses}
-            selectedCourses={selectedCourses}
+            selectedCourses={allSelectedCourses}
+            scheduleMap={scheduleMap}
           />
         )}
       </main>

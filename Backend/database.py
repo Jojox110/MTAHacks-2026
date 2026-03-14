@@ -44,9 +44,10 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             user_id INTEGER NOT NULL,
             course_id TEXT NOT NULL,
+            semester TEXT NOT NULL DEFAULT 'Fall 2026',
             FOREIGN KEY (user_id) REFERENCES users(id),
             FOREIGN KEY (course_id) REFERENCES courses(id),
-            UNIQUE(user_id, course_id)
+            UNIQUE(user_id, course_id, semester)
         );
     """)
     conn.close()

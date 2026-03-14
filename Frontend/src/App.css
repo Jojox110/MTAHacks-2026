@@ -134,6 +134,24 @@
   font-family: var(--font-mono);
 }
 
+.semester-picker {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.semester-picker select {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
 /* ─── AI Advisor Panel ─── */
 .ai-panel {
   border-bottom: 1px solid var(--border);
@@ -349,6 +367,29 @@
   font-size: 0.813rem;
 }
 
+.completed-toggle {
+  padding: 10px 24px;
+}
+
+.toggle-label {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 0.75rem !important;
+  color: var(--text-secondary) !important;
+  margin-bottom: 0 !important;
+}
+
+.toggle-label input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
 .course-list {
   padding: 8px 12px;
 }
@@ -376,6 +417,27 @@
 .course-card.conflict {
   opacity: 0.45;
   cursor: not-allowed;
+}
+
+.course-card.completed {
+  opacity: 0.55;
+  border-color: var(--success);
+  border-style: dashed;
+}
+
+.course-card.completed:hover {
+  opacity: 0.75;
+}
+
+.course-card-done {
+  font-size: 0.563rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--success);
+  background: rgba(94, 194, 105, 0.12);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
 }
 
 .course-card-header {
@@ -713,6 +775,111 @@
   background: var(--accent-glow);
   border-color: var(--accent-dim);
   color: var(--accent);
+}
+
+/* ─── Progress section headings ─── */
+.progress-section-heading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+  margin-top: 32px;
+  color: var(--text-secondary);
+}
+
+/* ─── Semester Progress ─── */
+.semester-progress {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.semester-card {
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.semester-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.semester-card-header h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.semester-card-stats {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ─── Year Progress ─── */
+.year-progress {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.year-card {
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.year-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.year-card-header h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.year-card-stats {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.year-semesters {
+  margin-top: 12px;
+}
+
+.year-semester-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-top: 1px solid var(--border);
+}
+
+.year-semester-row:first-child {
+  border-top: none;
+}
+
+.year-semester-label {
+  font-size: 0.813rem;
+  color: var(--text-secondary);
+}
+
+.year-semester-detail {
+  font-family: var(--font-mono);
+  font-size: 0.688rem;
+  color: var(--text-muted);
 }
 
 /* ─── Empty states ─── */

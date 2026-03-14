@@ -12,8 +12,8 @@ def get_schedule(
     user: dict = Depends(get_current_user),
     conn: sqlite3.Connection = Depends(get_db),
 ):
-    ids = load_schedule(conn, user["id"])
-    return {"courseIds": ids}
+    schedule = load_schedule(conn, user["id"])
+    return {"schedule": schedule}
 
 @router.post("/schedule")
 def post_schedule(
@@ -21,5 +21,5 @@ def post_schedule(
     user: dict = Depends(get_current_user),
     conn: sqlite3.Connection = Depends(get_db),
 ):
-    save_schedule(conn, user["id"], req.courseIds)
+    save_schedule(conn, user["id"], req.schedule)
     return {"success": True}
