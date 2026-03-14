@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-deep: #0a0a0c;
+  --bg-surface: #121216;
+  --bg-raised: #1a1a20;
+  --bg-hover: #22222a;
+  --border: #2a2a34;
+  --border-light: #3a3a48;
+  --text-primary: #e8e6e1;
+  --text-secondary: #9895a0;
+  --text-muted: #5c5968;
+  --accent: #e8a849;
+  --accent-dim: #c4883a;
+  --accent-glow: rgba(232, 168, 73, 0.12);
+  --accent-glow-strong: rgba(232, 168, 73, 0.25);
+  --success: #5ec269;
+  --success-glow: rgba(94, 194, 105, 0.15);
+  --danger: #e05c5c;
+  --info: #5c9ee0;
+  --info-glow: rgba(92, 158, 224, 0.15);
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
+
+::selection {
+  background: var(--accent-glow-strong);
+  color: var(--text-primary);
+}
+
+a { color: var(--accent); text-decoration: none; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  outline: none;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 0.938rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
