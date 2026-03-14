@@ -4,6 +4,7 @@ import { DEPT_NAMES } from '../data/courses';
 
 export default function CourseCatalog({ courses, selectedCourses, onToggleCourse, userMajor, priorCourseIds = new Set() }) {
   const [dept, setDept] = useState(userMajor || 'All');
+  const [ofgFilter, setOfgFilter] = useState('All');
   const [search, setSearch] = useState('');
   const [showCompleted, setShowCompleted] = useState(false);
 
@@ -15,11 +16,24 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
     return depts;
   }, [courses]);
 
+  // Build OFG list from actual course data
+  const ofgTypes = useMemo(() => {
+    const tags = new Set();
+    courses.forEach((c) => {
+      if (c.ofg) c.ofg.split(',').forEach((t) => tags.add(t.trim()));
+    });
+    return [...tags].sort();
+  }, [courses]);
+
   const filtered = useMemo(() => {
     return courses.filter((c) => {
       const isCompleted = priorCourseIds.has(c.id);
       if (isCompleted && !showCompleted) return false;
       if (dept !== 'All' && c.dept !== dept) return false;
+      if (ofgFilter !== 'All') {
+        if (!c.ofg) return false;
+        if (!c.ofg.split(',').map((t) => t.trim()).includes(ofgFilter)) return false;
+      }
       if (search) {
         const q = search.toLowerCase();
         const deptName = (DEPT_NAMES[c.dept] || '').toLowerCase();
@@ -33,7 +47,7 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
       }
       return true;
     });
-  }, [courses, dept, search, priorCourseIds, showCompleted]);
+  }, [courses, dept, ofgFilter, search, priorCourseIds, showCompleted]);
 
   function getTooltip(course, isSelected, isCompleted, prereqsMet, missingPrereqs) {
     if (isSelected) return `Click to remove ${course.id} from this semester`;
@@ -51,6 +65,16 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
           <option value="All">All Departments ({courses.length})</option>
           {departments.map((d) => (
             <option key={d} value={d}>{d} – {DEPT_NAMES[d] || d}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="filter-section">
+        <label>OFG</label>
+        <select value={ofgFilter} onChange={(e) => setOfgFilter(e.target.value)}>
+          <option value="All">All OFG types</option>
+          {ofgTypes.map((o) => (
+            <option key={o} value={o}>{o}</option>
           ))}
         </select>
       </div>
