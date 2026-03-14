@@ -1,0 +1,5118 @@
+[
+    {
+        "sigle": "ADCO1010",
+        "nrc": "1606",
+        "titre": "Comptabilité financière I",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Lu",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Jeannette  Brideau"
+    },
+    {
+        "sigle": "ADCO2001",
+        "nrc": "1533",
+        "titre": "Comptabilité financière II",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Jeannette  Brideau"
+    },
+    {
+        "sigle": "ADCO2002",
+        "nrc": "1536",
+        "titre": "Comptabilité financière III",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Alexandre  Savoie-Comeau"
+    },
+    {
+        "sigle": "ADCO2310",
+        "nrc": "1527",
+        "titre": "Comptabilité de gestion I",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/07/02",
+                "end_date": "2026/08/26",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/07/02",
+                "end_date": "2026/08/26",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Aurélie  Juste"
+    },
+    {
+        "sigle": "ADFI2510",
+        "nrc": "1609",
+        "titre": "Gestion financière",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Aurélie  Juste"
+    },
+    {
+        "sigle": "ADFI2520",
+        "nrc": "1538",
+        "titre": "Décisions d'investissement",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADFI3560",
+        "nrc": "1540",
+        "titre": "Valeurs mobilières",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADFI4520",
+        "nrc": "1541",
+        "titre": "Institutions financières",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADFS2901",
+        "nrc": "1543",
+        "titre": "Fiscalité I",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Emilie  Lebouthillier"
+    },
+    {
+        "sigle": "ADGO1431",
+        "nrc": "1546",
+        "titre": "Intro gestion des opérations",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Noomane Mohamed Darghouth"
+    },
+    {
+        "sigle": "ADGO3461",
+        "nrc": "1548",
+        "titre": "Statistique en gestion",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADGO6441",
+        "nrc": "1741",
+        "titre": "Analyse des données de gestion",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADMI3470",
+        "nrc": "1364",
+        "titre": "Stage I",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Jules  Comeau"
+    },
+    {
+        "sigle": "ADMI4470",
+        "nrc": "1365",
+        "titre": "Stage II",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Jules  Comeau"
+    },
+    {
+        "sigle": "ADMI4480",
+        "nrc": "1366",
+        "titre": "Stage III",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Jules  Comeau"
+    },
+    {
+        "sigle": "ADMI6501",
+        "nrc": "1367",
+        "titre": "Stage Coop I",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Hamadou  Boubacar"
+    },
+    {
+        "sigle": "ADMI6502",
+        "nrc": "1368",
+        "titre": "Stage Coop II",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Hamadou  Boubacar"
+    },
+    {
+        "sigle": "ADMK1310",
+        "nrc": "1550",
+        "titre": "Introduction au marketing",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Karine  Hébert Doumbia"
+    },
+    {
+        "sigle": "ADMN1220",
+        "nrc": "1614",
+        "titre": "Introduction au management",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Ma",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Renaud  Comeau"
+    },
+    {
+        "sigle": "ADMN2250",
+        "nrc": "1617",
+        "titre": "Gérer aujourd'hui",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Me",
+                "time": "1900-2045",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Michel  Ross"
+    },
+    {
+        "sigle": "ADMN3212",
+        "nrc": "1620",
+        "titre": "Management international",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Lu",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Ihssan  Bouhtiauy"
+    },
+    {
+        "sigle": "ADMN3242",
+        "nrc": "1623",
+        "titre": "Théorie organisationnelle",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADMN6219",
+        "nrc": "1625",
+        "titre": "Gestion stratégique",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Ma",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Kadia Georges  Aka"
+    },
+    {
+        "sigle": "ADPU6012",
+        "nrc": "1626",
+        "titre": "Gestion du changement",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADPU6920",
+        "nrc": "1369",
+        "titre": "Lectures dirigées",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Arnaud  Scaillerez"
+    },
+    {
+        "sigle": "ADPU6930",
+        "nrc": "1370",
+        "titre": "Stage",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Arnaud  Scaillerez"
+    },
+    {
+        "sigle": "ADRH3222",
+        "nrc": "1628",
+        "titre": "Comportement organisationnel",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Lu",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADRH3223",
+        "nrc": "1631",
+        "titre": "Gestion ressources humaines",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Ma",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Stéphanie  Maillet"
+    },
+    {
+        "sigle": "ADRH3224",
+        "nrc": "1634",
+        "titre": "Dotation du personnel",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Me",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Stéphanie  Maillet"
+    },
+    {
+        "sigle": "ADRH3225",
+        "nrc": "1637",
+        "titre": "Développement des compétences",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Lu",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADRH4223",
+        "nrc": "1640",
+        "titre": "Relations du travail (RDT)",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADSA6012",
+        "nrc": "1642",
+        "titre": "Gestion du changement",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ADSA6900",
+        "nrc": "1371",
+        "titre": "Stage",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Arnaud  Scaillerez"
+    },
+    {
+        "sigle": "ADSA6920",
+        "nrc": "1372",
+        "titre": "Lectures dirigées",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Arnaud  Scaillerez"
+    },
+    {
+        "sigle": "ADSG6202",
+        "nrc": "1373",
+        "titre": "Lectures dirigées II",
+        "groupe": "31D",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Gilles  Marcoux"
+    },
+    {
+        "sigle": "ADSG6203",
+        "nrc": "1374",
+        "titre": "Lectures dirigées III",
+        "groupe": "31D",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Gilles  Marcoux"
+    },
+    {
+        "sigle": "ADSG6600",
+        "nrc": "1375",
+        "titre": "Séminaire de thèse",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Gilles  Marcoux"
+    },
+    {
+        "sigle": "ADSG6900",
+        "nrc": "1376",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Gilles  Marcoux"
+    },
+    {
+        "sigle": "ADSG6900",
+        "nrc": "1377",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Gilles  Marcoux"
+    },
+    {
+        "sigle": "ANGL1021",
+        "nrc": "1552",
+        "titre": "Language, writing and reading",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": "MAR 214"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": "MAR 214"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ANGL1031",
+        "nrc": "1554",
+        "titre": "Language, writing and reading",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": "MAR 214"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": "MAR 214"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ANGL1032",
+        "nrc": "1555",
+        "titre": "Language, writing and reading",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1330-1615",
+                "location": "MAR 214"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1330-1615",
+                "location": "MAR 214"
+            }
+        ],
+        "professor": "Denys T.  Landry"
+    },
+    {
+        "sigle": "BICH2000",
+        "nrc": "1378",
+        "titre": "Stage coopératif I",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Gilles  Robichaud"
+    },
+    {
+        "sigle": "BICH3000",
+        "nrc": "1379",
+        "titre": "Stage coopératif II",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Gilles  Robichaud"
+    },
+    {
+        "sigle": "BICH4000",
+        "nrc": "1380",
+        "titre": "Stage coopératif III",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Gilles  Robichaud"
+    },
+    {
+        "sigle": "BICH6000",
+        "nrc": "1381",
+        "titre": "Thèse de biochimie",
+        "groupe": "30M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Louis R.  Lapierre"
+    },
+    {
+        "sigle": "BICH6000",
+        "nrc": "1382",
+        "titre": "Thèse de biochimie",
+        "groupe": "35M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Louis R.  Lapierre"
+    },
+    {
+        "sigle": "BICH6013",
+        "nrc": "1383",
+        "titre": "Proposition de recherche",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Louis R.  Lapierre"
+    },
+    {
+        "sigle": "BICH6021",
+        "nrc": "1384",
+        "titre": "Séminaire de recherche",
+        "groupe": "01M",
+        "credits": "1.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Louis R.  Lapierre"
+    },
+    {
+        "sigle": "BICH6032",
+        "nrc": "1385",
+        "titre": "Analyse critique d'articles",
+        "groupe": "01M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Louis R.  Lapierre"
+    },
+    {
+        "sigle": "BIOL1133",
+        "nrc": "1387",
+        "titre": "Anat. physiol. humaines I",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/05/07",
+                "days": "Je",
+                "time": "1500-1615",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/12",
+                "end_date": "2026/05/12",
+                "days": "Ma",
+                "time": "1500-1615",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/26",
+                "end_date": "2026/05/26",
+                "days": "Ma",
+                "time": "1500-1615",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/28",
+                "end_date": "2026/05/28",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/06/16",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1500-1615",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/18",
+                "end_date": "2026/06/18",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/07/07",
+                "end_date": "2026/07/07",
+                "days": "Ma",
+                "time": "1500-1615",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/07/09",
+                "end_date": "2026/07/09",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/07/28",
+                "end_date": "2026/07/28",
+                "days": "Ma",
+                "time": "1500-1615",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/08/04",
+                "end_date": "2026/08/04",
+                "days": "Ma",
+                "time": "1500-1615",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/08/06",
+                "end_date": "2026/08/06",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Yves  Martin"
+    },
+    {
+        "sigle": "BIOL1233",
+        "nrc": "1390",
+        "titre": "Anat. physiol. humaines II",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/05/07",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/12",
+                "end_date": "2026/05/12",
+                "days": "Ma",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/26",
+                "end_date": "2026/05/26",
+                "days": "Ma",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/28",
+                "end_date": "2026/05/28",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/06/16",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/18",
+                "end_date": "2026/06/18",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/07/07",
+                "end_date": "2026/07/07",
+                "days": "Ma",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/07/09",
+                "end_date": "2026/07/09",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/07/28",
+                "end_date": "2026/07/28",
+                "days": "Ma",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/08/04",
+                "end_date": "2026/08/04",
+                "days": "Ma",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/08/06",
+                "end_date": "2026/08/06",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Yves  Martin"
+    },
+    {
+        "sigle": "BIOL2000",
+        "nrc": "1392",
+        "titre": "Stage coopératif I",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Anne-Marie  Dion-Côté"
+    },
+    {
+        "sigle": "BIOL2133",
+        "nrc": "1644",
+        "titre": "Physiologie humaine I",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Lu",
+                "time": "1830-2015",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "BIOL2233",
+        "nrc": "1647",
+        "titre": "Physiologie humaine II",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Me",
+                "time": "1830-2015",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Annie Hélène  Boudreau"
+    },
+    {
+        "sigle": "BIOL3000",
+        "nrc": "1393",
+        "titre": "Stage coopératif II",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Anne-Marie  Dion-Côté"
+    },
+    {
+        "sigle": "BIOL4000",
+        "nrc": "1394",
+        "titre": "Stage coopératif III",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Anne-Marie  Dion-Côté"
+    },
+    {
+        "sigle": "BIOL6410",
+        "nrc": "1395",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Simon  Lamarre"
+    },
+    {
+        "sigle": "BIOL6410",
+        "nrc": "1396",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Simon  Lamarre"
+    },
+    {
+        "sigle": "CHIM1023",
+        "nrc": "1557",
+        "titre": "Chimie générale II",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "CHIM6000",
+        "nrc": "1397",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Louis R.  Lapierre"
+    },
+    {
+        "sigle": "CHIM6000",
+        "nrc": "1398",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Louis R.  Lapierre"
+    },
+    {
+        "sigle": "CHIM6016",
+        "nrc": "1399",
+        "titre": "Analyse critique d'articles",
+        "groupe": "01M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Louis R.  Lapierre"
+    },
+    {
+        "sigle": "CHIM6017",
+        "nrc": "1400",
+        "titre": "Séminaire de recherche",
+        "groupe": "01M",
+        "credits": "1.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Louis R.  Lapierre"
+    },
+    {
+        "sigle": "CRIM1000",
+        "nrc": "1649",
+        "titre": "Introduction à la criminologie",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Mélanie  Tardif"
+    },
+    {
+        "sigle": "CRIM4001",
+        "nrc": "1401",
+        "titre": "Stage intensif en criminologie",
+        "groupe": "01M",
+        "credits": "12.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Luc  Page"
+    },
+    {
+        "sigle": "DROI2000",
+        "nrc": "1650",
+        "titre": "Initiation au droit commercial",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/30",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "DROI6099",
+        "nrc": "1402",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Karine  McLaren"
+    },
+    {
+        "sigle": "DROI6099",
+        "nrc": "1403",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Karine  McLaren"
+    },
+    {
+        "sigle": "ECON1020",
+        "nrc": "1653",
+        "titre": "Principes économiques (macro)",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/05/07",
+                "days": "Je",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/21",
+                "end_date": "2026/05/21",
+                "days": "Je",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/23",
+                "end_date": "2026/05/23",
+                "days": "Sa",
+                "time": "1000-1200",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/28",
+                "end_date": "2026/05/28",
+                "days": "Je",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/04",
+                "end_date": "2026/06/04",
+                "days": "Je",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/06",
+                "end_date": "2026/06/06",
+                "days": "Sa",
+                "time": "1000-1200",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/11",
+                "end_date": "2026/06/11",
+                "days": "Je",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/06/22",
+                "days": "Lu",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/30",
+                "end_date": "2026/06/30",
+                "days": "Ma",
+                "time": "1500-1745",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Octave  Keutiben"
+    },
+    {
+        "sigle": "ECON1030",
+        "nrc": "1656",
+        "titre": "Principes économiques (micro)",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/05/06",
+                "days": "Me",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            },
+            {
+                "start_date": "2026/05/13",
+                "end_date": "2026/05/13",
+                "days": "Me",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/20",
+                "end_date": "2026/05/20",
+                "days": "Me",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/22",
+                "end_date": "2026/05/22",
+                "days": "Ve",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/27",
+                "end_date": "2026/05/27",
+                "days": "Me",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/03",
+                "end_date": "2026/06/03",
+                "days": "Me",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/05",
+                "end_date": "2026/06/05",
+                "days": "Ve",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/24",
+                "end_date": "2026/06/24",
+                "days": "Me",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/29",
+                "end_date": "2026/06/29",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Didier Francis Tatoutchoup"
+    },
+    {
+        "sigle": "ECON6231",
+        "nrc": "1658",
+        "titre": "Économie de gestion",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Me",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDDP3582",
+        "nrc": "1660",
+        "titre": "Didactique du français I",
+        "groupe": "82M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Dorothy  White"
+    },
+    {
+        "sigle": "EDDP4232",
+        "nrc": "1663",
+        "titre": "Sciences humaines au primaire",
+        "groupe": "82M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC2103",
+        "nrc": "1666",
+        "titre": "Apprentissage et enseignement",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC2110",
+        "nrc": "1669",
+        "titre": "Intro. enseignement au Canada",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC2851",
+        "nrc": "1719",
+        "titre": "Stage d'exploration",
+        "groupe": "01M",
+        "credits": "1.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/04",
+                "end_date": "2026/05/22",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC3333",
+        "nrc": "1672",
+        "titre": "Motivation & gestion de classe",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Dorothy  White"
+    },
+    {
+        "sigle": "EDUC3971",
+        "nrc": "1720",
+        "titre": "Stage didactico-pédagogique",
+        "groupe": "01M",
+        "credits": "1.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/04",
+                "end_date": "2026/05/22",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC4323",
+        "nrc": "1675",
+        "titre": "Éduc. en milieu minoritaire",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC5812",
+        "nrc": "1676",
+        "titre": "Stage : explo/prise en charge",
+        "groupe": "50M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Janelle C.  Arsenault"
+    },
+    {
+        "sigle": "EDUC5812",
+        "nrc": "1721",
+        "titre": "Stage : explo/prise en charge",
+        "groupe": "01M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/04",
+                "end_date": "2026/05/29",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC5903",
+        "nrc": "1678",
+        "titre": "Fondements de l'éducation",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC6016",
+        "nrc": "1679",
+        "titre": "Rech. scientifique en éduc.",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Jean  Labelle"
+    },
+    {
+        "sigle": "EDUC6017",
+        "nrc": "1680",
+        "titre": "Séminaire commun de maîtrise",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC6017",
+        "nrc": "1681",
+        "titre": "Séminaire commun de maîtrise",
+        "groupe": "83M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC6021",
+        "nrc": "1405",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC6021",
+        "nrc": "1406",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC6122",
+        "nrc": "1682",
+        "titre": "Supervision de l'enseignement",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Jean  Labelle"
+    },
+    {
+        "sigle": "EDUC6195",
+        "nrc": "1683",
+        "titre": "Gestion du personnel éducatif",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Marie-Michèle  Roy"
+    },
+    {
+        "sigle": "EDUC6222",
+        "nrc": "1407",
+        "titre": "Didactique approfondie",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC6237",
+        "nrc": "1684",
+        "titre": "Bilinguisme et apprentissage",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Caroline  Dault"
+    },
+    {
+        "sigle": "EDUC6438",
+        "nrc": "1685",
+        "titre": "Enseignement-ressource",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC7403",
+        "nrc": "1408",
+        "titre": "Étude approfondie I",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC7503",
+        "nrc": "1409",
+        "titre": "Étude approfondie II",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC8280",
+        "nrc": "1411",
+        "titre": "Thèse de doctorat",
+        "groupe": "30M",
+        "credits": "80.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "EDUC8280",
+        "nrc": "1412",
+        "titre": "Thèse de doctorat",
+        "groupe": "35M",
+        "credits": "80.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ESPA1611",
+        "nrc": "1562",
+        "titre": "Espagnol I",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": "MAR 243"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": "MAR 243"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ETEV6000",
+        "nrc": "1413",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "27.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Carole C.  Tranchant"
+    },
+    {
+        "sigle": "ETEV6000",
+        "nrc": "1414",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "27.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Carole C.  Tranchant"
+    },
+    {
+        "sigle": "ETEV6013",
+        "nrc": "1415",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Carole C.  Tranchant"
+    },
+    {
+        "sigle": "ETEV6013",
+        "nrc": "1416",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Carole C.  Tranchant"
+    },
+    {
+        "sigle": "ETEV6912",
+        "nrc": "1417",
+        "titre": "Stage",
+        "groupe": "01M",
+        "credits": "12.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Benoit  Doyon-Gosselin"
+    },
+    {
+        "sigle": "FORS6000",
+        "nrc": "1422",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Martin  Béland"
+    },
+    {
+        "sigle": "FORS6000",
+        "nrc": "1423",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Martin  Béland"
+    },
+    {
+        "sigle": "FRAN1003",
+        "nrc": "1686",
+        "titre": "Éléments de grammaire moderne",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "MaJe",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Carole  Boucher"
+    },
+    {
+        "sigle": "FRAN1101",
+        "nrc": "1563",
+        "titre": "Grammaire moderne I",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": "MAR 207"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": "MAR 207"
+            }
+        ],
+        "professor": "Micheline  Durepos"
+    },
+    {
+        "sigle": "FRAN1500",
+        "nrc": "1564",
+        "titre": "Communication orale",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1330-1615",
+                "location": "MAR 207"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1330-1615",
+                "location": "MAR 207"
+            }
+        ],
+        "professor": "Theresa  Mea"
+    },
+    {
+        "sigle": "FRAN1500",
+        "nrc": "1566",
+        "titre": "Communication orale",
+        "groupe": "51M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": "MAR 217"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": "MAR 217"
+            }
+        ],
+        "professor": "Joël  Boilard"
+    },
+    {
+        "sigle": "FRAN1500",
+        "nrc": "1742",
+        "titre": "Communication orale",
+        "groupe": "52M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "FRAN1600",
+        "nrc": "1567",
+        "titre": "Communication écrite",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": "MAR 217"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": "MAR 217"
+            }
+        ],
+        "professor": "Michelle  Savoie"
+    },
+    {
+        "sigle": "FRAN1600",
+        "nrc": "1568",
+        "titre": "Communication écrite",
+        "groupe": "51M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1330-1615",
+                "location": "MAR 217"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1330-1615",
+                "location": "MAR 217"
+            }
+        ],
+        "professor": "Norma  Doiron"
+    },
+    {
+        "sigle": "FRAN1600",
+        "nrc": "1569",
+        "titre": "Communication écrite",
+        "groupe": "52M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": "MAR 206"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": "MAR 206"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "FSCI6201",
+        "nrc": "1570",
+        "titre": "Int. à la programmation Python",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "FSCI6222",
+        "nrc": "1571",
+        "titre": "Analyse de données",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "GCIV1000",
+        "nrc": "1424",
+        "titre": "Stage I en génie civil",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GCIV2000",
+        "nrc": "1425",
+        "titre": "Stage II en génie civil",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GCIV2010",
+        "nrc": "1689",
+        "titre": "Statique",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2015",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Je",
+                "time": "1830-2015",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2015",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Ma",
+                "time": "1830-2015",
+                "location": "MG2 148G2"
+            }
+        ],
+        "professor": "Aiden  Gray"
+    },
+    {
+        "sigle": "GCIV2210",
+        "nrc": "1514",
+        "titre": "Résistance des matériaux",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": "MG2 148G2"
+            }
+        ],
+        "professor": "Ghassan  Abou-Samra"
+    },
+    {
+        "sigle": "GCIV3000",
+        "nrc": "1426",
+        "titre": "Stage III en génie civil",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GCIV4000",
+        "nrc": "1427",
+        "titre": "Stage IV en génie civil",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GELE1000",
+        "nrc": "1428",
+        "titre": "Stage I en génie électrique",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GELE2000",
+        "nrc": "1429",
+        "titre": "Stage II en génie électrique",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GELE3000",
+        "nrc": "1430",
+        "titre": "Stage III en génie électrique",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GELE4000",
+        "nrc": "1431",
+        "titre": "Stage IV en génie électrique",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GEOG1003",
+        "nrc": "1690",
+        "titre": "État du monde",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/25",
+                "end_date": "2026/07/06",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/05/25",
+                "end_date": "2026/07/06",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bienvenu Février Rajaonson"
+    },
+    {
+        "sigle": "GGEN6000",
+        "nrc": "1432",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GGEN6000",
+        "nrc": "1433",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GGEN7005",
+        "nrc": "1435",
+        "titre": "Séminaire de recherche",
+        "groupe": "30M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GGEN8000",
+        "nrc": "1436",
+        "titre": "Thèse de doctorat",
+        "groupe": "30M",
+        "credits": "80.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GGEN8000",
+        "nrc": "1437",
+        "titre": "Thèse de doctorat",
+        "groupe": "35M",
+        "credits": "80.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GMEC1000",
+        "nrc": "1438",
+        "titre": "Stage I en génie mécanique",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GMEC1014",
+        "nrc": "1572",
+        "titre": "Matériaux en ingénierie",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Je",
+                "time": "1500-1745",
+                "location": "MG2 147G2"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Ma",
+                "time": "1500-1745",
+                "location": "MG2 147G2"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "GMEC2000",
+        "nrc": "1439",
+        "titre": "Stage II en génie mécanique",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GMEC2010",
+        "nrc": "1692",
+        "titre": "Statique",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2015",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Je",
+                "time": "1830-2015",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2015",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Ma",
+                "time": "1830-2015",
+                "location": "MG2 148G2"
+            }
+        ],
+        "professor": "Aiden  Gray"
+    },
+    {
+        "sigle": "GMEC2210",
+        "nrc": "1515",
+        "titre": "Résistance des matériaux",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": "MG2 148G2"
+            }
+        ],
+        "professor": "Ghassan  Abou-Samra"
+    },
+    {
+        "sigle": "GMEC2311",
+        "nrc": "1516",
+        "titre": "Dynamique",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Lu",
+                "time": "1500-1645",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Je",
+                "time": "1500-1645",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Me",
+                "time": "1500-1645",
+                "location": "MG2 148G2"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Ma",
+                "time": "1500-1645",
+                "location": "MG2 148G2"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "GMEC3000",
+        "nrc": "1440",
+        "titre": "Stage III en génie mécanique",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "GMEC4000",
+        "nrc": "1441",
+        "titre": "Stage IV en génie mécanique",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Nancy Lee Black"
+    },
+    {
+        "sigle": "INFO2000",
+        "nrc": "1442",
+        "titre": "Stage coopératif I",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Eric  Hervet"
+    },
+    {
+        "sigle": "INFO3000",
+        "nrc": "1443",
+        "titre": "Stage coopératif II",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Eric  Hervet"
+    },
+    {
+        "sigle": "INFO4000",
+        "nrc": "1444",
+        "titre": "Stage coopératif III",
+        "groupe": "01M",
+        "credits": "0.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Eric  Hervet"
+    },
+    {
+        "sigle": "INFO6000",
+        "nrc": "1445",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mustapha  Kardouchi"
+    },
+    {
+        "sigle": "INFO6000",
+        "nrc": "1446",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mustapha  Kardouchi"
+    },
+    {
+        "sigle": "KNEP1102",
+        "nrc": "1693",
+        "titre": "Vie active et santé",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Je",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Grant  Handrigan"
+    },
+    {
+        "sigle": "LING6901",
+        "nrc": "1447",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Dominique  Thomassin"
+    },
+    {
+        "sigle": "LING8902",
+        "nrc": "1449",
+        "titre": "Thèse de doctorat",
+        "groupe": "35M",
+        "credits": "90.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Dominique  Thomassin"
+    },
+    {
+        "sigle": "LITT3300",
+        "nrc": "1573",
+        "titre": "Litt. des femmes en Acadie",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Benoit  Doyon-Gosselin"
+    },
+    {
+        "sigle": "LITT6901",
+        "nrc": "1450",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Dominique  Thomassin"
+    },
+    {
+        "sigle": "LITT8902",
+        "nrc": "1452",
+        "titre": "Thèse de doctorat",
+        "groupe": "35M",
+        "credits": "90.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Dominique  Thomassin"
+    },
+    {
+        "sigle": "MATH1013",
+        "nrc": "1518",
+        "titre": "Mathématique générale I",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "MATH1023",
+        "nrc": "1530",
+        "titre": "Mathématique générale II",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/07/02",
+                "end_date": "2026/08/26",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/07/02",
+                "end_date": "2026/08/26",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "MATH1073",
+        "nrc": "1575",
+        "titre": "Calcul différentiel",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Ve",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "MATH1153",
+        "nrc": "1577",
+        "titre": "Intro math des affaires",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Ve",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "MATH1173",
+        "nrc": "1521",
+        "titre": "Calcul intégral",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Ve",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/22",
+                "end_date": "2026/08/05",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "MATH3503",
+        "nrc": "1578",
+        "titre": "Équations différentielles I",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "MATH6000",
+        "nrc": "1453",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Samuel  Gaudet"
+    },
+    {
+        "sigle": "MATH6000",
+        "nrc": "1454",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Samuel  Gaudet"
+    },
+    {
+        "sigle": "NUAL1602",
+        "nrc": "1580",
+        "titre": "Introduction à la nutrition",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/05/06",
+                "days": "Me",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/10",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            },
+            {
+                "start_date": "2026/05/13",
+                "end_date": "2026/05/13",
+                "days": "Me",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/14",
+                "end_date": "2026/05/14",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/27",
+                "end_date": "2026/05/27",
+                "days": "Me",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/28",
+                "end_date": "2026/05/28",
+                "days": "Je",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/10",
+                "end_date": "2026/06/10",
+                "days": "Me",
+                "time": "1630-1745",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Slimane  Belbraouet"
+    },
+    {
+        "sigle": "NUAL5300",
+        "nrc": "1455",
+        "titre": "Pratique professionnelle V",
+        "groupe": "01M",
+        "credits": "9.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Sonia  Bérubé"
+    },
+    {
+        "sigle": "NUAL6944",
+        "nrc": "1456",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "NUAL6944",
+        "nrc": "1457",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ORCO6021",
+        "nrc": "1458",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "ORCO6021",
+        "nrc": "1459",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "PHIL1101",
+        "nrc": "1582",
+        "titre": "Introduction à la philosophie",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "PHYS6000",
+        "nrc": "1460",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bassel  Abdel Samad"
+    },
+    {
+        "sigle": "PHYS6000",
+        "nrc": "1461",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "33.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bassel  Abdel Samad"
+    },
+    {
+        "sigle": "PHYS8000",
+        "nrc": "1462",
+        "titre": "Thèse de doctorat",
+        "groupe": "30M",
+        "credits": "80.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bassel  Abdel Samad"
+    },
+    {
+        "sigle": "PHYS8000",
+        "nrc": "1463",
+        "titre": "Thèse de doctorat",
+        "groupe": "35M",
+        "credits": "80.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bassel  Abdel Samad"
+    },
+    {
+        "sigle": "PSYC1000",
+        "nrc": "1695",
+        "titre": "Introduction à la psychologie",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Ma",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Je",
+                "time": "1830-1945",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Frédéric  Huppé-Gourgues"
+    },
+    {
+        "sigle": "PSYC2700",
+        "nrc": "1583",
+        "titre": "Intro. à la psychosexualité",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "PSYC6050",
+        "nrc": "1465",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "27.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC6050",
+        "nrc": "1466",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "27.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC6301",
+        "nrc": "1467",
+        "titre": "Séminaire de thèse",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC6301",
+        "nrc": "1468",
+        "titre": "Séminaire de thèse",
+        "groupe": "02M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mylène  Lachance-Grzela"
+    },
+    {
+        "sigle": "PSYC6350",
+        "nrc": "1469",
+        "titre": "Stage de recherche",
+        "groupe": "01M",
+        "credits": "9.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC6423",
+        "nrc": "1470",
+        "titre": "Séminaire d'études dirigées",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC6423",
+        "nrc": "1471",
+        "titre": "Séminaire d'études dirigées",
+        "groupe": "02M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC6901",
+        "nrc": "1472",
+        "titre": "Stage professionnel enfant-ado",
+        "groupe": "01M",
+        "credits": "6.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mylène  Lachance-Grzela"
+    },
+    {
+        "sigle": "PSYC7000",
+        "nrc": "1473",
+        "titre": "Séminaire de thèse de doctorat",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC7350",
+        "nrc": "1474",
+        "titre": "Stage de recherche I",
+        "groupe": "01M",
+        "credits": "6.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC7360",
+        "nrc": "1475",
+        "titre": "Stage de recherche II",
+        "groupe": "01M",
+        "credits": "6.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC7910",
+        "nrc": "1478",
+        "titre": "Stage professionnel adulte",
+        "groupe": "01M",
+        "credits": "6.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mylène  Lachance-Grzela"
+    },
+    {
+        "sigle": "PSYC8000",
+        "nrc": "1479",
+        "titre": "Thèse de doctorat",
+        "groupe": "30M",
+        "credits": "62.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC8000",
+        "nrc": "1480",
+        "titre": "Thèse de doctorat",
+        "groupe": "35M",
+        "credits": "62.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Bradley  Harding"
+    },
+    {
+        "sigle": "PSYC8050",
+        "nrc": "1481",
+        "titre": "Thèse de doctorat",
+        "groupe": "30M",
+        "credits": "24.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mylène  Lachance-Grzela"
+    },
+    {
+        "sigle": "PSYC8050",
+        "nrc": "1482",
+        "titre": "Thèse de doctorat",
+        "groupe": "35M",
+        "credits": "24.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mylène  Lachance-Grzela"
+    },
+    {
+        "sigle": "PSYC8940",
+        "nrc": "1483",
+        "titre": "Stage professionnel avancé",
+        "groupe": "01M",
+        "credits": "6.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mylène  Lachance-Grzela"
+    },
+    {
+        "sigle": "PSYC8950",
+        "nrc": "1484",
+        "titre": "Internat",
+        "groupe": "47A",
+        "credits": "12.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mylène  Lachance-Grzela"
+    },
+    {
+        "sigle": "PSYC8950",
+        "nrc": "1485",
+        "titre": "Internat",
+        "groupe": "47H",
+        "credits": "12.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mylène  Lachance-Grzela"
+    },
+    {
+        "sigle": "PSYC8950",
+        "nrc": "1486",
+        "titre": "Internat",
+        "groupe": "47P",
+        "credits": "12.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Mylène  Lachance-Grzela"
+    },
+    {
+        "sigle": "SANT3433",
+        "nrc": "1698",
+        "titre": "Santé interculturelle",
+        "groupe": "38M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/18",
+                "end_date": "2026/06/26",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "France  Chassé"
+    },
+    {
+        "sigle": "SANT6153",
+        "nrc": "1487",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "24.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Horia-Daniel  Iancu"
+    },
+    {
+        "sigle": "SCPO1000",
+        "nrc": "1584",
+        "titre": "Intro. à la science politique",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "SCRE1110",
+        "nrc": "1586",
+        "titre": "Les grandes religions",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Serge  Comeau"
+    },
+    {
+        "sigle": "SCSO6900",
+        "nrc": "1488",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Matthieu  LeBlanc"
+    },
+    {
+        "sigle": "SCSO6900",
+        "nrc": "1489",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "30.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Matthieu  LeBlanc"
+    },
+    {
+        "sigle": "SINF1814",
+        "nrc": "1490",
+        "titre": "Fondements science infirmière",
+        "groupe": "40M",
+        "credits": "4.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Marjolaine  Dionne Merlin"
+    },
+    {
+        "sigle": "SINF1823",
+        "nrc": "1491",
+        "titre": "Santé et chronicité",
+        "groupe": "40M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Lucie-Anne  Landry"
+    },
+    {
+        "sigle": "SINF1922",
+        "nrc": "1492",
+        "titre": "Soin aînés et éval. physique",
+        "groupe": "01M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Julie  Renaud"
+    },
+    {
+        "sigle": "SINF2934",
+        "nrc": "1701",
+        "titre": "Soin et acuité",
+        "groupe": "01M",
+        "credits": "4.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Gabrielle Isabelle Gaudet"
+    },
+    {
+        "sigle": "SINF2952",
+        "nrc": "1493",
+        "titre": "Soin : Science infirmière",
+        "groupe": "01M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Lucie-Anne  Landry"
+    },
+    {
+        "sigle": "SINF3912",
+        "nrc": "1494",
+        "titre": "Soin périnatalité et pédiatrie",
+        "groupe": "01M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Latifa  Saidi"
+    },
+    {
+        "sigle": "SINF3922",
+        "nrc": "1495",
+        "titre": "Soin santé mentale",
+        "groupe": "01M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Stéphanie  Boudreau"
+    },
+    {
+        "sigle": "SINF3933",
+        "nrc": "1496",
+        "titre": "Soin médecine ou chirurgie",
+        "groupe": "01M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Julie  Renaud"
+    },
+    {
+        "sigle": "SINF3942",
+        "nrc": "1497",
+        "titre": "Soin santé communautaire",
+        "groupe": "01M",
+        "credits": "2.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Laure  Bourdon"
+    },
+    {
+        "sigle": "SINF6088",
+        "nrc": "1498",
+        "titre": "Stage d'intégration",
+        "groupe": "01M",
+        "credits": "8.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "SINF6243",
+        "nrc": "1499",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "15.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Marie-Eve  Laforest"
+    },
+    {
+        "sigle": "SINF6823",
+        "nrc": "1500",
+        "titre": "Rôles et responsabilités IIP",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/31",
+                "days": "Ma",
+                "time": "0830-1115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Véronique  Landry"
+    },
+    {
+        "sigle": "SINF6900",
+        "nrc": "1501",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Marie-Eve  Laforest"
+    },
+    {
+        "sigle": "SINF6900",
+        "nrc": "1502",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "21.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Marie-Eve  Laforest"
+    },
+    {
+        "sigle": "SINF6933",
+        "nrc": "1503",
+        "titre": "Physiopathologie I",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/31",
+                "days": "Ma",
+                "time": "1200-1445",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Fanny  Chiasson-Savoie"
+    },
+    {
+        "sigle": "SINF6943",
+        "nrc": "1504",
+        "titre": "Physiopathologie II",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/31",
+                "days": "Me",
+                "time": "0830-1115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Alexanne  Cormier"
+    },
+    {
+        "sigle": "SOCI1001",
+        "nrc": "1704",
+        "titre": "Introduction à la sociologie",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Luc  Léger"
+    },
+    {
+        "sigle": "SOCI2480",
+        "nrc": "1594",
+        "titre": "Sociologie de l'éducation",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "SOCI3320",
+        "nrc": "1595",
+        "titre": "Technologies et sociétés",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "STAT2633",
+        "nrc": "1597",
+        "titre": "Intro à la stat appliquée",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Salah-Eddine  El Adlouni"
+    },
+    {
+        "sigle": "STAT2653",
+        "nrc": "1524",
+        "titre": "Statistique descriptive",
+        "groupe": "88M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/06/18",
+                "end_date": "2026/07/28",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/18",
+                "end_date": "2026/07/28",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "STAT2653",
+        "nrc": "1600",
+        "titre": "Statistique descriptive",
+        "groupe": "86M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Me",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/17",
+                "days": "Lu",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Amel  Bennoune"
+    },
+    {
+        "sigle": "STAT2653",
+        "nrc": "1603",
+        "titre": "Statistique descriptive",
+        "groupe": "87M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Je",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/06/16",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "Amel  Bennoune"
+    },
+    {
+        "sigle": "STAT2653",
+        "nrc": "1707",
+        "titre": "Statistique descriptive",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/05/06",
+                "days": "Me",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/07/15",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            },
+            {
+                "start_date": "2026/05/27",
+                "end_date": "2026/05/27",
+                "days": "Me",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/29",
+                "end_date": "2026/05/29",
+                "days": "Ve",
+                "time": "1900-2100",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/07/02",
+                "end_date": "2026/07/02",
+                "days": "Je",
+                "time": "2000-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/07/03",
+                "end_date": "2026/07/03",
+                "days": "Ve",
+                "time": "1900-2100",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Gilles  Nadeau"
+    },
+    {
+        "sigle": "SVIE8000",
+        "nrc": "1505",
+        "titre": "Thèse de doctorat",
+        "groupe": "30M",
+        "credits": "80.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "David  Joly"
+    },
+    {
+        "sigle": "SVIE8000",
+        "nrc": "1506",
+        "titre": "Thèse de doctorat",
+        "groupe": "35M",
+        "credits": "80.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "David  Joly"
+    },
+    {
+        "sigle": "TSOC1000",
+        "nrc": "1709",
+        "titre": "Introduction au travail social",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "Ma",
+                "time": "1830-2115",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            }
+        ],
+        "professor": "Jessica  Breau"
+    },
+    {
+        "sigle": "TSOC4463",
+        "nrc": "1710",
+        "titre": "Droits de l'enfant",
+        "groupe": "50M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/06/15",
+                "end_date": "2026/06/19",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Hélène  Albert"
+    },
+    {
+        "sigle": "TSOC5112",
+        "nrc": "1507",
+        "titre": "Stage de formation pratique II",
+        "groupe": "01M",
+        "credits": "12.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Marie-Lyne  Caron"
+    },
+    {
+        "sigle": "TSOC6301",
+        "nrc": "1508",
+        "titre": "Stage d'intervention",
+        "groupe": "38M",
+        "credits": "6.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Marie-Lyne  Caron"
+    },
+    {
+        "sigle": "TSOC6432",
+        "nrc": "1711",
+        "titre": "Sém. à contenu variable",
+        "groupe": "55M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/06/15",
+                "end_date": "2026/06/19",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Hélène  Albert"
+    },
+    {
+        "sigle": "TSOC6723",
+        "nrc": "1509",
+        "titre": "Thèse",
+        "groupe": "30M",
+        "credits": "15.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Chantal H.  Bourassa"
+    },
+    {
+        "sigle": "TSOC6723",
+        "nrc": "1510",
+        "titre": "Thèse",
+        "groupe": "35M",
+        "credits": "15.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Chantal H.  Bourassa"
+    },
+    {
+        "sigle": "TSOC6725",
+        "nrc": "1511",
+        "titre": "Projet d'intervention",
+        "groupe": "01M",
+        "credits": "6.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/08/31",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            }
+        ],
+        "professor": "Chantal H.  Bourassa"
+    },
+    {
+        "sigle": "TSTX1920",
+        "nrc": "1713",
+        "titre": "Intro à la toxicomanie",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/06",
+                "end_date": "2026/06/30",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": ". INTERNET"
+            },
+            {
+                "start_date": "2026/05/14",
+                "end_date": "2026/05/14",
+                "days": "Je",
+                "time": "1830-2015",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    },
+    {
+        "sigle": "TSTX2920",
+        "nrc": "1739",
+        "titre": "Dépendance aux psychotropes",
+        "groupe": "82M",
+        "credits": "3.00",
+        "schedule": [
+            {
+                "start_date": "2026/05/01",
+                "end_date": "2026/07/05",
+                "days": "À dét.",
+                "time": "À dét.",
+                "location": "À dét. À dét."
+            },
+            {
+                "start_date": "2026/05/07",
+                "end_date": "2026/05/07",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/14",
+                "end_date": "2026/05/14",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/21",
+                "end_date": "2026/05/21",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/05/28",
+                "end_date": "2026/05/28",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/04",
+                "end_date": "2026/06/04",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/11",
+                "end_date": "2026/06/11",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/18",
+                "end_date": "2026/06/18",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            },
+            {
+                "start_date": "2026/06/25",
+                "end_date": "2026/06/25",
+                "days": "Je",
+                "time": "1900-2100",
+                "location": ". À DISTANCE"
+            }
+        ],
+        "professor": "(À déterminer)"
+    }
+]

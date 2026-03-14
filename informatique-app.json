@@ -1,0 +1,371 @@
+[
+  {
+    "year": "1",
+    "code": "INFO1101",
+    "title": "Principes de programmation 1",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "1",
+    "code": "INFO1102",
+    "title": "Principes de programmation II",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO1101",
+    "corequisites": null
+  },
+  {
+    "year": "1",
+    "code": "MATH1073",
+    "title": "Calcul différentiel",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "MATH1023 ou MATH30411C (125)",
+    "corequisites": null
+  },
+  {
+    "year": "1, 2",
+    "code": "MATH1173",
+    "title": "Calcul intégral",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "MATH1073 ou (MATH1153 avec note B)",
+    "corequisites": null
+  },
+  {
+    "year": "1, 2",
+    "code": "MATH1563",
+    "title": "Éléments de math. discrètes",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "MATH1073",
+    "corequisites": null
+  },
+  {
+    "year": "1",
+    "code": "PHYS1373",
+    "title": "Électricité et magnétisme",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": null,
+    "corequisites": "MATH1073"
+  },
+  {
+    "year": "1",
+    "code": "ANGL1022",
+    "title": "Language, writing and reading",
+    "credits": 3,
+    "type": "formation_generale",
+    "prerequisites": "Test de classement ou niveau précédent (ANGL1021)",
+    "corequisites": null
+  },
+  {
+    "year": "1",
+    "code": "FRAN1500",
+    "title": "Communication orale",
+    "credits": 3,
+    "type": "formation_generale",
+    "prerequisites": "Test de classement ou réussite de FRAN1003 ou FRAN1006",
+    "corequisites": null
+  },
+  {
+    "year": "1",
+    "code": "FRAN1600",
+    "title": "Communication écrite",
+    "credits": 3,
+    "type": "formation_generale",
+    "prerequisites": "Test de classement ou réussite de FRAN1003 ou FRAN1006",
+    "corequisites": null
+  },
+  {
+    "year": "1",
+    "code": "FSC11003",
+    "title": "Init. aux études en sciences",
+    "credits": 3,
+    "type": "formation_generale",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "1",
+    "code": "OPT_SCIENCES",
+    "title": "Option Sciences (ASTR, BIOL, CHIM, FSCI, PHYS)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "INFO2001",
+    "title": "Int. à l'architecture d'ord.",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO1101",
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "INFO2012",
+    "title": "Struct. de données et algor.",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO1102 et (MATH1173 ou MATH1563)",
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "INFO3103",
+    "title": "Organisation des ordinateurs",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO2001",
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "INFO3106",
+    "title": "Développement de logiciels",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO2012",
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "INFO3114",
+    "title": "Fichiers et bases de données",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO2012",
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "MATH2613",
+    "title": "Algèbre matricielle",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "MATH1073 ou MATH1153",
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "STAT2603",
+    "title": "Intro aux prob et statistique",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "MATH1173",
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "STAT2633",
+    "title": "Intro à la stat appliquée",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "MATH1153 ou MATH1073",
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "OFG_2",
+    "title": "Ouverture à l'Autre et/ou internationalisation",
+    "credits": 3,
+    "type": "formation_generale",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "2",
+    "code": "OFG_6",
+    "title": "Sensibilité aux arts et lettres",
+    "credits": 3,
+    "type": "formation_generale",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "INFO3201",
+    "title": "Architecture d'ordinateur",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO3103",
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "INFO3202",
+    "title": "Système d'exploitation",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO3103",
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "INFO3205",
+    "title": "Paradigmes de programmation",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO2012 et INFO3103",
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "INFO3212",
+    "title": "Algorithmique",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO2012",
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "INFO3214",
+    "title": "Informatique théorique",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO2012",
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "INFO3221",
+    "title": "Réseaux informatiques",
+    "credits": 3,
+    "type": "obligatoire",
+    "prerequisites": "INFO3103",
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "OPT_CONNEXES",
+    "title": "Option Connexes (ADS, MATH, STAT de niveau supérieur)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "Varie selon le cours",
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "OFG_3",
+    "title": "Option Éthique/Société (PHIL3475, PHIL3492, SOCI3320)",
+    "credits": 3,
+    "type": "formation_generale",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "OPT_GESTION",
+    "title": "Option Gestion (ADCO, ADMK, ADMN, ADRH)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "3",
+    "code": "OFG_7",
+    "title": "Capacité de penser logiquement et de manière critique",
+    "credits": 3,
+    "type": "formation_generale",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "INFO4000_SPEC_1",
+    "title": "Spécialisation INFO de niveau 4000 (1/7)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "Varie selon les cours",
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "INFO4000_SPEC_2",
+    "title": "Spécialisation INFO de niveau 4000 (2/7)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "Varie selon les cours",
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "INFO4000_SPEC_3",
+    "title": "Spécialisation INFO de niveau 4000 (3/7)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "Varie selon les cours",
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "INFO4000_SPEC_4",
+    "title": "Spécialisation INFO de niveau 4000 (4/7)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "Varie selon les cours",
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "INFO4000_SPEC_5",
+    "title": "Spécialisation INFO de niveau 4000 (5/7)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "Varie selon les cours",
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "INFO4000_SPEC_6",
+    "title": "Spécialisation INFO de niveau 4000 (6/7)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "Varie selon les cours",
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "INFO4000_SPEC_7",
+    "title": "Spécialisation INFO de niveau 4000 (7/7)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": "Varie selon les cours",
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "COURS_AU_CHOIX_1",
+    "title": "Cours au choix libres (1/3)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "COURS_AU_CHOIX_2",
+    "title": "Cours au choix libres (2/3)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": null,
+    "corequisites": null
+  },
+  {
+    "year": "4",
+    "code": "COURS_AU_CHOIX_3",
+    "title": "Cours au choix libres (3/3)",
+    "credits": 3,
+    "type": "option",
+    "prerequisites": null,
+    "corequisites": null
+  }
+]
