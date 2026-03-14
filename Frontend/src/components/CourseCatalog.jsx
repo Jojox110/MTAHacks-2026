@@ -2,13 +2,60 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DEPT_NAMES } from '../data/courses';
 
-export default function CourseCatalog({ courses, selectedCourses, onToggleCourse, userMajor, priorCourseIds = new Set() }) {
-  const [dept, setDept] = useState(userMajor || 'All');
+export default function CourseCatalog({ courses, selectedCourses, onToggleCourse, userMajor, userMinor, priorCourseIds = new Set(), programData, allScheduledIds = new Set() }) {
+  const [dept, setDept] = useState('All');
   const [ofgFilter, setOfgFilter] = useState('All');
   const [search, setSearch] = useState('');
   const [showCompleted, setShowCompleted] = useState(false);
+  const [needFilter, setNeedFilter] = useState('All');
 
   const selectedIds = selectedCourses.map((c) => c.id);
+
+  // Build set of courses needed for program/minor that aren't yet scheduled
+  const programCourseIds = useMemo(() => {
+    if (!programData) return new Set();
+    const ids = new Set();
+    if (userMajor) {
+      const prog = programData.programs?.find((p) => p.name === userMajor);
+      if (prog) prog.all_courses.forEach((c) => ids.add(c.code));
+    }
+    if (userMinor) {
+      const min = programData.available_minors?.find((m) => m.name === userMinor);
+      if (min) min.all_courses.forEach((c) => ids.add(c.code));
+    }
+    return ids;
+  }, [programData, userMajor, userMinor]);
+
+  // Find option courses in fulfilled groups (no longer needed)
+  const fulfilledOptionCodes = useMemo(() => {
+    const fulfilled = new Set();
+    if (!programData) return fulfilled;
+    const prog = userMajor ? programData.programs?.find((p) => p.name === userMajor) : null;
+    if (!prog) return fulfilled;
+    for (const y of (prog.years || [])) {
+      for (const og of (y.option_groups || [])) {
+        const groupCourses = y.courses.filter((c) => c.option_group === og.id);
+        const scheduledCr = groupCourses
+          .filter((c) => allScheduledIds.has(c.code))
+          .reduce((s, c) => s + c.credits, 0);
+        if (scheduledCr >= og.credits_required) {
+          // Group is fulfilled — mark unscheduled options as not needed
+          for (const c of groupCourses) {
+            if (!allScheduledIds.has(c.code)) fulfilled.add(c.code);
+          }
+        }
+      }
+    }
+    return fulfilled;
+  }, [programData, userMajor, allScheduledIds]);
+
+  const neededCourseIds = useMemo(() => {
+    const needed = new Set();
+    for (const id of programCourseIds) {
+      if (!allScheduledIds.has(id) && !fulfilledOptionCodes.has(id)) needed.add(id);
+    }
+    return needed;
+  }, [programCourseIds, allScheduledIds, fulfilledOptionCodes]);
 
   // Build department list from actual course data
   const departments = useMemo(() => {
@@ -29,6 +76,8 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
     return courses.filter((c) => {
       const isCompleted = priorCourseIds.has(c.id);
       if (isCompleted && !showCompleted) return false;
+      if (needFilter === 'needed' && !neededCourseIds.has(c.id)) return false;
+      if (needFilter === 'program' && !programCourseIds.has(c.id)) return false;
       if (dept !== 'All' && c.dept !== dept) return false;
       if (ofgFilter !== 'All') {
         if (!c.ofg) return false;
@@ -47,7 +96,7 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
       }
       return true;
     });
-  }, [courses, dept, ofgFilter, search, priorCourseIds, showCompleted]);
+  }, [courses, dept, ofgFilter, search, priorCourseIds, showCompleted, needFilter, neededCourseIds, programCourseIds]);
 
   function getTooltip(course, isSelected, isCompleted, prereqsMet, missingPrereqs) {
     if (isSelected) return `Click to remove ${course.id} from this semester`;
@@ -59,6 +108,17 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
 
   return (
     <>
+      {programCourseIds.size > 0 && (
+        <div className="filter-section">
+          <label>Progress</label>
+          <select value={needFilter} onChange={(e) => setNeedFilter(e.target.value)}>
+            <option value="All">All courses</option>
+            <option value="needed">Needed — not yet scheduled ({neededCourseIds.size})</option>
+            <option value="program">All program/minor courses ({programCourseIds.size})</option>
+          </select>
+        </div>
+      )}
+
       <div className="filter-section">
         <label>Department</label>
         <select value={dept} onChange={(e) => setDept(e.target.value)}>
@@ -106,8 +166,13 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
             const isCompleted = priorCourseIds.has(course.id);
             const isSelected = selectedIds.includes(course.id);
 
-            const prereqsMet = course.prereqs.length === 0 || course.prereqs.every((p) => priorCourseIds.has(p));
-            const missingPrereqs = course.prereqs.filter((p) => !priorCourseIds.has(p));
+            // prereqs is [["A","B"], ["C"]] meaning (A or B) AND C
+            const prereqsMet = course.prereqs.length === 0 || course.prereqs.every((group) =>
+              Array.isArray(group) ? group.some((p) => priorCourseIds.has(p)) : priorCourseIds.has(group)
+            );
+            const missingPrereqs = course.prereqs
+              .filter((group) => Array.isArray(group) ? !group.some((p) => priorCourseIds.has(p)) : !priorCourseIds.has(group))
+              .map((group) => Array.isArray(group) ? group.join(' / ') : group);
 
             const blocked = !isSelected && !isCompleted && !prereqsMet;
             const tooltip = getTooltip(course, isSelected, isCompleted, prereqsMet, missingPrereqs);
@@ -148,7 +213,7 @@ export default function CourseCatalog({ courses, selectedCourses, onToggleCourse
                   <div className={`course-card-prereqs ${!prereqsMet ? 'unmet' : ''}`}>
                     {prereqsMet
                       ? 'Prereqs met'
-                      : `Prereqs: ${course.prereqs.map((p) => `${p}${priorCourseIds.has(p) ? ' \u2713' : ''}`).join(', ')}`}
+                      : `Prereqs: ${missingPrereqs.join(' + ')}`}
                   </div>
                 )}
               </motion.div>

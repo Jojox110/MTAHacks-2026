@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DEPARTMENTS, DEPT_NAMES } from '../data/courses';
-import { registerUser, loginUser } from '../data/api';
+import { registerUser, loginUser, fetchPrograms } from '../data/api';
 
 export default function LoginScreen({ onComplete }) {
   const [step, setStep] = useState(1);
@@ -11,6 +10,24 @@ export default function LoginScreen({ onComplete }) {
   const [minor, setMinor] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [programData, setProgramData] = useState({ programs: [], available_minors: [] });
+
+  useEffect(() => {
+    fetchPrograms().then(setProgramData);
+  }, []);
+
+  // Find the selected program to check if it needs a minor
+  const selectedProgram = useMemo(() => {
+    if (!major) return null;
+    return programData.programs.find((p) => p.name === major) || null;
+  }, [major, programData]);
+
+  const needsMinor = selectedProgram?.minor_requirements?.has_minor ?? false;
+
+  // Reset minor when switching to a program that doesn't need one
+  useEffect(() => {
+    if (!needsMinor) setMinor('');
+  }, [needsMinor]);
 
   const handleContinue = async (e) => {
     e.preventDefault();
@@ -18,13 +35,12 @@ export default function LoginScreen({ onComplete }) {
     setLoading(true);
     setError('');
     try {
-      // Try login first — if the email exists, skip to dashboard
       const user = await loginUser(email);
       localStorage.setItem('courseforge_token', user.token);
       onComplete(user);
       return;
     } catch {
-      // Email not found — this is a new user, show step 2
+      // Email not found — new user, show step 2
     } finally {
       setLoading(false);
     }
@@ -119,24 +135,36 @@ export default function LoginScreen({ onComplete }) {
               <p className="login-subtitle">Help us personalize your experience</p>
 
               <div className="login-field">
-                <label>Major</label>
+                <label>Program</label>
                 <select value={major} onChange={(e) => setMajor(e.target.value)}>
-                  <option value="">Select your major</option>
-                  {DEPARTMENTS.map((d) => (
-                    <option key={d} value={d}>{d} – {DEPT_NAMES[d] || d}</option>
+                  <option value="">Select your program</option>
+                  {programData.programs.map((p) => (
+                    <option key={p.name} value={p.name}>
+                      {p.name}{p.degree ? ` — ${p.degree}` : ''}
+                    </option>
                   ))}
                 </select>
               </div>
 
-              <div className="login-field">
-                <label>Minor <span className="optional">(optional)</span></label>
-                <select value={minor} onChange={(e) => setMinor(e.target.value)}>
-                  <option value="">No minor</option>
-                  {DEPARTMENTS.map((d) => (
-                    <option key={d} value={d}>{d} – {DEPT_NAMES[d] || d}</option>
-                  ))}
-                </select>
-              </div>
+              {selectedProgram && !needsMinor && (
+                <div className="login-minor-info">
+                  This program does not require a minor.
+                </div>
+              )}
+
+              {needsMinor && (
+                <div className="login-field">
+                  <label>Minor <span className="optional">({selectedProgram.minor_requirements.total_credits} cr required)</span></label>
+                  <select value={minor} onChange={(e) => setMinor(e.target.value)}>
+                    <option value="">Select your minor</option>
+                    {programData.available_minors.map((m) => (
+                      <option key={m.name} value={m.name}>
+                        {m.name} ({m.total_credits} cr)
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
 
               {error && <div className="login-error">{error}</div>}
 

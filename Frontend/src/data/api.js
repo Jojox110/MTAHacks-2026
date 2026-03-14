@@ -42,6 +42,13 @@ export async function getCurrentUser() {
   return authFetch('/me');
 }
 
+export async function updateProfile({ major, minor }) {
+  return authFetch('/me', {
+    method: 'PUT',
+    body: JSON.stringify({ major, minor }),
+  });
+}
+
 // ─── Courses ───
 
 export async function fetchCourses() {
@@ -60,6 +67,18 @@ export async function fetchCareerPaths() {
   } catch {
     const { CAREER_PATHS } = await import('./courses.js');
     return CAREER_PATHS;
+  }
+}
+
+// ─── Programs & Minors ───
+
+export async function fetchPrograms() {
+  try {
+    const res = await fetch('/programs.json');
+    if (!res.ok) throw new Error('Failed to load programs');
+    return res.json();
+  } catch {
+    return { programs: [], available_minors: [] };
   }
 }
 

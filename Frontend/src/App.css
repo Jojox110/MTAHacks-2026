@@ -14,6 +14,8 @@
   height: 100vh;
   position: sticky;
   top: 0;
+  z-index: 2;
+  overflow-x: hidden;
 }
 
 .sidebar-header {
@@ -55,9 +57,24 @@
   margin-top: 10px;
 }
 
+.user-info-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
 .user-name {
   font-size: 0.813rem;
   color: var(--text-secondary);
+}
+
+.user-program {
+  font-size: 0.688rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .logout-btn {
@@ -86,6 +103,8 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* ─── Navigation Tabs ─── */
@@ -1108,6 +1127,17 @@
   flex: 1;
 }
 
+.login-minor-info {
+  font-size: 0.813rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
 .login-error {
   font-size: 0.813rem;
   color: var(--danger);
@@ -1115,6 +1145,367 @@
   padding: 8px 12px;
   background: rgba(224, 92, 92, 0.1);
   border-radius: var(--radius-sm);
+}
+
+/* ─── Program Year Progress (in Progress tab) ─── */
+.program-year-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.program-year-progress-card {
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.program-year-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.program-year-progress-header h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.program-year-progress-stats {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.minor-course-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+/* ─── Program View ─── */
+.program-view {
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+}
+
+.program-view h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.program-view-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.program-change-btn {
+  font-size: 0.75rem;
+  color: var(--accent);
+  padding: 6px 14px;
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--radius-md);
+  background: var(--accent-glow);
+  transition: all 0.15s;
+  font-weight: 500;
+}
+
+.program-change-btn:hover {
+  background: var(--accent);
+  color: #0a0a0c;
+}
+
+.program-edit-panel {
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+}
+
+.program-edit-field {
+  margin-bottom: 14px;
+}
+
+.program-edit-field label {
+  display: block;
+  font-size: 0.688rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.program-edit-field select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+}
+
+.program-edit-info {
+  font-size: 0.813rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.program-edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.program-edit-actions .login-button {
+  flex: 1;
+}
+
+.program-edit-actions .login-back {
+  white-space: nowrap;
+}
+
+.program-overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.program-overview-cards.minor-overview {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 16px;
+}
+
+.program-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+.program-card-degree {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.program-stat-total {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.program-years {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.program-year-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.program-year-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.program-year-header h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.program-year-stats {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.program-course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 12px;
+}
+
+.program-course-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.813rem;
+  transition: background 0.15s;
+  border-left: 3px solid transparent;
+}
+
+.program-course-item:hover {
+  background: var(--bg-hover);
+}
+
+.program-course-item.scheduled {
+  background: var(--accent-glow);
+  border-left-color: var(--accent);
+}
+
+.program-course-code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 80px;
+}
+
+.program-course-item.scheduled .program-course-code {
+  color: var(--accent);
+}
+
+.program-course-name {
+  flex: 1;
+  color: var(--text-secondary);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.program-course-cr {
+  font-family: var(--font-mono);
+  font-size: 0.688rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.program-course-check {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.program-course-prereq {
+  font-size: 0.688rem;
+  color: var(--text-muted);
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.program-option-group {
+  margin-top: 12px;
+  border-top: 1px dashed var(--border);
+  padding-top: 8px;
+}
+
+.program-option-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  background: var(--bg-raised);
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+}
+
+.program-option-header.fulfilled {
+  color: var(--success);
+  background: rgba(94, 194, 105, 0.08);
+}
+
+.program-option-status {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.program-minor-slot {
+  margin-top: 12px;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  border-top: 1px dashed var(--border);
+}
+
+.program-minor-info {
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.program-minor-note {
+  font-size: 0.813rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 12px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.program-minor-courses {
+  margin-top: 16px;
+}
+
+.program-minor-courses-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.program-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: var(--text-muted);
+}
+
+.program-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.program-empty h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.program-empty p {
+  font-size: 0.875rem;
+  max-width: 300px;
+  text-align: center;
+  line-height: 1.5;
 }
 
 /* ─── Responsive ─── */

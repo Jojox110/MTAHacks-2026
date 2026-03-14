@@ -67,7 +67,9 @@ export default function ScheduleGrid({ selectedCourses, onRemoveCourse }) {
                       <div className="semester-course-name">{course.name}</div>
                       {course.prereqs && course.prereqs.length > 0 && (
                         <div className="semester-course-prereqs">
-                          Prereqs: {course.prereqs.join(', ')}
+                          Prereqs: {course.prereqs.map((group) =>
+                            Array.isArray(group) ? group.join(' / ') : group
+                          ).join(' + ')}
                         </div>
                       )}
                     </div>

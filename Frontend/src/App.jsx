@@ -7,7 +7,8 @@ import AIAdvisor from './components/AIAdvisor';
 import CourseCatalog from './components/CourseCatalog';
 import ScheduleGrid from './components/ScheduleGrid';
 import ProgressView from './components/ProgressView';
-import { fetchCourses, getCurrentUser, saveSchedule, loadSchedule } from './data/api';
+import ProgramView from './components/ProgramView';
+import { fetchCourses, fetchPrograms, updateProfile, getCurrentUser, saveSchedule, loadSchedule } from './data/api';
 
 const SESSIONS = ['Fall', 'Spring', 'Summer'];
 const START_YEAR = 2026;
@@ -32,6 +33,7 @@ function App() {
   const [scheduleMap, setScheduleMap] = useState({}); // { "Fall 2026": ["CS101", ...] }
   const [activeSemester, setActiveSemester] = useState(ALL_SEMESTERS[0]);
   const [activeTab, setActiveTab] = useState('schedule');
+  const [programData, setProgramData] = useState(null);
 
   // Derive selected courses for the active semester
   const selectedCourses = useMemo(() => {
@@ -71,9 +73,10 @@ function App() {
     }
   }, []);
 
-  // Load course catalog
+  // Load course catalog and program data
   useEffect(() => {
     fetchCourses().then(setCourses);
+    fetchPrograms().then(setProgramData);
   }, []);
 
   // Load saved schedule when user logs in
@@ -134,6 +137,15 @@ function App() {
     updateSemesterCourses((ids) => ids.filter((id) => id !== course.id));
   }, [updateSemesterCourses]);
 
+  const handleUpdateProfile = useCallback(async (major, minor) => {
+    try {
+      const updated = await updateProfile({ major, minor });
+      setUser(updated);
+    } catch {
+      // ignore
+    }
+  }, []);
+
   const handleLogout = () => {
     localStorage.removeItem('courseforge_token');
     setUser(null);
@@ -164,7 +176,10 @@ function App() {
             <span className="logo-tag">2026</span>
           </div>
           <div className="user-info">
-            <span className="user-name">{user.name}</span>
+            <div className="user-info-left">
+              <span className="user-name">{user.name}</span>
+              {user.major && <span className="user-program">{user.major}</span>}
+            </div>
             <button className="logout-btn" onClick={handleLogout}>Log out</button>
           </div>
         </div>
@@ -182,7 +197,10 @@ function App() {
             selectedCourses={selectedCourses}
             onToggleCourse={toggleCourse}
             userMajor={user.major}
+            userMinor={user.minor}
             priorCourseIds={priorCourseIds}
+            programData={programData}
+            allScheduledIds={new Set(Object.values(scheduleMap).flat())}
           />
         </div>
 
@@ -225,6 +243,12 @@ function App() {
             )}
           </button>
           <button
+            className={`nav-tab ${activeTab === 'program' ? 'active' : ''}`}
+            onClick={() => setActiveTab('program')}
+          >
+            Program
+          </button>
+          <button
             className={`nav-tab ${activeTab === 'progress' ? 'active' : ''}`}
             onClick={() => setActiveTab('progress')}
           >
@@ -254,11 +278,23 @@ function App() {
             onRemoveCourse={removeCourse}
           />
         )}
+        {activeTab === 'program' && (
+          <ProgramView
+            programData={programData}
+            userMajor={user.major}
+            userMinor={user.minor}
+            scheduleMap={scheduleMap}
+            onUpdateProfile={handleUpdateProfile}
+          />
+        )}
         {activeTab === 'progress' && (
           <ProgressView
             courses={courses}
             selectedCourses={allSelectedCourses}
             scheduleMap={scheduleMap}
+            programData={programData}
+            userMajor={user.major}
+            userMinor={user.minor}
           />
         )}
       </main>

@@ -7,6 +7,10 @@ class RegisterRequest(BaseModel):
     major: Optional[str] = None
     minor: Optional[str] = None
 
+class UpdateProfileRequest(BaseModel):
+    major: Optional[str] = None
+    minor: Optional[str] = None
+
 class LoginRequest(BaseModel):
     email: str
 

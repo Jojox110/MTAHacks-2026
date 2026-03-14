@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 import sqlite3
 from database import get_db
-from models.user import RegisterRequest, LoginRequest, UserResponse
+from models.user import RegisterRequest, LoginRequest, UpdateProfileRequest, UserResponse
 from services.auth_service import register_user, login_user
 from middleware.auth_middleware import get_current_user
 
@@ -22,3 +22,13 @@ def login(req: LoginRequest, conn: sqlite3.Connection = Depends(get_db)):
 @router.get("/me", response_model=UserResponse)
 def me(user: dict = Depends(get_current_user)):
     return user
+
+@router.put("/me", response_model=UserResponse)
+def update_profile(req: UpdateProfileRequest, user: dict = Depends(get_current_user), conn: sqlite3.Connection = Depends(get_db)):
+    conn.execute(
+        "UPDATE users SET major = ?, minor = ? WHERE id = ?",
+        (req.major, req.minor, user["id"]),
+    )
+    conn.commit()
+    row = conn.execute("SELECT * FROM users WHERE id = ?", (user["id"],)).fetchone()
+    return dict(row)
