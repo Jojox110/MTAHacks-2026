@@ -1558,10 +1558,115 @@
   flex-shrink: 0;
 }
 
+/* ─── Option Group Cards ─── */
+.og-card {
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.og-card.og-free { border-left: 3px solid var(--text-muted); }
+.og-card.og-prefix { border-left: 3px solid var(--info); }
+.og-card.og-codes { border-left: 3px solid var(--accent); }
+.og-card.og-ofg { border-left: 3px solid #b07ce8; }
+.og-card.og-minor { border-left: 3px solid var(--success); }
+
+.og-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--bg-raised);
+  gap: 8px;
+}
+
+.og-header.fulfilled {
+  background: rgba(94, 194, 105, 0.08);
+}
+
+.og-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.og-icon {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+}
+
+.og-free .og-icon { color: var(--text-muted); }
+.og-prefix .og-icon { color: var(--info); }
+.og-codes .og-icon { color: var(--accent); }
+.og-ofg .og-icon { color: #b07ce8; }
+.og-minor .og-icon { color: var(--success); }
+
+.og-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.og-status {
+  font-family: var(--font-mono);
+  font-size: 0.688rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.og-header.fulfilled .og-status {
+  color: var(--success);
+}
+
+.og-check {
+  color: var(--success);
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+.og-matched,
+.og-options {
+  border-top: 1px solid var(--border);
+}
+
+.og-matched .program-course-item,
+.og-options .program-course-item {
+  padding: 6px 12px;
+}
+
+.og-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border);
+}
+
+.og-hint {
+  padding: 8px 12px;
+  font-size: 0.688rem;
+  color: var(--text-muted);
+  font-style: italic;
+  border-top: 1px solid var(--border);
+}
+
+.og-hint strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Keep old class for backwards compat */
 .program-option-group {
-  margin-top: 12px;
-  border-top: 1px dashed var(--border);
-  padding-top: 8px;
+  margin-top: 10px;
 }
 
 .program-option-header {

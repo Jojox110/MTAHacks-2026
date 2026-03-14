@@ -2,18 +2,32 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 function getAcademicYear(semester) {
-  const [session, yearStr] = semester.split(' ');
-  const year = parseInt(yearStr);
-  // Fall starts a new academic year; Spring/Summer belong to the prior fall's year
-  if (session === 'Fall') return `${year}–${year + 1}`;
+  const parts = semester.split(' ');
+  const year = parseInt(parts[parts.length - 1]);
+  const session = parts.slice(0, -1).join(' ');
+  // Automne starts a new academic year; Hiver/Printemps-Été belong to the prior fall's year
+  if (session === 'Automne' || session === 'Fall') return `${year}–${year + 1}`;
   return `${year - 1}–${year}`;
+}
+
+/** Find scheduled courses matching an option group's codes/prefix */
+function matchOG(og, yearCourses, allCourses, scheduledIds) {
+  const groupCourses = yearCourses.filter((c) => c.option_group === og.id);
+  const ogCodes = og.codes || [];
+  const ogPrefix = og.prefix || '';
+  return allCourses.filter((c) => {
+    if (!scheduledIds.has(c.id)) return false;
+    if (groupCourses.some((gc) => gc.code === c.id)) return true;
+    if (ogCodes.length > 0 && ogCodes.includes(c.id)) return true;
+    if (ogPrefix && c.id.startsWith(ogPrefix)) return true;
+    return false;
+  });
 }
 
 export default function ProgressView({ courses, selectedCourses, scheduleMap = {}, programData, userMajor, userMinor }) {
   const totalCredits = selectedCourses.reduce((sum, c) => sum + c.credits, 0);
-  const selectedIds = selectedCourses.map((c) => c.id);
+  const selectedIds = useMemo(() => new Set(selectedCourses.map((c) => c.id)), [selectedCourses]);
 
-  // Find the user's program and minor from programData
   const program = useMemo(() => {
     if (!userMajor || !programData?.programs) return null;
     return programData.programs.find((p) => p.name === userMajor) || null;
@@ -24,7 +38,6 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
     return programData.available_minors.find((m) => m.name === userMinor) || null;
   }, [programData, userMinor]);
 
-  // Use program's total credits as target if available, otherwise 120
   const targetCredits = program ? program.total_credits : 120;
   const creditPercent = Math.min(100, (totalCredits / targetCredits) * 100);
 
@@ -32,25 +45,20 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
   const programProgress = useMemo(() => {
     if (!program) return null;
     const reqCourses = program.all_courses.filter((c) => c.type !== 'option');
-    const reqScheduled = reqCourses.filter((c) => selectedIds.includes(c.code));
     const reqCredits = reqCourses.reduce((s, c) => s + c.credits, 0);
-    const reqScheduledCredits = reqScheduled.reduce((s, c) => s + c.credits, 0);
+    const reqScheduledCredits = reqCourses.filter((c) => selectedIds.has(c.code)).reduce((s, c) => s + c.credits, 0);
 
     let optTotalCredits = 0;
     let optScheduledCredits = 0;
-    let openCredits = 0;
     for (const y of (program.years || [])) {
-      openCredits += y.open_credits || 0;
       for (const og of (y.option_groups || [])) {
         optTotalCredits += og.credits_required;
-        const groupCourses = y.courses.filter((c) => c.option_group === og.id);
-        const cr = groupCourses.filter((c) => selectedIds.includes(c.code)).reduce((s, c) => s + c.credits, 0);
-        optScheduledCredits += Math.min(cr, og.credits_required);
+        const matching = matchOG(og, y.courses, courses, selectedIds);
+        optScheduledCredits += Math.min(matching.reduce((s, c) => s + c.credits, 0), og.credits_required);
       }
+      optTotalCredits += y.minor_credits || 0;
     }
 
-    // Open OFG credits (1 course per OFG, 3 cr each)
-    // Each course can only fill one OFG; program-required courses don't count
     const openOfgs = program.ofg_requirements?.open || [];
     const ofgTotalCredits = openOfgs.length * 3;
     let ofgScheduledCredits = 0;
@@ -59,7 +67,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
     for (const ofg of openOfgs) {
       const match = courses.find((c) =>
         c.ofg && c.ofg.split(',').map((t) => t.trim()).includes(ofg.ofg)
-        && selectedIds.includes(c.id)
+        && selectedIds.has(c.id)
         && !progCodes.has(c.id)
         && !ofgUsed.has(c.id)
       );
@@ -69,22 +77,22 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       }
     }
 
-    const totalCredits = reqCredits + optTotalCredits + openCredits + ofgTotalCredits;
-    const scheduledCredits = reqScheduledCredits + optScheduledCredits + ofgScheduledCredits;
+    const total = reqCredits + optTotalCredits + ofgTotalCredits;
+    const scheduled = reqScheduledCredits + optScheduledCredits + ofgScheduledCredits;
     return {
-      totalCredits,
-      scheduledCredits,
-      percent: totalCredits > 0 ? (scheduledCredits / totalCredits) * 100 : 0,
+      totalCredits: total,
+      scheduledCredits: scheduled,
+      percent: total > 0 ? (scheduled / total) * 100 : 0,
     };
   }, [program, selectedIds, courses]);
 
-  // Minor course completion stats
+  // Minor progress
   const minorProgress = useMemo(() => {
     if (!minor) return null;
     const minorCodes = new Set(minor.all_courses.map((c) => c.code));
-    const scheduledInMinor = selectedIds.filter((id) => minorCodes.has(id));
+    const scheduledInMinor = [...selectedIds].filter((id) => minorCodes.has(id));
     const scheduledCredits = minor.all_courses
-      .filter((c) => selectedIds.includes(c.code))
+      .filter((c) => selectedIds.has(c.code))
       .reduce((s, c) => s + c.credits, 0);
     const totalMinorCredits = minor.all_courses.reduce((s, c) => s + c.credits, 0);
     return {
@@ -96,54 +104,50 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
     };
   }, [minor, selectedIds]);
 
-  // Per-year progress for the program
+  // Per-year progress
   const yearProgress = useMemo(() => {
     if (!program || !program.years) return [];
     return [...program.years].sort((a, b) => a.year - b.year).map((year) => {
       const reqCourses = year.courses.filter((c) => c.type !== 'option');
-      const reqScheduled = reqCourses.filter((c) => selectedIds.includes(c.code));
-      const reqScheduledCredits = reqScheduled.reduce((s, c) => s + c.credits, 0);
-      const reqCredits = reqCourses.reduce((s, c) => s + c.credits, 0);
+      const reqScheduledCredits = reqCourses.filter((c) => selectedIds.has(c.code)).reduce((s, c) => s + c.credits, 0);
 
       let optTotalCredits = 0;
       let optScheduledCredits = 0;
       for (const og of (year.option_groups || [])) {
         optTotalCredits += og.credits_required;
-        const groupCourses = year.courses.filter((c) => c.option_group === og.id);
-        const cr = groupCourses.filter((c) => selectedIds.includes(c.code)).reduce((s, c) => s + c.credits, 0);
-        optScheduledCredits += Math.min(cr, og.credits_required);
+        const matching = matchOG(og, year.courses, courses, selectedIds);
+        optScheduledCredits += Math.min(matching.reduce((s, c) => s + c.credits, 0), og.credits_required);
       }
 
-      const totalCredits = reqCredits + optTotalCredits + (year.open_credits || 0);
       const scheduledCredits = reqScheduledCredits + optScheduledCredits;
 
       return {
         label: year.label,
         year: year.year,
-        totalCredits,
+        totalCredits: year.credits,
         scheduledCredits,
         courses: year.courses,
-        optionGroups: year.option_groups || [],
       };
     });
-  }, [program, selectedIds]);
+  }, [program, selectedIds, courses]);
 
-  // Group by department (derived from course data, not static list)
+  // Department stats
   const deptProgress = useMemo(() => {
     const deptMap = {};
     for (const c of courses) {
       if (!deptMap[c.dept]) deptMap[c.dept] = { dept: c.dept, total: 0, enrolled: 0, courses: [] };
       deptMap[c.dept].total++;
       deptMap[c.dept].courses.push(c);
-      if (selectedIds.includes(c.id)) deptMap[c.dept].enrolled++;
+      if (selectedIds.has(c.id)) deptMap[c.dept].enrolled++;
     }
     return Object.values(deptMap)
       .filter((d) => d.enrolled > 0)
       .sort((a, b) => b.enrolled - a.enrolled);
   }, [courses, selectedIds]);
 
-  // Group by semester
+  // Per-semester breakdown
   const semesterBreakdown = useMemo(() => {
+    const sessionOrder = { 'Hiver': 0, 'Printemps-Été': 1, 'Automne': 2, 'Fall': 0, 'Spring': 1, 'Summer': 2 };
     return Object.entries(scheduleMap)
       .filter(([, ids]) => ids.length > 0)
       .map(([semester, ids]) => {
@@ -152,14 +156,17 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
         return { semester, courses: semCourses, credits };
       })
       .sort((a, b) => {
-        const order = ['Fall', 'Spring', 'Summer'];
-        const [sA, yA] = a.semester.split(' ');
-        const [sB, yB] = b.semester.split(' ');
-        return (+yA - +yB) || (order.indexOf(sA) - order.indexOf(sB));
+        const partsA = a.semester.split(' ');
+        const partsB = b.semester.split(' ');
+        const yA = parseInt(partsA[partsA.length - 1]);
+        const yB = parseInt(partsB[partsB.length - 1]);
+        const sA = partsA.slice(0, -1).join(' ');
+        const sB = partsB.slice(0, -1).join(' ');
+        return (yA - yB) || ((sessionOrder[sA] || 0) - (sessionOrder[sB] || 0));
       });
   }, [scheduleMap, courses]);
 
-  // Group by academic year
+  // Academic year grouping
   const academicYearBreakdown = useMemo(() => {
     const yearMap = {};
     for (const sem of semesterBreakdown) {
@@ -174,12 +181,12 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
 
   return (
     <div className="progress-view">
-      <h2>Degree Progress</h2>
+      <h2>Progrès</h2>
 
       {/* ─── Overall Stats ─── */}
       <div className="progress-overview">
         <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
-          <div className="progress-card-label">Credits Enrolled</div>
+          <div className="progress-card-label">Crédits planifiés</div>
           <div className="progress-card-value accent">{totalCredits}<span className="program-stat-total">/{targetCredits}</span></div>
           <div className="progress-bar-container">
             <div className="progress-bar-fill" style={{ width: `${creditPercent}%` }} />
@@ -187,7 +194,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
         </motion.div>
 
         <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-          <div className="progress-card-label">Credits Remaining</div>
+          <div className="progress-card-label">Crédits restants</div>
           <div className="progress-card-value">{Math.max(0, targetCredits - totalCredits)}</div>
           <div className="progress-bar-container">
             <div className="progress-bar-fill success" style={{ width: `${100 - creditPercent}%` }} />
@@ -195,12 +202,12 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
         </motion.div>
 
         <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
-          <div className="progress-card-label">Courses Selected</div>
+          <div className="progress-card-label">Cours sélectionnés</div>
           <div className="progress-card-value">{selectedCourses.length}</div>
         </motion.div>
 
         <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-          <div className="progress-card-label">Departments Covered</div>
+          <div className="progress-card-label">Départements</div>
           <div className="progress-card-value">{deptProgress.filter((d) => d.enrolled > 0).length}</div>
         </motion.div>
       </div>
@@ -208,10 +215,10 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       {/* ─── Program Progress ─── */}
       {programProgress && (
         <>
-          <h3 className="progress-section-heading">Program: {program.name}</h3>
+          <h3 className="progress-section-heading">Programme : {program.name}</h3>
           <div className="progress-overview">
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="progress-card-label">Program Credits</div>
+              <div className="progress-card-label">Crédits du programme</div>
               <div className="progress-card-value accent">{programProgress.scheduledCredits}<span className="program-stat-total">/{programProgress.totalCredits}</span></div>
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${programProgress.percent}%` }} />
@@ -219,7 +226,6 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
             </motion.div>
           </div>
 
-          {/* Per-year program progress */}
           {yearProgress.length > 0 && (
             <div className="program-year-progress-grid">
               {yearProgress.map((yr, i) => (
@@ -243,7 +249,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
                     {yr.courses.map((c) => (
                       <span
                         key={c.code}
-                        className={`dept-course-chip ${selectedIds.includes(c.code) ? 'enrolled' : ''}`}
+                        className={`dept-course-chip ${selectedIds.has(c.code) ? 'enrolled' : ''}`}
                       >
                         {c.code}
                       </span>
@@ -259,17 +265,17 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       {/* ─── Minor Progress ─── */}
       {minorProgress && (
         <>
-          <h3 className="progress-section-heading">Minor: {minor.name}</h3>
+          <h3 className="progress-section-heading">Mineure : {minor.name}</h3>
           <div className="progress-overview">
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="progress-card-label">Minor Courses</div>
+              <div className="progress-card-label">Cours de mineure</div>
               <div className="progress-card-value accent">{minorProgress.scheduled}<span className="program-stat-total">/{minorProgress.total}</span></div>
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${minorProgress.percent}%` }} />
               </div>
             </motion.div>
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
-              <div className="progress-card-label">Minor Credits</div>
+              <div className="progress-card-label">Crédits mineure</div>
               <div className="progress-card-value">{minorProgress.scheduledCredits}<span className="program-stat-total">/{minorProgress.totalCredits}</span></div>
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${minorProgress.totalCredits > 0 ? (minorProgress.scheduledCredits / minorProgress.totalCredits) * 100 : 0}%` }} />
@@ -280,7 +286,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
             {minor.all_courses.map((c) => (
               <span
                 key={c.code}
-                className={`dept-course-chip ${selectedIds.includes(c.code) ? 'enrolled' : ''}`}
+                className={`dept-course-chip ${selectedIds.has(c.code) ? 'enrolled' : ''}`}
               >
                 {c.code}
               </span>
@@ -292,7 +298,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       {/* ─── By Semester ─── */}
       {semesterBreakdown.length > 0 && (
         <>
-          <h3 className="progress-section-heading">By Semester</h3>
+          <h3 className="progress-section-heading">Par session</h3>
           <div className="semester-progress">
             {semesterBreakdown.map((sem, i) => (
               <motion.div
@@ -305,7 +311,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
                 <div className="semester-card-header">
                   <h4>{sem.semester}</h4>
                   <span className="semester-card-stats">
-                    {sem.courses.length} course{sem.courses.length !== 1 ? 's' : ''} &middot; {sem.credits} cr
+                    {sem.courses.length} cours &middot; {sem.credits} cr
                   </span>
                 </div>
                 <div className="dept-courses">
@@ -322,10 +328,10 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       {/* ─── By Year ─── */}
       {academicYearBreakdown.length > 0 && (
         <>
-          <h3 className="progress-section-heading">By Academic Year</h3>
+          <h3 className="progress-section-heading">Par année académique</h3>
           <div className="year-progress">
             {academicYearBreakdown.map((yr, i) => {
-              const ayPercent = Math.min(100, (yr.credits / 30) * 100); // ~30 credits per year target
+              const ayPercent = Math.min(100, (yr.credits / 30) * 100);
               return (
                 <motion.div
                   key={yr.year}
@@ -336,7 +342,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
                 >
                   <div className="year-card-header">
                     <h4>{yr.year}</h4>
-                    <span className="year-card-stats">{yr.credits} credits</span>
+                    <span className="year-card-stats">{yr.credits} crédits</span>
                   </div>
                   <div className="progress-bar-container">
                     <div className="progress-bar-fill" style={{ width: `${ayPercent}%` }} />
@@ -346,7 +352,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
                       <div key={sem.semester} className="year-semester-row">
                         <span className="year-semester-label">{sem.semester}</span>
                         <span className="year-semester-detail">
-                          {sem.courses.length} course{sem.courses.length !== 1 ? 's' : ''} &middot; {sem.credits} cr
+                          {sem.courses.length} cours &middot; {sem.credits} cr
                         </span>
                       </div>
                     ))}
@@ -359,7 +365,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       )}
 
       {/* ─── By Department ─── */}
-      <h3 className="progress-section-heading">By Department</h3>
+      <h3 className="progress-section-heading">Par département</h3>
       <div className="dept-progress">
         {deptProgress.map((d, i) => (
           <motion.div
@@ -383,7 +389,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
               {d.courses.map((c) => (
                 <span
                   key={c.id}
-                  className={`dept-course-chip ${selectedIds.includes(c.id) ? 'enrolled' : ''}`}
+                  className={`dept-course-chip ${selectedIds.has(c.id) ? 'enrolled' : ''}`}
                 >
                   {c.id}
                 </span>
