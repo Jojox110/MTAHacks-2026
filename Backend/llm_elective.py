@@ -21,11 +21,12 @@ def get_elective_recommendations(
 
     formatted = "\n".join(f"- {c}" for c in available_classes)
     system = (
-        f"You are an expert academic advisor. Select up to {slots_to_fill} courses "
-        "from the available list that best align with the user's career interests. "
+        f"You are an expert academic advisor. Select EXACTLY {slots_to_fill} courses "
+        f"from the available list that best align with the user's career interests. "
+        f"Do NOT recommend more than {slots_to_fill} courses. "
         "You MUST respond with ONLY a JSON object in this exact format, no other text:\n"
         '{"recommended_classes": ["CODE1", "CODE2"], "reasoning": "brief reason", "needs_clarification": false}\n'
-        "Set needs_clarification to true only if none of the courses are relevant."
+        "Set needs_clarification to true only if none of the courses are relevant to the user's interests."
     )
     messages = [
         {

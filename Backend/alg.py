@@ -251,8 +251,8 @@ class ScheduleOptimizer:
                 return (sec, slots)
         return None
 
-    # Maximum courses per semester for mandatory placement (generous to fit full programs)
-    MAX_PER_SEMESTER = 8
+    # Maximum courses per semester — must match the target used in fill_ofg and get_blanks_per_semester
+    MAX_PER_SEMESTER = 5
 
     def place_mandatory(
         self,
@@ -356,8 +356,8 @@ class ScheduleOptimizer:
                     break
 
             if not placed_in_sem:
-                # Last resort: try every semester type (not just the matching one) while
-                # still enforcing that prerequisites come from earlier semesters.
+                # Last resort: try each semester using only its correct semester type.
+                # Prerequisites must still come from earlier semesters.
                 for sem_idx in range(len(self.REAL_SEMESTERS)):
                     sem_key = self._semester_key(sem_idx)
                     prior = set(already_completed)
@@ -367,20 +367,16 @@ class ScheduleOptimizer:
                         continue
                     if len(schedule[sem_key]) >= self.MAX_PER_SEMESTER:
                         continue
-                    # Try all three semester types so a course isn't blocked purely by
-                    # semester-type mismatch when an equivalent section exists elsewhere.
-                    for sem_type_try in [self._semester_type(sem_idx), "hiver", "automne", "printemps_ete"]:
-                        result = self._find_non_conflicting_section(code, sem_type_try, used_slots[sem_key])
-                        if result:
-                            sec, slots = result
-                            schedule[sem_key].append(code)
-                            sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
-                            placed.append(PlacedCourse(code=code, semester_key=sem_key, nrc=sec.get("nrc", ""), groupe=sec.get("groupe", ""), schedule=sec.get("schedule", []), slots=slots))
-                            used_slots[sem_key].extend(slots)
-                            completed.add(code)
-                            placed_in_sem = True
-                            break
-                    if placed_in_sem:
+                    sem_type = self._semester_type(sem_idx)
+                    result = self._find_non_conflicting_section(code, sem_type, used_slots[sem_key])
+                    if result:
+                        sec, slots = result
+                        schedule[sem_key].append(code)
+                        sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
+                        placed.append(PlacedCourse(code=code, semester_key=sem_key, nrc=sec.get("nrc", ""), groupe=sec.get("groupe", ""), schedule=sec.get("schedule", []), slots=slots))
+                        used_slots[sem_key].extend(slots)
+                        completed.add(code)
+                        placed_in_sem = True
                         break
                 # If still not placed, skip: prerequisites cannot be satisfied within
                 # the available semesters — better to omit than to violate ordering.
@@ -534,7 +530,7 @@ class ScheduleOptimizer:
 
         completed_set = set(already_completed or [])
         schedule, sections, placed_list = self.place_mandatory(program, minor, already_completed=completed_set)
-        placed_codes = {p.code for p in placed_list}
+        placed_codes = {p.code for p in placed_list} | completed_set  # exclude already-done courses from OFG/electives
         used_slots: dict[str, list[tuple[str, float, float]]] = {}
         for p in placed_list:
             used_slots.setdefault(p.semester_key, []).extend(p.slots)
