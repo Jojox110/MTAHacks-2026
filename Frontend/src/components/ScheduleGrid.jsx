@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const DAYS = ['Lu', 'Ma', 'Me', 'Je', 'Ve'];
-const DAY_LABELS = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'];
+const DAY_LABELS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const START_HOUR = 8;
 const END_HOUR = 22;
 const HOUR_HEIGHT = 60; // px per hour
@@ -123,20 +123,20 @@ export default function ScheduleGrid({ selectedCourses, onRemoveCourse, sessionD
   return (
     <div className="schedule-view">
       <div className="schedule-header">
-        <h2>Horaire</h2>
+        <h2>Schedule</h2>
         <div className="schedule-stats">
           <div className="stat">
             <div className="stat-value accent">{selectedCourses.length}</div>
-            <div className="stat-label">Cours</div>
+            <div className="stat-label">Courses</div>
           </div>
           <div className="stat">
             <div className="stat-value">{totalCredits}</div>
-            <div className="stat-label">Crédits</div>
+            <div className="stat-label">Credits</div>
           </div>
           {conflicts.size > 0 && (
             <div className="stat">
               <div className="stat-value" style={{ color: 'var(--danger)' }}>!</div>
-              <div className="stat-label">Conflits</div>
+              <div className="stat-label">Conflicts</div>
             </div>
           )}
         </div>
@@ -145,10 +145,10 @@ export default function ScheduleGrid({ selectedCourses, onRemoveCourse, sessionD
       {selectedCourses.length === 0 ? (
         <div className="empty-schedule">
           <div className="empty-schedule-icon">&#128197;</div>
-          <h3>Aucun cours</h3>
+          <h3>No courses</h3>
           <p>
-            Sélectionnez des cours dans le catalogue ou utilisez le conseiller IA
-            pour des recommandations personnalisées.
+            Select courses from the catalog or use the AI advisor
+            for personalized recommendations.
           </p>
         </div>
       ) : (
@@ -249,7 +249,7 @@ export default function ScheduleGrid({ selectedCourses, onRemoveCourse, sessionD
           {/* Unscheduled courses (no timetable data) */}
           {unscheduled.length > 0 && (
             <div className="cal-unscheduled">
-              <h4>Cours sans horaire disponible</h4>
+              <h4>Courses without available schedule</h4>
               <div className="cal-unscheduled-list">
                 {unscheduled.map((course) => (
                   <div key={course.id} className="cal-unscheduled-item">

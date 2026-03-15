@@ -251,7 +251,7 @@ function App() {
             className={`nav-tab ${activeTab === 'schedule' ? 'active' : ''}`}
             onClick={() => setActiveTab('schedule')}
           >
-            Horaire
+            Schedule
             {selectedCourses.length > 0 && (
               <span className="badge">{selectedCourses.length}</span>
             )}
@@ -260,13 +260,13 @@ function App() {
             className={`nav-tab ${activeTab === 'program' ? 'active' : ''}`}
             onClick={() => setActiveTab('program')}
           >
-            Programme
+            Program
           </button>
           <button
             className={`nav-tab ${activeTab === 'progress' ? 'active' : ''}`}
             onClick={() => setActiveTab('progress')}
           >
-            Progrès
+            Progress
           </button>
 
           <div className="semester-picker">

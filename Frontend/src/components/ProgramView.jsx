@@ -52,8 +52,8 @@ function OptionGroupCard({ og, yearCourses, allCourses, scheduledIds }) {
   if (type === 'ofg') {
     const ofgMatch = og.label.match(/OFG\s*(\d|[?])/);
     displayLabel = ofgMatch && ofgMatch[1] !== '?'
-      ? `Formation générale — OFG ${ofgMatch[1]}`
-      : 'Formation générale (banque OFG)';
+      ? `General Education — OFG ${ofgMatch[1]}`
+      : 'General Education (OFG bank)';
   }
 
   return (
@@ -120,28 +120,28 @@ function OptionGroupCard({ og, yearCourses, allCourses, scheduledIds }) {
           {ogCodes.slice(0, 12).map((code) => (
             <span key={code} className={`dept-course-chip ${scheduledIds.has(code) ? 'enrolled' : ''}`}>{code}</span>
           ))}
-          {ogCodes.length > 12 && <span className="program-ofg-more">+{ogCodes.length - 12} autres</span>}
+          {ogCodes.length > 12 && <span className="program-ofg-more">+{ogCodes.length - 12} more</span>}
         </div>
       )}
 
       {/* Prefix hint */}
       {type === 'prefix' && matchingScheduled.length === 0 && (
         <div className="og-hint">
-          Choisir des cours <strong>{prefix}</strong>{og.levels ? ` de niveau ${og.levels}` : ''} dans le catalogue
+          Choose <strong>{prefix}</strong>{og.levels ? ` level ${og.levels}` : ''} courses from the catalog
         </div>
       )}
 
       {/* Free elective hint */}
       {type === 'free' && matchingScheduled.length === 0 && (
         <div className="og-hint">
-          N'importe quel cours du catalogue
+          Any course from the catalog
         </div>
       )}
 
       {/* OFG hint */}
       {type === 'ofg' && matchingScheduled.length === 0 && (
         <div className="og-hint">
-          Choisir dans la banque de cours OFG
+          Choose from the OFG course bank
         </div>
       )}
     </div>
@@ -292,10 +292,10 @@ export default function ProgramView({ programData, courses = [], userMajor, user
   return (
     <div className="program-view">
       <div className="program-view-header">
-        <h2>Mon programme</h2>
+        <h2>My Program</h2>
         {!editing && (
           <button className="program-change-btn" onClick={() => setEditing(true)}>
-            {program ? 'Changer' : 'Choisir un programme'}
+            {program ? 'Change' : 'Choose a program'}
           </button>
         )}
       </div>
@@ -308,9 +308,9 @@ export default function ProgramView({ programData, courses = [], userMajor, user
           animate={{ opacity: 1, y: 0 }}
         >
           <div className="program-edit-field">
-            <label>Programme</label>
+            <label>Program</label>
             <select value={editMajor} onChange={(e) => setEditMajor(e.target.value)}>
-              <option value="">Choisir votre programme</option>
+              <option value="">Choose your program</option>
               {programData.programs.map((p) => (
                 <option key={p.name} value={p.name}>
                   {p.name}{p.degree ? ` — ${p.degree}` : ''}
@@ -321,15 +321,15 @@ export default function ProgramView({ programData, courses = [], userMajor, user
 
           {editProgram && !editNeedsMinor && (
             <div className="program-edit-info">
-              Ce programme ne nécessite pas de mineure.
+              This program does not require a minor.
             </div>
           )}
 
           {editNeedsMinor && (
             <div className="program-edit-field">
-              <label>Mineure ({editProgram.minor_requirements.total_credits} cr requis)</label>
+              <label>Minor ({editProgram.minor_requirements.total_credits} cr required)</label>
               <select value={editMinor} onChange={(e) => setEditMinor(e.target.value)}>
-                <option value="">Choisir votre mineure</option>
+                <option value="">Choose your minor</option>
                 {programData.available_minors.map((m) => (
                   <option key={m.name} value={m.name}>
                     {m.name} ({m.total_credits} cr)
@@ -340,8 +340,8 @@ export default function ProgramView({ programData, courses = [], userMajor, user
           )}
 
           <div className="program-edit-actions">
-            <button className="login-back" onClick={handleCancel}>Annuler</button>
-            <button className="login-button" onClick={handleSave}>Sauvegarder</button>
+            <button className="login-back" onClick={handleCancel}>Cancel</button>
+            <button className="login-button" onClick={handleSave}>Save</button>
           </div>
         </motion.div>
       )}
@@ -350,8 +350,8 @@ export default function ProgramView({ programData, courses = [], userMajor, user
       {!program && !editing && (
         <div className="program-empty">
           <div className="program-empty-icon">&#9734;</div>
-          <h3>Aucun programme</h3>
-          <p>Cliquez sur "Choisir un programme" pour sélectionner votre programme d'études.</p>
+          <h3>No program</h3>
+          <p>Click "Choose a program" to select your field of study.</p>
         </div>
       )}
 
@@ -359,12 +359,12 @@ export default function ProgramView({ programData, courses = [], userMajor, user
       {program && programStats && (
         <div className="program-overview-cards">
           <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
-            <div className="progress-card-label">Programme</div>
+            <div className="progress-card-label">Program</div>
             <div className="program-card-title">{program.name}</div>
             {program.degree && <div className="program-card-degree">{program.degree}</div>}
           </motion.div>
           <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <div className="progress-card-label">Crédits planifiés</div>
+            <div className="progress-card-label">Planned Credits</div>
             <div className="progress-card-value accent">{programStats.scheduledCredits}<span className="program-stat-total">/{program.total_credits}</span></div>
             <div className="progress-bar-container">
               <div className="progress-bar-fill" style={{ width: `${program.total_credits > 0 ? (programStats.scheduledCredits / program.total_credits) * 100 : 0}%` }} />
@@ -372,8 +372,8 @@ export default function ProgramView({ programData, courses = [], userMajor, user
           </motion.div>
           {program.years && (
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-              <div className="progress-card-label">Durée</div>
-              <div className="progress-card-value">{program.years.length} <span className="program-stat-total">ans</span></div>
+              <div className="progress-card-label">Duration</div>
+              <div className="progress-card-value">{program.years.length} <span className="program-stat-total">years</span></div>
             </motion.div>
           )}
         </div>
@@ -387,14 +387,14 @@ export default function ProgramView({ programData, courses = [], userMajor, user
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15 }}
         >
-          <h3 className="progress-section-heading">Optimiser l&apos;horaire 4 ans</h3>
+          <h3 className="progress-section-heading">Optimize 4-Year Schedule</h3>
           <p className="program-optimize-desc">
-            Décrivez vos intérêts ou objectifs de carrière. L&apos;IA remplira les cours optionnels.
+            Describe your interests or career goals. The AI will fill in the elective courses.
           </p>
           <div className="program-optimize-input">
             <textarea
               className="program-optimize-textarea"
-              placeholder="Ex.: Je veux devenir ingénieur en IA et travailler sur des produits de machine learning..."
+              placeholder="E.g.: I want to become an AI engineer and work on machine learning products..."
               value={optimizePrompt}
               onChange={(e) => { setOptimizePrompt(e.target.value); setOptimizeError(null); }}
               rows={3}
@@ -415,14 +415,14 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                     setPendingChoices(result.pendingChoices);
                   }
                 } catch (err) {
-                  setOptimizeError(err?.message || 'Erreur lors de l\'optimisation');
+                  setOptimizeError(err?.message || 'Optimization error');
                 } finally {
                   setOptimizing(false);
                 }
               }}
               disabled={!optimizePrompt.trim() || optimizing}
             >
-              {optimizing ? 'Optimisation...' : 'Optimiser l\'horaire'}
+              {optimizing ? 'Optimizing...' : 'Optimize Schedule'}
             </button>
           </div>
           {optimizeError && (
@@ -535,7 +535,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                       setTimeout(() => setPendingChoices(null), 2000);
                     }
                   } catch (err) {
-                    setOptimizeError(err?.message || 'Erreur');
+                    setOptimizeError(err?.message || 'Error');
                   } finally {
                     setOptimizing(false);
                   }
@@ -552,7 +552,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
       {/* ─── Program Courses by Year ─── */}
       {program && program.years && (
         <>
-          <h3 className="progress-section-heading">Cheminement par année</h3>
+          <h3 className="progress-section-heading">Pathway by Year</h3>
           <div className="program-years">
             {[...program.years].sort((a, b) => a.year - b.year).map((year, i) => {
               const obligatoire = year.courses.filter((c) => c.type !== 'option');
@@ -598,7 +598,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                             <span className="program-course-cr">{course.credits} cr</span>
                             {isScheduled && <span className="program-course-check">&#10003;</span>}
                             {course.prerequisites && course.prerequisites.length > 0 && (
-                              <span className="program-course-prereq" title={`Préalables: ${course.prerequisites.map((g) => Array.isArray(g) ? g.join(' / ') : g).join(' + ')}`}>
+                              <span className="program-course-prereq" title={`Prerequisites: ${course.prerequisites.map((g) => Array.isArray(g) ? g.join(' / ') : g).join(' + ')}`}>
                                 &#8592; {course.prerequisites.map((g) => Array.isArray(g) ? g.join(' / ') : g).join(' + ')}
                               </span>
                             )}
@@ -625,12 +625,12 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                       <div className="og-header">
                         <div className="og-header-left">
                           <span className="og-icon">&#9830;</span>
-                          <span className="og-label">Crédits de la mineure</span>
+                          <span className="og-label">Minor Credits</span>
                         </div>
                         <span className="og-status">{minorCr} cr</span>
                       </div>
                       <div className="og-hint">
-                        Cours provenant de votre programme de mineure
+                        Courses from your minor program
                       </div>
                     </div>
                   )}
@@ -644,7 +644,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
       {/* ─── OFG Requirements (open only) ─── */}
       {program && program.ofg_requirements?.open?.length > 0 && (
         <>
-          <h3 className="progress-section-heading">OFG — Formation générale</h3>
+          <h3 className="progress-section-heading">OFG — General Education</h3>
           {(() => {
             const OFG_NAMES = {
               OFG1: 'Initiation au travail intellectuel universitaire',
@@ -697,7 +697,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                       <div className="program-ofg-header">
                         <span className="program-ofg-tag">{ofgKey}</span>
                         <span className="program-ofg-status">
-                          {isDone ? '\u2713' : '3 cr requis'}
+                          {isDone ? '\u2713' : '3 cr required'}
                         </span>
                       </div>
                       <div className="program-ofg-name">{OFG_NAMES[ofgKey] || ofgKey}</div>
@@ -711,7 +711,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                             <span key={c.id} className="dept-course-chip">{c.id}</span>
                           ))}
                           {ofgCourses.length > 8 && (
-                            <span className="program-ofg-more">+{ofgCourses.length - 8} autres</span>
+                            <span className="program-ofg-more">+{ofgCourses.length - 8} more</span>
                           )}
                         </div>
                       )}
@@ -728,7 +728,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
       {program && program.minor_requirements && (
         <div className="program-minor-info">
           {program.minor_requirements.has_minor ? (
-            <p className="program-minor-note">Ce programme comprend {program.minor_requirements.total_credits} crédits de mineure.</p>
+            <p className="program-minor-note">This program includes {program.minor_requirements.total_credits} minor credits.</p>
           ) : (
             <p className="program-minor-note">{program.minor_requirements.how_it_works}</p>
           )}
@@ -738,24 +738,24 @@ export default function ProgramView({ programData, courses = [], userMajor, user
       {/* ─── Minor Section ─── */}
       {minor && minorStats && (
         <>
-          <h3 className="progress-section-heading">Mineure : {minor.name}</h3>
+          <h3 className="progress-section-heading">Minor: {minor.name}</h3>
           <div className="program-overview-cards minor-overview">
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="progress-card-label">Crédits mineure</div>
+              <div className="progress-card-label">Minor Credits</div>
               <div className="progress-card-value accent">{minorStats.scheduledCredits}<span className="program-stat-total">/{minorStats.totalCredits}</span></div>
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${minorStats.totalCredits > 0 ? (minorStats.scheduledCredits / minorStats.totalCredits) * 100 : 0}%` }} />
               </div>
             </motion.div>
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
-              <div className="progress-card-label">Cours planifiés</div>
+              <div className="progress-card-label">Planned Courses</div>
               <div className="progress-card-value">{minorStats.scheduled}<span className="program-stat-total">/{minorStats.total}</span></div>
             </motion.div>
           </div>
 
           {minor.required_courses && minor.required_courses.length > 0 && (
             <div className="program-minor-courses">
-              <h4 className="program-minor-courses-heading">Cours obligatoires</h4>
+              <h4 className="program-minor-courses-heading">Required Courses</h4>
               <div className="program-course-list">
                 {minor.required_courses.map((course) => {
                   const isScheduled = allScheduledIds.has(course.code);
@@ -774,7 +774,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
 
           {minor.elective_courses && minor.elective_courses.length > 0 && (
             <div className="program-minor-courses">
-              <h4 className="program-minor-courses-heading">Cours à option ({minor.elective_credits} cr à choisir)</h4>
+              <h4 className="program-minor-courses-heading">Elective Courses ({minor.elective_credits} cr to choose)</h4>
               <div className="program-course-list">
                 {minor.elective_courses.map((course) => {
                   const isScheduled = allScheduledIds.has(course.code);

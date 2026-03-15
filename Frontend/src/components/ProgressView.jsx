@@ -181,12 +181,12 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
 
   return (
     <div className="progress-view">
-      <h2>Progrès</h2>
+      <h2>Progress</h2>
 
       {/* ─── Overall Stats ─── */}
       <div className="progress-overview">
         <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
-          <div className="progress-card-label">Crédits planifiés</div>
+          <div className="progress-card-label">Planned Credits</div>
           <div className="progress-card-value accent">{totalCredits}<span className="program-stat-total">/{targetCredits}</span></div>
           <div className="progress-bar-container">
             <div className="progress-bar-fill" style={{ width: `${creditPercent}%` }} />
@@ -194,7 +194,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
         </motion.div>
 
         <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-          <div className="progress-card-label">Crédits restants</div>
+          <div className="progress-card-label">Remaining Credits</div>
           <div className="progress-card-value">{Math.max(0, targetCredits - totalCredits)}</div>
           <div className="progress-bar-container">
             <div className="progress-bar-fill success" style={{ width: `${100 - creditPercent}%` }} />
@@ -202,12 +202,12 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
         </motion.div>
 
         <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
-          <div className="progress-card-label">Cours sélectionnés</div>
+          <div className="progress-card-label">Selected Courses</div>
           <div className="progress-card-value">{selectedCourses.length}</div>
         </motion.div>
 
         <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-          <div className="progress-card-label">Départements</div>
+          <div className="progress-card-label">Departments</div>
           <div className="progress-card-value">{deptProgress.filter((d) => d.enrolled > 0).length}</div>
         </motion.div>
       </div>
@@ -215,10 +215,10 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       {/* ─── Program Progress ─── */}
       {programProgress && (
         <>
-          <h3 className="progress-section-heading">Programme : {program.name}</h3>
+          <h3 className="progress-section-heading">Program: {program.name}</h3>
           <div className="progress-overview">
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="progress-card-label">Crédits du programme</div>
+              <div className="progress-card-label">Program Credits</div>
               <div className="progress-card-value accent">{programProgress.scheduledCredits}<span className="program-stat-total">/{programProgress.totalCredits}</span></div>
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${programProgress.percent}%` }} />
@@ -265,17 +265,17 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       {/* ─── Minor Progress ─── */}
       {minorProgress && (
         <>
-          <h3 className="progress-section-heading">Mineure : {minor.name}</h3>
+          <h3 className="progress-section-heading">Minor: {minor.name}</h3>
           <div className="progress-overview">
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="progress-card-label">Cours de mineure</div>
+              <div className="progress-card-label">Minor Courses</div>
               <div className="progress-card-value accent">{minorProgress.scheduled}<span className="program-stat-total">/{minorProgress.total}</span></div>
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${minorProgress.percent}%` }} />
               </div>
             </motion.div>
             <motion.div className="progress-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
-              <div className="progress-card-label">Crédits mineure</div>
+              <div className="progress-card-label">Minor Credits</div>
               <div className="progress-card-value">{minorProgress.scheduledCredits}<span className="program-stat-total">/{minorProgress.totalCredits}</span></div>
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${minorProgress.totalCredits > 0 ? (minorProgress.scheduledCredits / minorProgress.totalCredits) * 100 : 0}%` }} />
@@ -298,7 +298,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       {/* ─── By Semester ─── */}
       {semesterBreakdown.length > 0 && (
         <>
-          <h3 className="progress-section-heading">Par session</h3>
+          <h3 className="progress-section-heading">By Semester</h3>
           <div className="semester-progress">
             {semesterBreakdown.map((sem, i) => (
               <motion.div
@@ -311,7 +311,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
                 <div className="semester-card-header">
                   <h4>{sem.semester}</h4>
                   <span className="semester-card-stats">
-                    {sem.courses.length} cours &middot; {sem.credits} cr
+                    {sem.courses.length} courses &middot; {sem.credits} cr
                   </span>
                 </div>
                 <div className="dept-courses">
@@ -328,7 +328,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       {/* ─── By Year ─── */}
       {academicYearBreakdown.length > 0 && (
         <>
-          <h3 className="progress-section-heading">Par année académique</h3>
+          <h3 className="progress-section-heading">By Academic Year</h3>
           <div className="year-progress">
             {academicYearBreakdown.map((yr, i) => {
               const ayPercent = Math.min(100, (yr.credits / 30) * 100);
@@ -342,7 +342,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
                 >
                   <div className="year-card-header">
                     <h4>{yr.year}</h4>
-                    <span className="year-card-stats">{yr.credits} crédits</span>
+                    <span className="year-card-stats">{yr.credits} credits</span>
                   </div>
                   <div className="progress-bar-container">
                     <div className="progress-bar-fill" style={{ width: `${ayPercent}%` }} />
@@ -352,7 +352,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
                       <div key={sem.semester} className="year-semester-row">
                         <span className="year-semester-label">{sem.semester}</span>
                         <span className="year-semester-detail">
-                          {sem.courses.length} cours &middot; {sem.credits} cr
+                          {sem.courses.length} courses &middot; {sem.credits} cr
                         </span>
                       </div>
                     ))}
@@ -365,7 +365,7 @@ export default function ProgressView({ courses, selectedCourses, scheduleMap = {
       )}
 
       {/* ─── By Department ─── */}
-      <h3 className="progress-section-heading">Par département</h3>
+      <h3 className="progress-section-heading">By Department</h3>
       <div className="dept-progress">
         {deptProgress.map((d, i) => (
           <motion.div
