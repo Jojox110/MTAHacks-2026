@@ -97,6 +97,13 @@ const SESSION_FILES = {
   'Hiver 2026': '/schedule_hiver_2026_moncton_fix.json',
   'Printemps-Été 2026': '/schedule_printemps_ete_2026_moncton_fix.json',
   'Automne 2026': '/schedule_automne_2026_moncton_fix.json',
+  'Hiver 2027': '/schedule_hiver_2026_moncton_fix.json',
+  'Automne 2027': '/schedule_automne_2026_moncton_fix.json',
+  'Hiver 2028': '/schedule_hiver_2026_moncton_fix.json',
+  'Automne 2028': '/schedule_automne_2026_moncton_fix.json',
+  'Hiver 2029': '/schedule_hiver_2026_moncton_fix.json',
+  'Automne 2029': '/schedule_automne_2026_moncton_fix.json',
+  'Hiver 2030': '/schedule_hiver_2026_moncton_fix.json',
 };
 
 const sessionCache = {};
@@ -143,4 +150,18 @@ export async function loadSchedule() {
     }
     return { schedule: {} };
   }
+}
+
+// ─── Schedule Optimizer (4-year plan) ───
+
+export async function optimizeSchedule(program, userPrompt, minor = null, userChoices = null) {
+  return authFetch('/schedule/optimize', {
+    method: 'POST',
+    body: JSON.stringify({
+      program,
+      userPrompt,
+      minor: minor || undefined,
+      userChoices: userChoices || undefined,
+    }),
+  });
 }

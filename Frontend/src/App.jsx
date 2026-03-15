@@ -8,9 +8,13 @@ import CourseCatalog from './components/CourseCatalog';
 import ScheduleGrid from './components/ScheduleGrid';
 import ProgressView from './components/ProgressView';
 import ProgramView from './components/ProgramView';
-import { fetchCourses, fetchPrograms, fetchSessionSchedule, updateProfile, getCurrentUser, saveSchedule, loadSchedule } from './data/api';
+import { fetchCourses, fetchPrograms, fetchSessionSchedule, updateProfile, getCurrentUser, saveSchedule, loadSchedule, optimizeSchedule } from './data/api';
 
-const ALL_SEMESTERS = ['Hiver 2026', 'Printemps-Été 2026', 'Automne 2026'];
+const ALL_SEMESTERS = [
+  'Automne 2026', 'Hiver 2027', 'Automne 2027', 'Hiver 2028',
+  'Automne 2028', 'Hiver 2029', 'Automne 2029', 'Hiver 2030',
+  'Hiver 2026', 'Printemps-Été 2026',
+];
 
 function App() {
   const [user, setUser] = useState(null);
@@ -136,6 +140,18 @@ function App() {
       // ignore
     }
   }, []);
+
+  const handleOptimizeSchedule = useCallback(async (programName, userPrompt) => {
+    try {
+      const result = await optimizeSchedule(programName, userPrompt, user?.minor);
+      if (result?.schedule) {
+        setScheduleMap(result.schedule);
+      }
+    } catch (err) {
+      console.error('Schedule optimization failed:', err);
+      throw err;
+    }
+  }, [user?.minor]);
 
   const handleLogout = () => {
     localStorage.removeItem('courseforge_token');
@@ -278,6 +294,7 @@ function App() {
             userMinor={user.minor}
             scheduleMap={scheduleMap}
             onUpdateProfile={handleUpdateProfile}
+            onOptimizeSchedule={handleOptimizeSchedule}
           />
         )}
         {activeTab === 'progress' && (

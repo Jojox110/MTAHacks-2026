@@ -150,10 +150,13 @@ function OptionGroupCard({ og, yearCourses, allCourses, scheduledIds }) {
 
 // ─── Main Component ─────────────────────────────────────────────────────────
 
-export default function ProgramView({ programData, courses = [], userMajor, userMinor, scheduleMap, onUpdateProfile }) {
+export default function ProgramView({ programData, courses = [], userMajor, userMinor, scheduleMap, onUpdateProfile, onOptimizeSchedule }) {
   const [editing, setEditing] = useState(false);
   const [editMajor, setEditMajor] = useState(userMajor || '');
   const [editMinor, setEditMinor] = useState(userMinor || '');
+  const [optimizePrompt, setOptimizePrompt] = useState('');
+  const [optimizing, setOptimizing] = useState(false);
+  const [optimizeError, setOptimizeError] = useState(null);
 
   useEffect(() => {
     setEditMajor(userMajor || '');
@@ -340,6 +343,51 @@ export default function ProgramView({ programData, courses = [], userMajor, user
             </motion.div>
           )}
         </div>
+      )}
+
+      {/* ─── Optimize 4-year schedule ─── */}
+      {program && onOptimizeSchedule && (
+        <motion.div
+          className="program-optimize-panel"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+        >
+          <h3 className="progress-section-heading">Optimiser l&apos;horaire 4 ans</h3>
+          <p className="program-optimize-desc">
+            Décrivez vos intérêts ou objectifs de carrière. L&apos;IA remplira les cours optionnels.
+          </p>
+          <div className="program-optimize-input">
+            <textarea
+              className="program-optimize-textarea"
+              placeholder="Ex.: Je veux devenir ingénieur en IA et travailler sur des produits de machine learning..."
+              value={optimizePrompt}
+              onChange={(e) => { setOptimizePrompt(e.target.value); setOptimizeError(null); }}
+              rows={3}
+            />
+            <button
+              className="program-optimize-btn"
+              onClick={async () => {
+                if (!optimizePrompt.trim() || optimizing) return;
+                setOptimizing(true);
+                setOptimizeError(null);
+                try {
+                  await onOptimizeSchedule(userMajor, optimizePrompt.trim());
+                } catch (err) {
+                  setOptimizeError(err?.message || 'Erreur lors de l\'optimisation');
+                } finally {
+                  setOptimizing(false);
+                }
+              }}
+              disabled={!optimizePrompt.trim() || optimizing}
+            >
+              {optimizing ? 'Optimisation...' : 'Optimiser l\'horaire'}
+            </button>
+          </div>
+          {optimizeError && (
+            <div className="program-optimize-error">{optimizeError}</div>
+          )}
+        </motion.div>
       )}
 
       {/* ─── Program Courses by Year ─── */}

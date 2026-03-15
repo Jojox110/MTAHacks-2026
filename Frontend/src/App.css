@@ -1457,6 +1457,69 @@
   font-weight: 400;
 }
 
+.program-optimize-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.program-optimize-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.program-optimize-input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.program-optimize-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  resize: vertical;
+}
+
+.program-optimize-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.program-optimize-btn {
+  align-self: flex-start;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.program-optimize-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.program-optimize-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.program-optimize-error {
+  margin-top: 10px;
+  font-size: 0.813rem;
+  color: var(--danger, #e05c5c);
+}
+
 .program-years {
   display: flex;
   flex-direction: column;
