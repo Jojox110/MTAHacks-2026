@@ -11,9 +11,7 @@ import ProgramView from './components/ProgramView';
 import { fetchCourses, fetchPrograms, fetchSessionSchedule, updateProfile, getCurrentUser, saveSchedule, loadSchedule, optimizeSchedule } from './data/api';
 
 const ALL_SEMESTERS = [
-  'Automne 2026', 'Hiver 2027', 'Automne 2027', 'Hiver 2028',
-  'Automne 2028', 'Hiver 2029', 'Automne 2029', 'Hiver 2030',
-  'Hiver 2026', 'Printemps-Été 2026',
+  'Hiver 2026', 'Printemps-Été 2026', 'Automne 2026',
 ];
 
 function App() {

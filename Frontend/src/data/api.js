@@ -101,16 +101,9 @@ export async function chatWithAdvisor({ studentProfile, message, history = [], c
 // ─── Session schedule data (timetable) ───
 
 const SESSION_FILES = {
-  'Hiver 2026': '/schedule_hiver_2026_moncton_fix.json',
+  'Hiver 2026':         '/schedule_hiver_2026_moncton_fix.json',
   'Printemps-Été 2026': '/schedule_printemps_ete_2026_moncton_fix.json',
-  'Automne 2026': '/schedule_automne_2026_moncton_fix.json',
-  'Hiver 2027': '/schedule_hiver_2026_moncton_fix.json',
-  'Automne 2027': '/schedule_automne_2026_moncton_fix.json',
-  'Hiver 2028': '/schedule_hiver_2026_moncton_fix.json',
-  'Automne 2028': '/schedule_automne_2026_moncton_fix.json',
-  'Hiver 2029': '/schedule_hiver_2026_moncton_fix.json',
-  'Automne 2029': '/schedule_automne_2026_moncton_fix.json',
-  'Hiver 2030': '/schedule_hiver_2026_moncton_fix.json',
+  'Automne 2026':       '/schedule_automne_2026_moncton_fix.json',
 };
 
 const sessionCache = {};

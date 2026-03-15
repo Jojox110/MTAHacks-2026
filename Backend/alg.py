@@ -169,13 +169,18 @@ class ScheduleOptimizer:
                 return p
         return None
 
+    # The only real semesters — must match the 3 schedule JSON files
+    REAL_SEMESTERS = [
+        ("Hiver 2026",        "hiver"),
+        ("Printemps-Été 2026","printemps_ete"),
+        ("Automne 2026",      "automne"),
+    ]
+
     def _semester_type(self, idx: int) -> str:
-        """idx 0=Fall Y1, 1=Winter Y1, 2=Fall Y2, ..."""
-        return "hiver" if idx % 2 == 1 else "automne"
+        return self.REAL_SEMESTERS[idx % len(self.REAL_SEMESTERS)][1]
 
     def _semester_key(self, idx: int) -> str:
-        year = 2026 + idx // 2
-        return "Automne " + str(year) if idx % 2 == 0 else "Hiver " + str(year + 1)
+        return self.REAL_SEMESTERS[idx % len(self.REAL_SEMESTERS)][0]
 
     def _flatten_prereqs(self, prereqs: Any) -> list[list[str]]:
         """Convert prerequisites to list of OR-groups. [[A,B], C] -> [[A,B],[C]]."""
@@ -252,10 +257,10 @@ class ScheduleOptimizer:
         schedule: { "Automne 2026": ["CODE1", ...], ... }
         sections: { "CODE1": { nrc, groupe, schedule }, ... }
         """
-        schedule: dict[str, list[str]] = {self._semester_key(i): [] for i in range(8)}
+        schedule: dict[str, list[str]] = {self._semester_key(i): [] for i in range(len(self.REAL_SEMESTERS))}
         sections: dict[str, dict] = {}
         placed: list[PlacedCourse] = []
-        used_slots: dict[str, list[tuple[str, float, float]]] = {self._semester_key(i): [] for i in range(8)}
+        used_slots: dict[str, list[tuple[str, float, float]]] = {self._semester_key(i): [] for i in range(len(self.REAL_SEMESTERS))}
 
         # Collect mandatory courses from program
         mandatory: list[dict] = []
@@ -285,13 +290,16 @@ class ScheduleOptimizer:
             code = course.get("code", "")
             if not code:
                 continue
-            completed.add(code)
+
+            # Skip entirely if the course has no sections in any semester schedule
+            if code not in self.schedule_by_sigle:
+                continue
 
             placed_in_sem = False
-            for sem_idx in range(8):
+            for sem_idx in range(len(self.REAL_SEMESTERS)):
                 sem_key = self._semester_key(sem_idx)
                 prereqs = self._flatten_prereqs(course.get("prerequisites") or course.get("corequisites") or [])
-                if not self._prereqs_satisfied(prereqs, completed - {code}):
+                if not self._prereqs_satisfied(prereqs, completed):
                     continue
 
                 if len(schedule[sem_key]) >= 5:
@@ -304,16 +312,14 @@ class ScheduleOptimizer:
                     sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
                     placed.append(PlacedCourse(code=code, semester_key=sem_key, nrc=sec.get("nrc", ""), groupe=sec.get("groupe", ""), schedule=sec.get("schedule", []), slots=slots))
                     used_slots[sem_key].extend(slots)
+                    completed.add(code)
                     placed_in_sem = True
                     break
 
             if not placed_in_sem:
-                # Try next semester even if prereqs just satisfied
-                for sem_idx in range(8):
+                # Try any semester ignoring prereq order (course exists but had conflicts)
+                for sem_idx in range(len(self.REAL_SEMESTERS)):
                     sem_key = self._semester_key(sem_idx)
-                    prereqs = self._flatten_prereqs(course.get("prerequisites") or course.get("corequisites") or [])
-                    if not self._prereqs_satisfied(prereqs, completed - {code}):
-                        continue
                     if len(schedule[sem_key]) >= 5:
                         continue
                     sem_type = self._semester_type(sem_idx)
@@ -324,6 +330,7 @@ class ScheduleOptimizer:
                         sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
                         placed.append(PlacedCourse(code=code, semester_key=sem_key, nrc=sec.get("nrc", ""), groupe=sec.get("groupe", ""), schedule=sec.get("schedule", []), slots=slots))
                         used_slots[sem_key].extend(slots)
+                        completed.add(code)
                         placed_in_sem = True
                         break
 
@@ -352,9 +359,13 @@ class ScheduleOptimizer:
             for codes in fulfilled.values():
                 excluded.update(codes if isinstance(codes, list) else [codes])
 
-            candidates = self.ofg_index.get(ofg_key, [])
+            # Only OFG courses that are actually offered in some semester
+            candidates = [
+                s for s in self.ofg_index.get(ofg_key, [])
+                if s in self.schedule_by_sigle
+            ]
             placed = False
-            for sem_idx in range(8):
+            for sem_idx in range(len(self.REAL_SEMESTERS)):
                 if placed:
                     break
                 sem_key = self._semester_key(sem_idx)
@@ -401,7 +412,7 @@ class ScheduleOptimizer:
     ) -> list[dict]:
         """Get list of elective courses that fit in the given semester (no conflict, prereqs OK)."""
         sem_idx = list(schedule.keys()).index(semester_key) if semester_key in schedule else 0
-        for i in range(8):
+        for i in range(len(self.REAL_SEMESTERS)):
             if self._semester_key(i) == semester_key:
                 sem_idx = i
                 break
@@ -410,16 +421,22 @@ class ScheduleOptimizer:
         for i in range(sem_idx):
             completed.update(schedule.get(self._semester_key(i), []))
         program_codes = {c.get("code") for y in program.get("years", []) for c in y.get("courses", []) if c.get("code")}
+
+        # Only consider courses that actually have sections in this semester's schedule
+        actually_offered = set(self.schedule_by_sigle.keys())
+
         elective_codes = set()
         for y in program.get("years", []):
             for c in y.get("courses", []):
-                if c.get("type") == "option":
+                if c.get("type") == "option" and c.get("code") in actually_offered:
                     elective_codes.add(c.get("code"))
         if minor:
             for c in minor.get("elective_courses", []):
-                elective_codes.add(c.get("code"))
+                if c.get("code") in actually_offered:
+                    elective_codes.add(c.get("code"))
         if not elective_codes:
-            elective_codes = set(self.course_by_sigle.keys()) - program_codes
+            # Fallback: any course offered this semester, excluding mandatory program courses
+            elective_codes = actually_offered - program_codes
 
         candidates = []
         for sigle in elective_codes:
@@ -483,13 +500,16 @@ class ScheduleOptimizer:
             if count <= 0:
                 continue
             if sem_key in user_choices:
+                sem_idx = next(i for i in range(len(self.REAL_SEMESTERS)) if self._semester_key(i) == sem_key)
+                sem_type = self._semester_type(sem_idx)
                 for code in user_choices[sem_key][:count]:
-                    schedule.setdefault(sem_key, []).append(code)
-                    sem_idx = next(i for i in range(8) if self._semester_key(i) == sem_key)
-                    sem_type = self._semester_type(sem_idx)
+                    if code in placed_codes:
+                        continue
                     result = self._find_non_conflicting_section(code, sem_type, used_slots.get(sem_key, []))
                     if result:
                         sec, slots = result
+                        schedule.setdefault(sem_key, []).append(code)
+                        placed_codes.add(code)
                         sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
                         used_slots.setdefault(sem_key, []).extend(slots)
                 continue
@@ -515,17 +535,17 @@ class ScheduleOptimizer:
                             {"code": c["code"], "name": c["name"]} for c in available[:10]
                         ]
 
+                    sem_idx = next(i for i in range(len(self.REAL_SEMESTERS)) if self._semester_key(i) == sem_key)
+                    sem_type = self._semester_type(sem_idx)
                     for code in (codes or [])[:count]:
                         code = code.split()[0] if isinstance(code, str) else str(code)
                         if code in placed_codes:
                             continue
-                        schedule.setdefault(sem_key, []).append(code)
-                        placed_codes.add(code)
-                        sem_idx = next(i for i in range(8) if self._semester_key(i) == sem_key)
-                        sem_type = self._semester_type(sem_idx)
                         result = self._find_non_conflicting_section(code, sem_type, used_slots.get(sem_key, []))
                         if result:
                             sec, slots = result
+                            schedule.setdefault(sem_key, []).append(code)
+                            placed_codes.add(code)
                             sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
                             used_slots.setdefault(sem_key, []).extend(slots)
 
