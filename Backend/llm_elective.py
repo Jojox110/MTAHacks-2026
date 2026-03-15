@@ -37,10 +37,10 @@ def get_elective_recommendations(
     result = enqueue({"kind": "fill", "system": system, "messages": messages, "max_new_tokens": 512})
 
     codes = result.get("recommended_classes", [])
-    needs_clarification = result.get("needs_clarification", False)
 
     out = []
     for c in codes[:slots_to_fill]:
         out.append(c.split()[0] if isinstance(c, str) and " " in c else str(c))
 
-    return out, needs_clarification
+    # Always ask the user to confirm — never silently pick on their behalf.
+    return out, True

@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -157,8 +157,13 @@ export default function ProgramView({ programData, courses = [], userMajor, user
   const [optimizePrompt, setOptimizePrompt] = useState('');
   const [optimizing, setOptimizing] = useState(false);
   const [optimizeError, setOptimizeError] = useState(null);
-  const [pendingChoices, setPendingChoices] = useState(null);   // { semKey: [{code,name}] }
+  // pendingChoices: { semKey: { options: [{code,name}], recommended: [code], slots: n } }
+  const [pendingChoices, setPendingChoices] = useState(null);
+  // advisor chat state
+  const [advisorMessages, setAdvisorMessages] = useState([]);  // [{role,content}]
   const [userChoices, setUserChoices] = useState({});           // { semKey: [code] }
+  const [advisorInput, setAdvisorInput] = useState('');
+  const advisorBottomRef = useRef(null);
 
   useEffect(() => {
     setEditMajor(userMajor || '');
@@ -185,6 +190,33 @@ export default function ProgramView({ programData, courses = [], userMajor, user
   }, [editMajor, programData]);
 
   const editNeedsMinor = editProgram?.minor_requirements?.has_minor ?? false;
+
+  // Scroll advisor chat to bottom when messages change
+  useEffect(() => {
+    advisorBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [advisorMessages]);
+
+  // Build initial advisor message when pending choices arrive
+  useEffect(() => {
+    if (!pendingChoices) return;
+    const lines = ['Based on your interests, here are my recommendations for each elective slot:\n'];
+    for (const [semKey, data] of Object.entries(pendingChoices)) {
+      const recommended = (data.recommended || [])
+        .map((code) => (data.options || []).find((o) => o.code === code))
+        .filter(Boolean);
+      const others = (data.options || []).filter((o) => !(data.recommended || []).includes(o.code));
+      lines.push(`**${semKey}** (${data.slots} slot${data.slots > 1 ? 's' : ''} to fill)`);
+      if (recommended.length > 0) {
+        lines.push(`  I recommend: ${recommended.map((o) => `${o.code} — ${o.name}`).join(', ')}`);
+      }
+      if (others.length > 0) {
+        lines.push(`  Other options: ${others.map((o) => `${o.code} — ${o.name}`).join(', ')}`);
+      }
+      lines.push('');
+    }
+    lines.push('Which courses would you like to add? You can click options below or tell me your preference.');
+    setAdvisorMessages([{ role: 'advisor', content: lines.join('\n') }]);
+  }, [pendingChoices]);
 
   useEffect(() => {
     if (editing && !editNeedsMinor) setEditMinor('');
@@ -375,6 +407,8 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                 setOptimizeError(null);
                 setPendingChoices(null);
                 setUserChoices({});
+                setAdvisorMessages([]);
+                setAdvisorInput('');
                 try {
                   const result = await onOptimizeSchedule(userMajor, optimizePrompt.trim());
                   if (result?.pendingChoices && Object.keys(result.pendingChoices).length > 0) {
@@ -395,45 +429,98 @@ export default function ProgramView({ programData, courses = [], userMajor, user
             <div className="program-optimize-error">{optimizeError}</div>
           )}
 
-          {/* ─── Pending choices: LLM couldn't find relevant courses ─── */}
+          {/* ─── Pending choices: AI advisor chat ─── */}
           {pendingChoices && (
-            <div className="program-pending-choices">
-              <p className="program-pending-title">
-                L&apos;IA n&apos;a pas trouvé de cours pertinents pour certains semestres. Veuillez choisir manuellement&nbsp;:
-              </p>
-              {Object.entries(pendingChoices).map(([semKey, options]) => (
-                <div key={semKey} className="program-pending-sem">
-                  <strong>{semKey}</strong>
-                  <div className="program-pending-options">
-                    {options.map((opt) => {
-                      const chosen = (userChoices[semKey] || []).includes(opt.code);
-                      return (
-                        <button
-                          key={opt.code}
-                          className={`program-pending-opt ${chosen ? 'chosen' : ''}`}
-                          onClick={() => {
-                            setUserChoices((prev) => {
-                              const cur = prev[semKey] || [];
-                              return {
-                                ...prev,
-                                [semKey]: chosen
-                                  ? cur.filter((c) => c !== opt.code)
-                                  : [...cur, opt.code],
-                              };
-                            });
-                          }}
-                        >
-                          {opt.code} — {opt.name}
-                        </button>
-                      );
-                    })}
+            <div className="program-advisor-chat">
+              <h4 className="program-advisor-chat-title">&#9830; AI Course Advisor</h4>
+
+              {/* Message bubbles */}
+              <div className="program-advisor-messages">
+                {advisorMessages.map((msg, i) => (
+                  <div key={i} className={`program-advisor-bubble ${msg.role}`}>
+                    <span className="program-advisor-bubble-role">
+                      {msg.role === 'user' ? 'You' : 'Advisor'}
+                    </span>
+                    <p style={{ whiteSpace: 'pre-wrap' }}>{msg.content}</p>
                   </div>
-                </div>
-              ))}
+                ))}
+                <div ref={advisorBottomRef} />
+              </div>
+
+              {/* Clickable option buttons per semester */}
+              {Object.entries(pendingChoices).map(([semKey, data]) => {
+                const slots = data.slots || 1;
+                const chosen = userChoices[semKey] || [];
+                return (
+                  <div key={semKey} className="program-pending-sem">
+                    <strong>{semKey}</strong>
+                    <span className="program-pending-slots">
+                      {' '}— choose {slots} course{slots > 1 ? 's' : ''}
+                    </span>
+                    <div className="program-pending-options">
+                      {(data.options || []).map((opt) => {
+                        const isChosen = chosen.includes(opt.code);
+                        const isRecommended = (data.recommended || []).includes(opt.code);
+                        return (
+                          <button
+                            key={opt.code}
+                            className={`program-pending-opt ${isChosen ? 'chosen' : ''} ${isRecommended ? 'recommended' : ''}`}
+                            onClick={() => {
+                              setUserChoices((prev) => {
+                                const cur = prev[semKey] || [];
+                                if (isChosen) {
+                                  return { ...prev, [semKey]: cur.filter((c) => c !== opt.code) };
+                                }
+                                // Replace if at slot limit, otherwise append
+                                const next = cur.length >= slots ? [...cur.slice(0, slots - 1), opt.code] : [...cur, opt.code];
+                                return { ...prev, [semKey]: next };
+                              });
+                            }}
+                          >
+                            {isRecommended && <span className="opt-star">★ </span>}
+                            {opt.code} — {opt.name}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+
+              {/* Free-text reply */}
+              <div className="program-advisor-input-row">
+                <input
+                  className="program-advisor-input"
+                  type="text"
+                  placeholder="Tell the advisor your preference, or just click options above…"
+                  value={advisorInput}
+                  onChange={(e) => setAdvisorInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && advisorInput.trim()) {
+                      setAdvisorMessages((m) => [...m, { role: 'user', content: advisorInput.trim() }]);
+                      setAdvisorInput('');
+                    }
+                  }}
+                />
+              </div>
+
+              {/* Confirm button */}
               <button
                 className="program-optimize-btn"
-                style={{ marginTop: 12 }}
+                style={{ marginTop: 10 }}
                 onClick={async () => {
+                  const allChosen = Object.values(userChoices).every((v) => v.length > 0);
+                  if (!allChosen) {
+                    setAdvisorMessages((m) => [
+                      ...m,
+                      { role: 'advisor', content: 'Please select at least one course for each semester before confirming.' },
+                    ]);
+                    return;
+                  }
+                  setAdvisorMessages((m) => [
+                    ...m,
+                    { role: 'user', content: `I'll go with: ${Object.entries(userChoices).map(([sem, codes]) => `${codes.join(', ')} for ${sem}`).join('; ')}.` },
+                  ]);
                   setOptimizing(true);
                   setOptimizeError(null);
                   try {
@@ -443,6 +530,9 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                       setUserChoices({});
                     } else {
                       setPendingChoices(null);
+                      setAdvisorMessages([]);
+                      setAdvisorMessages((m) => [...m, { role: 'advisor', content: 'All done! Your selections have been added to the schedule.' }]);
+                      setTimeout(() => setPendingChoices(null), 2000);
                     }
                   } catch (err) {
                     setOptimizeError(err?.message || 'Erreur');
@@ -452,7 +542,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                 }}
                 disabled={optimizing}
               >
-                {optimizing ? 'Mise à jour...' : 'Confirmer les choix'}
+                {optimizing ? 'Updating…' : 'Confirm choices'}
               </button>
             </div>
           )}

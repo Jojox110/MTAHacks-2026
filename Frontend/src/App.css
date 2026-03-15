@@ -1637,35 +1637,85 @@
   color: var(--danger, #e05c5c);
 }
 
-.program-pending-choices {
+/* ── AI Advisor chat embedded in Programme tab ── */
+.program-advisor-chat {
   margin-top: 16px;
   padding: 14px;
   background: var(--bg-hover);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.program-pending-title {
-  font-size: 0.813rem;
+.program-advisor-chat-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+}
+
+.program-advisor-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.program-advisor-bubble {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.program-advisor-bubble.advisor {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  align-self: flex-start;
+  max-width: 95%;
+}
+
+.program-advisor-bubble.user {
+  background: var(--accent-glow);
+  border: 1px solid var(--accent-dim);
+  align-self: flex-end;
+  max-width: 85%;
+  text-align: right;
+}
+
+.program-advisor-bubble-role {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
   color: var(--text-secondary);
-  margin-bottom: 12px;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .program-pending-sem {
-  margin-bottom: 14px;
+  margin-bottom: 6px;
 }
 
 .program-pending-sem strong {
   font-size: 0.813rem;
   color: var(--text-primary);
-  display: block;
-  margin-bottom: 6px;
+}
+
+.program-pending-slots {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
 }
 
 .program-pending-options {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-top: 6px;
 }
 
 .program-pending-opt {
@@ -1688,6 +1738,35 @@
   border-color: var(--accent);
   background: var(--accent-glow);
   color: var(--accent);
+}
+
+.program-pending-opt.recommended {
+  border-color: var(--accent-dim);
+}
+
+.opt-star {
+  color: var(--accent);
+}
+
+.program-advisor-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.program-advisor-input {
+  flex: 1;
+  padding: 7px 10px;
+  font-size: 0.8rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.program-advisor-input:focus {
+  border-color: var(--accent-dim);
 }
 
 .program-years {

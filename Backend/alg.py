@@ -583,23 +583,29 @@ class ScheduleOptimizer:
                         codes, needs_clarification = result_pair, False
 
                     if needs_clarification:
-                        # LLM flagged: let user pick manually from available options
-                        pending_choices[sem_key] = [
-                            {"code": c["code"], "name": c["name"]} for c in available[:10]
-                        ]
-
-                    sem_idx = next(i for i in range(len(self.REAL_SEMESTERS)) if self._semester_key(i) == sem_key)
-                    sem_type = self._semester_type(sem_idx)
-                    for code in (codes or [])[:count]:
-                        code = code.split()[0] if isinstance(code, str) else str(code)
-                        if code in placed_codes:
-                            continue
-                        result = self._find_non_conflicting_section(code, sem_type, used_slots.get(sem_key, []))
-                        if result:
-                            sec, slots = result
-                            schedule.setdefault(sem_key, []).append(code)
-                            placed_codes.add(code)
-                            sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
-                            used_slots.setdefault(sem_key, []).extend(slots)
+                        # Always ask the user — store options and LLM's ranked picks.
+                        pending_choices[sem_key] = {
+                            "options": [{"code": c["code"], "name": c["name"]} for c in available[:10]],
+                            "recommended": [
+                                c.split()[0] if isinstance(c, str) else str(c)
+                                for c in (codes or [])[:count]
+                            ],
+                            "slots": count,
+                        }
+                    else:
+                        # LLM is confident — place automatically.
+                        sem_idx = next(i for i in range(len(self.REAL_SEMESTERS)) if self._semester_key(i) == sem_key)
+                        sem_type = self._semester_type(sem_idx)
+                        for code in (codes or [])[:count]:
+                            code = code.split()[0] if isinstance(code, str) else str(code)
+                            if code in placed_codes:
+                                continue
+                            result = self._find_non_conflicting_section(code, sem_type, used_slots.get(sem_key, []))
+                            if result:
+                                sec, slots = result
+                                schedule.setdefault(sem_key, []).append(code)
+                                placed_codes.add(code)
+                                sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
+                                used_slots.setdefault(sem_key, []).extend(slots)
 
         return {"schedule": schedule, "sections": sections, "pending_choices": pending_choices}
