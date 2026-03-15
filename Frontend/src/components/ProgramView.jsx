@@ -8,12 +8,19 @@ function findMatchingCourses(og, yearCourses, allCourses, scheduledIds) {
   const groupCourses = yearCourses.filter((c) => c.option_group === og.id);
   const ogCodes = og.codes || [];
   const ogPrefix = og.prefix || '';
+  // e.g. levels "4000" → first digit is "4", so INFO4XXX must start with "INFO4"
+  const levelPrefix = og.levels ? String(og.levels)[0] : '';
 
   return allCourses.filter((c) => {
     if (!scheduledIds.has(c.id)) return false;
     if (groupCourses.some((gc) => gc.code === c.id)) return true;
     if (ogCodes.length > 0 && ogCodes.includes(c.id)) return true;
-    if (ogPrefix && c.id.startsWith(ogPrefix)) return true;
+    if (ogPrefix) {
+      if (!c.id.startsWith(ogPrefix)) return false;
+      // If a level is specified, the digit after the prefix must match
+      if (levelPrefix && c.id[ogPrefix.length] !== levelPrefix) return false;
+      return true;
+    }
     return false;
   });
 }
