@@ -1,67 +1,16 @@
-```mermaid
 ---
-title: CourseForge Architecture
+title: CourseForge — Request Flow
 ---
-graph TB
-    subgraph Frontend["Frontend — React 19 + Vite"]
-        App["App.jsx"]
-        Views["LoginScreen · ScheduleGrid · CourseCatalog\nProgramView · ProgressView · AIAdvisor"]
-        API["api.js"]
-        App --> Views --> API
-    end
+graph LR
+    Nginx["Nginx\nReverse Proxy"] -->|"/api/*"| FastAPI["FastAPI\nRouters"]
+    FastAPI --> Auth["Auth\nMiddleware"]
+    Auth --> Services["Services"]
 
-    subgraph Static["Static JSON"]
-        JSON["programs.json · session timetables"]
-    end
+    Services --> DB["SQLite"]
+    Services --> AI["AI Engine\nQwen 3 4B"]
 
-    Views -->|fetch| Static
+    AI -->|recommendations| Services
+    DB -->|data| Services
 
-    subgraph Proxy["Nginx Reverse Proxy"]
-        direction LR
-        Serve["Static files + /api/ → backend:8000"]
-    end
-
-    API -->|HTTP| Proxy
-
-    subgraph Backend["Backend — FastAPI + Uvicorn"]
-        Routers["Routers\nauth · courses · schedules · recommendations"]
-        Auth["Auth Middleware\nBearer token"]
-        Services["Services\nauth · courses · schedules · recommendations · ai chat"]
-        Routers --> Auth
-        Routers --> Services
-    end
-
-    subgraph AI["AI Engine"]
-        Optimizer["4-Year Optimizer + Elective Recommender"]
-        Qwen["Qwen 3 4B Model Worker"]
-        Optimizer --> Qwen
-    end
-
-    Services --> AI
-
-    Proxy --> Backend
-
-    subgraph DB["SQLite"]
-        Tables["users · courses · user_schedules"]
-    end
-
-    Services --> DB
-
-    subgraph Seed["Seed Data"]
-        SeedScript["seed.py → data/courses.json → DB"]
-    end
-
-    Seed -.-> DB
-
-    subgraph Docker["Docker Compose"]
-        FE["Frontend Container\nnode:22 → nginx:alpine"]
-        BE["Backend Container\npython:3.12-slim"]
-        Vol["Shared Volume"]
-    end
-
-    FE -.-> Frontend
-    FE -.-> Proxy
-    BE -.-> Backend
-    BE -.-> DB
-    Vol -.-> DB
-```
+    Services -->|JSON response| Nginx
+    Nginx -->|response| Client["React 19\nFrontend"]
