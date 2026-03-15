@@ -1,136 +1,67 @@
+```mermaid
 ---
 title: CourseForge Architecture
 ---
 graph TB
-    subgraph Client["Frontend (React 19 + Vite)"]
-        App["App.jsx<br/>State Hub"]
-        Login["LoginScreen"]
-        Schedule["ScheduleGrid"]
-        Catalog["CourseCatalog"]
-        Program["ProgramView"]
-        Progress["ProgressView"]
-        AIAdvisor["AIAdvisor"]
-        API["api.js<br/>Service Layer"]
-
-        App --> Login
-        App --> Schedule
-        App --> Catalog
-        App --> Program
-        App --> Progress
-        App --> AIAdvisor
-        Login --> API
-        Schedule --> API
-        Catalog --> API
-        Program --> API
-        Progress --> API
-        AIAdvisor --> API
+    subgraph Frontend["Frontend — React 19 + Vite"]
+        App["App.jsx"]
+        Views["LoginScreen · ScheduleGrid · CourseCatalog\nProgramView · ProgressView · AIAdvisor"]
+        API["api.js"]
+        App --> Views --> API
     end
 
-    subgraph StaticData["Static JSON (public/)"]
-        Programs["programs.json<br/>63 Programs"]
-        SessionH["Hiver 2026<br/>Timetable"]
-        SessionP["Printemps-Été 2026<br/>Timetable"]
-        SessionA["Automne 2026<br/>Timetable"]
+    subgraph Static["Static JSON"]
+        JSON["programs.json · session timetables"]
     end
 
-    Schedule -->|fetch sessions| StaticData
-    Program -->|load programs| Programs
+    Views -->|fetch| Static
 
     subgraph Proxy["Nginx Reverse Proxy"]
-        Static["Static Files"]
-        ProxyPass["/api/ → backend:8000"]
+        direction LR
+        Serve["Static files + /api/ → backend:8000"]
     end
 
     API -->|HTTP| Proxy
 
-    subgraph Server["Backend (FastAPI + Uvicorn)"]
-        subgraph Routers["Routers"]
-            AuthRouter["auth.py<br/>POST /api/register<br/>POST /api/login<br/>GET /api/me"]
-            CourseRouter["courses.py<br/>GET /api/courses<br/>GET /api/departments"]
-            ScheduleRouter["schedules.py<br/>GET/POST /api/schedule<br/>POST /api/schedule/optimize"]
-            RecommendRouter["recommendations.py<br/>POST /api/ai/recommend<br/>POST /api/ai/chat"]
-        end
-
-        subgraph Middleware["Middleware"]
-            AuthMW["auth_middleware.py<br/>Bearer Token Validation"]
-        end
-
-        subgraph Services["Services"]
-            AuthSvc["auth_service.py<br/>Register / Login"]
-            CourseSvc["course_service.py<br/>Catalog Queries"]
-            ScheduleSvc["schedule_service.py<br/>Load / Save"]
-            RecommendSvc["recommendation_service.py<br/>Keyword Scoring"]
-            AIChatSvc["ai_chat_service.py<br/>Multi-turn Advisor"]
-        end
-
-        subgraph AI["AI Engine"]
-            Alg["alg.py<br/>4-Year Optimizer"]
-            LLMElective["llm_elective.py<br/>Elective Recommender"]
-            QwenWorker["qwen_worker.py<br/>Shared Model Worker"]
-            Qwen["Qwen 3 4B<br/>(PyTorch + HF)"]
-        end
-
-        AuthRouter --> AuthMW
-        CourseRouter --> AuthMW
-        ScheduleRouter --> AuthMW
-        RecommendRouter --> AuthMW
-
-        AuthRouter --> AuthSvc
-        CourseRouter --> CourseSvc
-        ScheduleRouter --> ScheduleSvc
-        ScheduleRouter --> Alg
-        RecommendRouter --> RecommendSvc
-        RecommendRouter --> AIChatSvc
-
-        Alg --> LLMElective
-        LLMElective --> QwenWorker
-        AIChatSvc --> QwenWorker
-        QwenWorker --> Qwen
+    subgraph Backend["Backend — FastAPI + Uvicorn"]
+        Routers["Routers\nauth · courses · schedules · recommendations"]
+        Auth["Auth Middleware\nBearer token"]
+        Services["Services\nauth · courses · schedules · recommendations · ai chat"]
+        Routers --> Auth
+        Routers --> Services
     end
 
-    Proxy --> Server
-
-    subgraph Database["SQLite"]
-        Users["users<br/>id, name, email,<br/>major, minor, token"]
-        Courses["courses<br/>id, name, dept,<br/>credits, prereqs, ofg"]
-        Schedules["user_schedules<br/>user_id, course_id,<br/>semester"]
+    subgraph AI["AI Engine"]
+        Optimizer["4-Year Optimizer + Elective Recommender"]
+        Qwen["Qwen 3 4B Model Worker"]
+        Optimizer --> Qwen
     end
 
-    AuthSvc --> Users
-    CourseSvc --> Courses
-    ScheduleSvc --> Schedules
+    Services --> AI
+
+    Proxy --> Backend
+
+    subgraph DB["SQLite"]
+        Tables["users · courses · user_schedules"]
+    end
+
+    Services --> DB
 
     subgraph Seed["Seed Data"]
-        SeedScript["seed.py"]
-        CoursesJSON["data/courses.json"]
+        SeedScript["seed.py → data/courses.json → DB"]
     end
 
-    SeedScript --> CoursesJSON
-    SeedScript --> Courses
+    Seed -.-> DB
 
     subgraph Docker["Docker Compose"]
-        FrontendContainer["Frontend Container<br/>node:22 → nginx:alpine"]
-        BackendContainer["Backend Container<br/>python:3.12-slim"]
-        Volume["Shared Volume<br/>(DB persistence)"]
+        FE["Frontend Container\nnode:22 → nginx:alpine"]
+        BE["Backend Container\npython:3.12-slim"]
+        Vol["Shared Volume"]
     end
 
-    FrontendContainer -.-> Client
-    FrontendContainer -.-> Proxy
-    BackendContainer -.-> Server
-    BackendContainer -.-> Database
-    Volume -.-> Database
-
-    %% Styling
-    classDef frontend fill:#3b82f6,stroke:#1e40af,color:#fff
-    classDef backend fill:#10b981,stroke:#047857,color:#fff
-    classDef db fill:#f59e0b,stroke:#b45309,color:#fff
-    classDef ai fill:#8b5cf6,stroke:#5b21b6,color:#fff
-    classDef infra fill:#6b7280,stroke:#374151,color:#fff
-    classDef static fill:#ec4899,stroke:#be185d,color:#fff
-
-    class App,Login,Schedule,Catalog,Program,Progress,AIAdvisor,API frontend
-    class AuthRouter,CourseRouter,ScheduleRouter,RecommendRouter,AuthMW,AuthSvc,CourseSvc,ScheduleSvc,RecommendSvc,AIChatSvc backend
-    class Users,Courses,Schedules db
-    class Alg,LLMElective,QwenWorker,Qwen ai
-    class Proxy,Static,ProxyPass,FrontendContainer,BackendContainer,Volume,Docker infra
-    class Programs,SessionH,SessionP,SessionA,SeedScript,CoursesJSON static
+    FE -.-> Frontend
+    FE -.-> Proxy
+    BE -.-> Backend
+    BE -.-> DB
+    Vol -.-> DB
+```
