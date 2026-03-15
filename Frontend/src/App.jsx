@@ -141,12 +141,14 @@ function App() {
     }
   }, []);
 
-  const handleOptimizeSchedule = useCallback(async (programName, userPrompt) => {
+  const handleOptimizeSchedule = useCallback(async (programName, userPrompt, userChoices = null) => {
     try {
-      const result = await optimizeSchedule(programName, userPrompt, user?.minor);
+      const result = await optimizeSchedule(programName, userPrompt, user?.minor, userChoices);
       if (result?.schedule) {
         setScheduleMap(result.schedule);
       }
+      // Return result so callers can inspect pendingChoices
+      return result;
     } catch (err) {
       console.error('Schedule optimization failed:', err);
       throw err;

@@ -13,6 +13,11 @@ class OptimizeScheduleRequest(BaseModel):
     minor: Optional[str] = None
     userChoices: Optional[Dict[str, List[str]]] = None  # { "Automne 2026": ["CODE1", ...] }
 
+class PendingChoice(BaseModel):
+    code: str
+    name: str
+
 class OptimizeScheduleResponse(BaseModel):
     schedule: Dict[str, List[str]]
     sections: Dict[str, dict]
+    pendingChoices: Optional[Dict[str, List[PendingChoice]]] = None  # semesters needing user input

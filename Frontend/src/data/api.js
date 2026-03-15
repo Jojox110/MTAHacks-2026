@@ -91,6 +91,13 @@ export async function getAIRecommendation(prompt, currentCourses = [], major = n
   });
 }
 
+export async function chatWithAdvisor({ studentProfile, message, history = [], currentCourses = [], numToSelect = 2 }) {
+  return authFetch('/ai/chat', {
+    method: 'POST',
+    body: JSON.stringify({ studentProfile, message, history, currentCourses, numToSelect }),
+  });
+}
+
 // ─── Session schedule data (timetable) ───
 
 const SESSION_FILES = {
@@ -155,7 +162,8 @@ export async function loadSchedule() {
 // ─── Schedule Optimizer (4-year plan) ───
 
 export async function optimizeSchedule(program, userPrompt, minor = null, userChoices = null) {
-  return authFetch('/schedule/optimize', {
+  // Start the job
+  const { job_id } = await authFetch('/schedule/optimize', {
     method: 'POST',
     body: JSON.stringify({
       program,
@@ -164,4 +172,13 @@ export async function optimizeSchedule(program, userPrompt, minor = null, userCh
       userChoices: userChoices || undefined,
     }),
   });
+
+  // Poll until done (LLM can take several minutes)
+  while (true) {
+    await new Promise((r) => setTimeout(r, 2000));
+    const status = await authFetch(`/schedule/optimize/${job_id}`);
+    if (status.status === 'done') return status;
+    if (status.status === 'error') throw new Error(status.detail || 'Optimization failed');
+    // status === 'pending' → keep polling
+  }
 }

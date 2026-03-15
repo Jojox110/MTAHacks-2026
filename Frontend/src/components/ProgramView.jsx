@@ -157,6 +157,8 @@ export default function ProgramView({ programData, courses = [], userMajor, user
   const [optimizePrompt, setOptimizePrompt] = useState('');
   const [optimizing, setOptimizing] = useState(false);
   const [optimizeError, setOptimizeError] = useState(null);
+  const [pendingChoices, setPendingChoices] = useState(null);   // { semKey: [{code,name}] }
+  const [userChoices, setUserChoices] = useState({});           // { semKey: [code] }
 
   useEffect(() => {
     setEditMajor(userMajor || '');
@@ -371,8 +373,13 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                 if (!optimizePrompt.trim() || optimizing) return;
                 setOptimizing(true);
                 setOptimizeError(null);
+                setPendingChoices(null);
+                setUserChoices({});
                 try {
-                  await onOptimizeSchedule(userMajor, optimizePrompt.trim());
+                  const result = await onOptimizeSchedule(userMajor, optimizePrompt.trim());
+                  if (result?.pendingChoices && Object.keys(result.pendingChoices).length > 0) {
+                    setPendingChoices(result.pendingChoices);
+                  }
                 } catch (err) {
                   setOptimizeError(err?.message || 'Erreur lors de l\'optimisation');
                 } finally {
@@ -386,6 +393,68 @@ export default function ProgramView({ programData, courses = [], userMajor, user
           </div>
           {optimizeError && (
             <div className="program-optimize-error">{optimizeError}</div>
+          )}
+
+          {/* ─── Pending choices: LLM couldn't find relevant courses ─── */}
+          {pendingChoices && (
+            <div className="program-pending-choices">
+              <p className="program-pending-title">
+                L&apos;IA n&apos;a pas trouvé de cours pertinents pour certains semestres. Veuillez choisir manuellement&nbsp;:
+              </p>
+              {Object.entries(pendingChoices).map(([semKey, options]) => (
+                <div key={semKey} className="program-pending-sem">
+                  <strong>{semKey}</strong>
+                  <div className="program-pending-options">
+                    {options.map((opt) => {
+                      const chosen = (userChoices[semKey] || []).includes(opt.code);
+                      return (
+                        <button
+                          key={opt.code}
+                          className={`program-pending-opt ${chosen ? 'chosen' : ''}`}
+                          onClick={() => {
+                            setUserChoices((prev) => {
+                              const cur = prev[semKey] || [];
+                              return {
+                                ...prev,
+                                [semKey]: chosen
+                                  ? cur.filter((c) => c !== opt.code)
+                                  : [...cur, opt.code],
+                              };
+                            });
+                          }}
+                        >
+                          {opt.code} — {opt.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+              <button
+                className="program-optimize-btn"
+                style={{ marginTop: 12 }}
+                onClick={async () => {
+                  setOptimizing(true);
+                  setOptimizeError(null);
+                  try {
+                    const result = await onOptimizeSchedule(userMajor, optimizePrompt.trim(), userChoices);
+                    if (result?.pendingChoices && Object.keys(result.pendingChoices).length > 0) {
+                      setPendingChoices(result.pendingChoices);
+                      setUserChoices({});
+                    } else {
+                      setPendingChoices(null);
+                    }
+                  } catch (err) {
+                    setOptimizeError(err?.message || 'Erreur');
+                  } finally {
+                    setOptimizing(false);
+                  }
+                }}
+                disabled={optimizing}
+              >
+                {optimizing ? 'Mise à jour...' : 'Confirmer les choix'}
+              </button>
+            </div>
           )}
         </motion.div>
       )}

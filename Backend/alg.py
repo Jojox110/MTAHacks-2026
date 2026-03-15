@@ -476,13 +476,15 @@ class ScheduleOptimizer:
         blanks = self.get_blanks_per_semester(schedule)
         user_choices = user_choices or {}
 
+        # Semesters where LLM couldn't find relevant courses — frontend will ask user
+        pending_choices: dict[str, list[dict]] = {}
+
         for sem_key, count in blanks.items():
             if count <= 0:
                 continue
             if sem_key in user_choices:
                 for code in user_choices[sem_key][:count]:
                     schedule.setdefault(sem_key, []).append(code)
-                    # Get section for sections dict
                     sem_idx = next(i for i in range(8) if self._semester_key(i) == sem_key)
                     sem_type = self._semester_type(sem_idx)
                     result = self._find_non_conflicting_section(code, sem_type, used_slots.get(sem_key, []))
@@ -495,12 +497,24 @@ class ScheduleOptimizer:
             if fill_electives_fn:
                 available = self.get_available_electives(sem_key, schedule, used_slots.get(sem_key, []), program, minor, placed_codes)
                 if available:
-                    codes = fill_electives_fn(
+                    result_pair = fill_electives_fn(
                         [f"{c['code']} - {c['name']}" for c in available],
                         user_prompt,
                         count,
                         sem_key,
                     )
+                    # fill_electives_fn may return (codes, needs_clarification) or just codes
+                    if isinstance(result_pair, tuple):
+                        codes, needs_clarification = result_pair
+                    else:
+                        codes, needs_clarification = result_pair, False
+
+                    if needs_clarification:
+                        # LLM flagged: let user pick manually from available options
+                        pending_choices[sem_key] = [
+                            {"code": c["code"], "name": c["name"]} for c in available[:10]
+                        ]
+
                     for code in (codes or [])[:count]:
                         code = code.split()[0] if isinstance(code, str) else str(code)
                         if code in placed_codes:
@@ -515,4 +529,4 @@ class ScheduleOptimizer:
                             sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
                             used_slots.setdefault(sem_key, []).extend(slots)
 
-        return {"schedule": schedule, "sections": sections}
+        return {"schedule": schedule, "sections": sections, "pending_choices": pending_choices}
