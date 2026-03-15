@@ -34024,12 +34024,7 @@
               "code": "MATH1073",
               "name": "Calcul différentiel",
               "credits": 3,
-              "prerequisites": [
-                [
-                  "MATH3041",
-                  "MATH1023"
-                ]
-              ],
+              "prerequisites": [],
               "corequisites": [],
               "type": "obligatoire"
             },
@@ -34039,8 +34034,7 @@
               "credits": 3,
               "prerequisites": [
                 [
-                  "MATH1073",
-                  "MATH1153"
+                  "MATH1073"
                 ]
               ],
               "corequisites": [],
@@ -34131,8 +34125,7 @@
                   "INFO1102"
                 ],
                 [
-                  "MATH1173",
-                  "MATH1563"
+                  "MATH1173"
                 ]
               ],
               "corequisites": [],
@@ -34174,8 +34167,7 @@
               "credits": 3,
               "prerequisites": [
                 [
-                  "MATH1073",
-                  "MATH1153"
+                  "MATH1073"
                 ]
               ],
               "corequisites": [],
@@ -34200,7 +34192,6 @@
               "credits": 3,
               "prerequisites": [
                 [
-                  "MATH1153",
                   "MATH1073"
                 ]
               ],
@@ -34218,8 +34209,7 @@
               "credits_required": 3,
               "label": "Choisir 3 cr",
               "codes": [
-                "STAT2603",
-                "STAT2633"
+                "STAT2603"
               ]
             },
             {

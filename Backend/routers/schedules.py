@@ -35,6 +35,7 @@ def _run_optimize_job(job_id: str, req: OptimizeScheduleRequest):
             minor_name=req.minor,
             fill_electives_fn=get_elective_recommendations,
             user_choices=req.userChoices,
+            already_completed=req.completedCourses or [],
         )
         with _jobs_lock:
             _jobs[job_id] = {"status": "done", "result": result, "error": None}

@@ -251,16 +251,26 @@ class ScheduleOptimizer:
                 return (sec, slots)
         return None
 
-    def place_mandatory(self, program: dict, minor: dict | None = None) -> tuple[dict[str, list[str]], dict[str, dict], list[PlacedCourse]]:
+    # Maximum courses per semester for mandatory placement (generous to fit full programs)
+    MAX_PER_SEMESTER = 8
+
+    def place_mandatory(
+        self,
+        program: dict,
+        minor: dict | None = None,
+        already_completed: set[str] | None = None,
+    ) -> tuple[dict[str, list[str]], dict[str, dict], list[PlacedCourse]]:
         """
         Place all mandatory courses. Returns (schedule, sections, placed_list).
         schedule: { "Automne 2026": ["CODE1", ...], ... }
         sections: { "CODE1": { nrc, groupe, schedule }, ... }
+        already_completed: course codes the user has already completed (excluded from placement).
         """
         schedule: dict[str, list[str]] = {self._semester_key(i): [] for i in range(len(self.REAL_SEMESTERS))}
         sections: dict[str, dict] = {}
         placed: list[PlacedCourse] = []
         used_slots: dict[str, list[tuple[str, float, float]]] = {self._semester_key(i): [] for i in range(len(self.REAL_SEMESTERS))}
+        already_completed = already_completed or set()
 
         # Collect mandatory courses from program
         mandatory: list[dict] = []
@@ -283,26 +293,55 @@ class ScheduleOptimizer:
                 seen_codes.add(code)
                 unique_mandatory.append(c)
 
+        # Build the set of all codes that are mandatory in this program.
+        # Any prerequisite NOT in this set is assumed to be an external/transfer
+        # prerequisite (e.g. high-school math) and is treated as already satisfied.
+        mandatory_codes = {c.get("code", "") for c in unique_mandatory}
+
         ordered = self._topological_order(unique_mandatory)
-        completed = set()
+        # Seed completed with courses the user has already finished so they don't get re-placed
+        completed: set[str] = set(already_completed)
+
+        def _prereqs_ok(prereqs: list[list[str]], prior: set[str]) -> bool:
+            """Check prereqs; treats groups whose options are all external to the program as satisfied."""
+            for group in prereqs:
+                if any(c in prior for c in group):
+                    continue
+                # If every option in this group is external to the mandatory course list,
+                # treat as auto-satisfied (e.g. high-school prerequisites).
+                if all(c not in mandatory_codes for c in group):
+                    continue
+                return False
+            return True
 
         for course in ordered:
             code = course.get("code", "")
             if not code:
                 continue
 
+            # Skip if user already completed this course
+            if code in already_completed:
+                completed.add(code)
+                continue
+
             # Skip entirely if the course has no sections in any semester schedule
             if code not in self.schedule_by_sigle:
                 continue
 
+            prereqs = self._flatten_prereqs(course.get("prerequisites") or course.get("corequisites") or [])
             placed_in_sem = False
+
             for sem_idx in range(len(self.REAL_SEMESTERS)):
                 sem_key = self._semester_key(sem_idx)
-                prereqs = self._flatten_prereqs(course.get("prerequisites") or course.get("corequisites") or [])
-                if not self._prereqs_satisfied(prereqs, completed):
+                # Only courses placed in EARLIER semesters satisfy prerequisites
+                prior = set(already_completed)
+                for i in range(sem_idx):
+                    prior.update(schedule.get(self._semester_key(i), []))
+
+                if not _prereqs_ok(prereqs, prior):
                     continue
 
-                if len(schedule[sem_key]) >= 5:
+                if len(schedule[sem_key]) >= self.MAX_PER_SEMESTER:
                     continue
                 sem_type = self._semester_type(sem_idx)
                 result = self._find_non_conflicting_section(code, sem_type, used_slots[sem_key])
@@ -317,22 +356,34 @@ class ScheduleOptimizer:
                     break
 
             if not placed_in_sem:
-                # Try any semester ignoring prereq order (course exists but had conflicts)
+                # Last resort: try every semester type (not just the matching one) while
+                # still enforcing that prerequisites come from earlier semesters.
                 for sem_idx in range(len(self.REAL_SEMESTERS)):
                     sem_key = self._semester_key(sem_idx)
-                    if len(schedule[sem_key]) >= 5:
+                    prior = set(already_completed)
+                    for i in range(sem_idx):
+                        prior.update(schedule.get(self._semester_key(i), []))
+                    if not _prereqs_ok(prereqs, prior):
                         continue
-                    sem_type = self._semester_type(sem_idx)
-                    result = self._find_non_conflicting_section(code, sem_type, used_slots[sem_key])
-                    if result:
-                        sec, slots = result
-                        schedule[sem_key].append(code)
-                        sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
-                        placed.append(PlacedCourse(code=code, semester_key=sem_key, nrc=sec.get("nrc", ""), groupe=sec.get("groupe", ""), schedule=sec.get("schedule", []), slots=slots))
-                        used_slots[sem_key].extend(slots)
-                        completed.add(code)
-                        placed_in_sem = True
+                    if len(schedule[sem_key]) >= self.MAX_PER_SEMESTER:
+                        continue
+                    # Try all three semester types so a course isn't blocked purely by
+                    # semester-type mismatch when an equivalent section exists elsewhere.
+                    for sem_type_try in [self._semester_type(sem_idx), "hiver", "automne", "printemps_ete"]:
+                        result = self._find_non_conflicting_section(code, sem_type_try, used_slots[sem_key])
+                        if result:
+                            sec, slots = result
+                            schedule[sem_key].append(code)
+                            sections[code] = {"nrc": sec.get("nrc", ""), "groupe": sec.get("groupe", ""), "schedule": sec.get("schedule", [])}
+                            placed.append(PlacedCourse(code=code, semester_key=sem_key, nrc=sec.get("nrc", ""), groupe=sec.get("groupe", ""), schedule=sec.get("schedule", []), slots=slots))
+                            used_slots[sem_key].extend(slots)
+                            completed.add(code)
+                            placed_in_sem = True
+                            break
+                    if placed_in_sem:
                         break
+                # If still not placed, skip: prerequisites cannot be satisfied within
+                # the available semesters — better to omit than to violate ordering.
 
         return schedule, sections, placed
 
@@ -464,6 +515,7 @@ class ScheduleOptimizer:
         minor_name: str | None = None,
         fill_electives_fn: callable | None = None,
         user_choices: dict | None = None,
+        already_completed: list[str] | None = None,
     ) -> dict:
         """
         Run full optimization. fill_electives_fn(available_classes, user_prompt, slots_to_fill, semester_key)
@@ -480,7 +532,8 @@ class ScheduleOptimizer:
                     minor = m
                     break
 
-        schedule, sections, placed_list = self.place_mandatory(program, minor)
+        completed_set = set(already_completed or [])
+        schedule, sections, placed_list = self.place_mandatory(program, minor, already_completed=completed_set)
         placed_codes = {p.code for p in placed_list}
         used_slots: dict[str, list[tuple[str, float, float]]] = {}
         for p in placed_list:

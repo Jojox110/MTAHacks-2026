@@ -45,7 +45,7 @@ const COURSE_COLORS = [
   '#5c7ce0', '#e0785c', '#7ce0b0', '#c45ce0', '#5ce0e0',
 ];
 
-export default function ScheduleGrid({ selectedCourses, onRemoveCourse, sessionData }) {
+export default function ScheduleGrid({ selectedCourses, onRemoveCourse, sessionData, optimizerSections = {} }) {
   const [hoveredBlock, setHoveredBlock] = useState(null);
   const totalCredits = selectedCourses.reduce((sum, c) => sum + c.credits, 0);
 
@@ -67,8 +67,9 @@ export default function ScheduleGrid({ selectedCourses, onRemoveCourse, sessionD
         unscheduled.push(course);
         return;
       }
-      // Use first section
-      const section = sections[0];
+      // Use the optimizer-chosen section (by NRC) if available, otherwise fall back to the first section
+      const chosenNrc = optimizerSections[course.id]?.nrc;
+      const section = (chosenNrc && sections.find((s) => s.nrc === chosenNrc)) || sections[0];
       let hasTimeSlot = false;
 
       (section.schedule || []).forEach((slot) => {

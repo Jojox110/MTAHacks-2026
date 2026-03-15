@@ -12,6 +12,7 @@ class OptimizeScheduleRequest(BaseModel):
     userPrompt: str
     minor: Optional[str] = None
     userChoices: Optional[Dict[str, List[str]]] = None  # { "Automne 2026": ["CODE1", ...] }
+    completedCourses: Optional[List[str]] = None  # courses already completed by the user
 
 class PendingChoice(BaseModel):
     code: str

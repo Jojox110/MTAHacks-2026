@@ -36,6 +36,7 @@ def ai_chat(
             current_message=req.message,
             current_courses=req.currentCourses,
             num_to_select=req.numToSelect,
+            major=user.get("major"),
         )
     except RuntimeError as e:
         raise HTTPException(status_code=500, detail=str(e))

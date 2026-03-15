@@ -6,15 +6,38 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from pathlib import Path
 from typing import Optional
 
 
 # ── Course selection helpers ─────────────────────────────────────────────────
 
+def _get_mandatory_codes(major: str | None) -> set[str]:
+    """Load programs.json and return all obligatoire course codes for the given major."""
+    if not major:
+        return set()
+    try:
+        programs_path = Path(__file__).resolve().parent.parent.parent / "programs.json"
+        with open(programs_path, encoding="utf-8") as f:
+            data = json.load(f)
+        for program in data.get("programs", []):
+            if program.get("name") == major:
+                return {
+                    c["code"]
+                    for year in program.get("years", [])
+                    for c in year.get("courses", [])
+                    if c.get("type") == "obligatoire" and c.get("code")
+                }
+    except Exception:
+        pass
+    return set()
+
+
 def _get_relevant_courses(
     conn: sqlite3.Connection,
     profile: str,
     current_courses: list[str],
+    excluded_codes: set[str] | None = None,
     limit: int = 18,
 ) -> list[dict]:
     """Keyword-score all courses against the student profile, return top matches."""
@@ -22,12 +45,13 @@ def _get_relevant_courses(
         "SELECT id, name, department, description, credits FROM courses"
     ).fetchall()
 
+    excluded = set(current_courses) | (excluded_codes or set())
     lower = profile.lower()
     keywords = [w for w in lower.split() if len(w) > 3]
 
     scored = []
     for r in rows:
-        if r["id"] in current_courses:
+        if r["id"] in excluded:
             continue
         score = 0
         name_l = r["name"].lower()
@@ -43,7 +67,7 @@ def _get_relevant_courses(
     scored.sort(key=lambda x: -x[0])
 
     if not scored:
-        fallback = [dict(r) for r in rows if r["id"] not in current_courses]
+        fallback = [dict(r) for r in rows if r["id"] not in excluded]
         return fallback[:limit]
 
     return [r for _, r in scored[:limit]]
@@ -53,13 +77,30 @@ def _build_system_prompt(
     student_profile: str,
     available_courses: list[dict],
     num_to_select: int,
+    future_courses: list[dict] | None = None,
 ) -> str:
     classes_lines = "\n".join(
         f"- {c['id']}: {c['name']}. {(c.get('description') or '').strip() or 'No description available.'}"
         for c in available_courses
     )
 
+    future_section = ""
+    if future_courses:
+        future_lines = "\n".join(
+            f"- {c['id']}: {c['name']}. {(c.get('description') or '').strip() or 'No description available.'}"
+            for c in future_courses
+        )
+        future_section = f"""
+Here is a list of courses the student cannot take yet (prerequisites not met or not offered this semester), but that they can look forward to in the future:
+<future_classes>
+{future_lines}
+</future_classes>
+"""
+
     return f"""You are an expert, interactive academic advisor. Your task is to help the student select EXACTLY {num_to_select} classes from the provided list that best align with their profile.
+
+### STRICT DATA CONSTRAINT ###
+The list provided in <available_classes> is the ONLY list of classes the student can register for right now. You must recommend exclusively from that list. The <future_classes> list is provided for reference only — do NOT recommend those for registration this semester.
 
 Here is the student's profile:
 <student_profile>
@@ -70,24 +111,24 @@ Here is the list of available classes and their descriptions:
 <available_classes>
 {classes_lines}
 </available_classes>
-
+{future_section}
 ### INSTRUCTIONS FOR INTERACTION ###
-You must not finalize the selection immediately. You must engage the student based on the following conditions:
+You must engage the student based on the following conditions:
 
-1. OBVIOUS MATCHES: If exactly {num_to_select} classes perfectly align with the profile, list your recommendations, explain your reasoning, and ask: "Do these sound good to you, or would you like to make adjustments?"
-2. UNCLEAR/TOO MANY MATCHES: If there are more than {num_to_select} good options, do not guess. Present the top contenders and ask 1 or 2 specific questions to narrow down their exact preferences.
-3. NO GOOD MATCHES: If none of the classes fit well, explicitly acknowledge that and present the "next best" options, then ask targeted questions to help the student choose.
+1. OBVIOUS MATCHES: If exactly {num_to_select} classes from <available_classes> align with the profile, list them, explain the reasoning, and ask: "Do these sound good to you, or would you like to make adjustments?"
+2. UNCLEAR/TOO MANY MATCHES: If there are more than {num_to_select} good options in <available_classes>, present the top contenders and ask 1 or 2 questions to narrow down the preference.
+3. NO GOOD MATCHES: If none of the classes in <available_classes> fit the student's interests well, explicitly tell them so. Then, if <future_classes> contains relevant options, highlight 2–3 of those as courses they can look forward to taking in a future semester once prerequisites are met — and explain why those are a better fit. Finally, still ask the student to pick {num_to_select} from <available_classes> as a placeholder for this semester, presenting the closest available options.
 
 ### OUTPUT FORMATTING ###
-- Phase 1 (Conversation): While discussing or confirming with the student, reply using normal conversational text. Do NOT output any JSON.
-- Phase 2 (Finalization): ONLY after the student explicitly confirms their final {num_to_select} choices, output STRICTLY the following JSON. No conversational text before or after:
+- Phase 1 (Conversation): Use normal conversational text. Do NOT output any JSON.
+- Phase 2 (Finalization): ONLY after the student explicitly confirms the choices from <available_classes>, output the decision STRICTLY in the following JSON format. No conversational text allowed in this phase.
 
 {{
   "recommendations": [
     {{
       "class_name": "Name of the class",
       "class_id": "Course code e.g. INFO2001",
-      "reasoning": "A concise explanation of the agreed-upon reasoning."
+      "reasoning": "A concise explanation of the final agreed-upon reasoning."
     }}
   ]
 }}"""
@@ -125,6 +166,7 @@ def chat_with_advisor(
     current_message: str,
     current_courses: list[str],
     num_to_select: int = 2,
+    major: str | None = None,
 ) -> dict:
     """
     Multi-turn conversation with Qwen acting as an academic advisor.
@@ -147,8 +189,19 @@ def chat_with_advisor(
     """
     from qwen_worker import enqueue
 
-    available_courses = _get_relevant_courses(conn, student_profile, current_courses)
-    system_prompt = _build_system_prompt(student_profile, available_courses, num_to_select)
+    mandatory_codes = _get_mandatory_codes(major)
+    available_courses = _get_relevant_courses(conn, student_profile, current_courses, excluded_codes=mandatory_codes)
+
+    # Build future courses: scored courses from the full catalog that didn't make the
+    # available list (e.g. prerequisites not yet met), so the LLM can suggest them
+    # when there are no good current-semester matches.
+    available_ids = {c["id"] for c in available_courses}
+    excluded_for_future = set(current_courses) | mandatory_codes | available_ids
+    future_courses = _get_relevant_courses(
+        conn, student_profile, list(excluded_for_future), excluded_codes=set(), limit=10
+    )
+
+    system_prompt = _build_system_prompt(student_profile, available_courses, num_to_select, future_courses=future_courses)
 
     messages = list(history) + [{"role": "user", "content": current_message}]
 

@@ -23,6 +23,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('schedule');
   const [programData, setProgramData] = useState(null);
   const [sessionData, setSessionData] = useState([]); // timetable data for active session
+  const [optimizerSections, setOptimizerSections] = useState({}); // courseCode -> {nrc, groupe, schedule}
 
   // Load session schedule data when semester changes
   useEffect(() => {
@@ -141,9 +142,15 @@ function App() {
 
   const handleOptimizeSchedule = useCallback(async (programName, userPrompt, userChoices = null) => {
     try {
-      const result = await optimizeSchedule(programName, userPrompt, user?.minor, userChoices);
+      // Courses already in the user's schedule (across all semesters) are treated as completed
+      // so the optimizer doesn't re-place them.
+      const completedCourses = [...new Set(Object.values(scheduleMap).flat())];
+      const result = await optimizeSchedule(programName, userPrompt, user?.minor, userChoices, completedCourses);
       if (result?.schedule) {
         setScheduleMap(result.schedule);
+      }
+      if (result?.sections) {
+        setOptimizerSections(result.sections);
       }
       // Return result so callers can inspect pendingChoices
       return result;
@@ -284,6 +291,7 @@ function App() {
             selectedCourses={selectedCourses}
             onRemoveCourse={removeCourse}
             sessionData={sessionData}
+            optimizerSections={optimizerSections}
           />
         )}
         {activeTab === 'program' && (

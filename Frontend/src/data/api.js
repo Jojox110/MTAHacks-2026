@@ -154,7 +154,7 @@ export async function loadSchedule() {
 
 // ─── Schedule Optimizer (4-year plan) ───
 
-export async function optimizeSchedule(program, userPrompt, minor = null, userChoices = null) {
+export async function optimizeSchedule(program, userPrompt, minor = null, userChoices = null, completedCourses = null) {
   // Start the job
   const { job_id } = await authFetch('/schedule/optimize', {
     method: 'POST',
@@ -163,6 +163,7 @@ export async function optimizeSchedule(program, userPrompt, minor = null, userCh
       userPrompt,
       minor: minor || undefined,
       userChoices: userChoices || undefined,
+      completedCourses: completedCourses && completedCourses.length > 0 ? completedCourses : undefined,
     }),
   });
 
