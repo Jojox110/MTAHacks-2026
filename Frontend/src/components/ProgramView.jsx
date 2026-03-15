@@ -1,6 +1,53 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
+// ─── Schedule conflict helpers ────────────────────────────────────────────────
+
+const DAYS_ORDER = ['Lu', 'Ma', 'Me', 'Je', 'Ve'];
+
+function parseDays(dayStr) {
+  if (!dayStr || dayStr === 'À dét.') return [];
+  const result = [];
+  let remaining = dayStr;
+  while (remaining.length > 0) {
+    const found = DAYS_ORDER.find((d) => remaining.startsWith(d));
+    if (found) { result.push(found); remaining = remaining.slice(found.length); }
+    else { remaining = remaining.slice(1); }
+  }
+  return result;
+}
+
+function parseTime(timeStr) {
+  if (!timeStr || timeStr === 'À dét.' || !timeStr.includes('-')) return null;
+  const [a, b] = timeStr.split('-');
+  const toH = (t) => t.length >= 4 ? parseInt(t.slice(0, 2)) + parseInt(t.slice(2, 4)) / 60 : 0;
+  return [toH(a), toH(b)];
+}
+
+/** Returns true if two section schedule arrays share a day+time overlap. */
+function schedulesConflict(schedA, schedB) {
+  const slotsA = [];
+  for (const s of schedA) {
+    const days = parseDays(s.days || '');
+    const time = parseTime(s.time || '');
+    if (!days.length || !time) continue;
+    for (const d of days) slotsA.push([d, time[0], time[1]]);
+  }
+  const slotsB = [];
+  for (const s of schedB) {
+    const days = parseDays(s.days || '');
+    const time = parseTime(s.time || '');
+    if (!days.length || !time) continue;
+    for (const d of days) slotsB.push([d, time[0], time[1]]);
+  }
+  for (const [da, sa, ea] of slotsA) {
+    for (const [db, sb, eb] of slotsB) {
+      if (da === db && sa < eb && sb < ea) return true;
+    }
+  }
+  return false;
+}
+
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 /** Find scheduled courses that satisfy an option group */
@@ -468,11 +515,19 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                       {(data.options || []).map((opt) => {
                         const isChosen = chosen.includes(opt.code);
                         const isRecommended = (data.recommended || []).includes(opt.code);
+                        // Disable if it conflicts with any already-chosen course in this semester
+                        const conflicts = !isChosen && chosen.some((chosenCode) => {
+                          const chosenOpt = (data.options || []).find((o) => o.code === chosenCode);
+                          return chosenOpt && schedulesConflict(opt.schedule || [], chosenOpt.schedule || []);
+                        });
                         return (
                           <button
                             key={opt.code}
-                            className={`program-pending-opt ${isChosen ? 'chosen' : ''} ${isRecommended ? 'recommended' : ''}`}
+                            className={`program-pending-opt ${isChosen ? 'chosen' : ''} ${isRecommended ? 'recommended' : ''} ${conflicts ? 'conflicted' : ''}`}
+                            disabled={conflicts}
+                            title={conflicts ? 'Conflicts with a course you already selected' : undefined}
                             onClick={() => {
+                              if (conflicts) return;
                               setUserChoices((prev) => {
                                 const cur = prev[semKey] || [];
                                 if (isChosen) {
@@ -485,6 +540,7 @@ export default function ProgramView({ programData, courses = [], userMajor, user
                             }}
                           >
                             {isRecommended && <span className="opt-star">★ </span>}
+                            {conflicts && <span className="opt-conflict">✕ </span>}
                             {opt.code} — {opt.name}
                           </button>
                         );

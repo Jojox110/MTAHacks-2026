@@ -1744,6 +1744,20 @@
   border-color: var(--accent-dim);
 }
 
+.program-pending-opt.conflicted,
+.program-pending-opt.conflicted:hover {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: #c0392b44;
+  color: #c0392b;
+  text-decoration: line-through;
+}
+
+.opt-conflict {
+  color: #c0392b;
+  margin-right: 2px;
+}
+
 .opt-star {
   color: var(--accent);
 }

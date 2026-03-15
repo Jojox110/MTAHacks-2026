@@ -1,0 +1,436 @@
+[
+  {
+    "sigle": "INFO1101",
+    "name": "Principes de programmation I",
+    "ofg": "OFG5",
+    "prerequisites": null,
+    "description": "Fonctionnement, systèmes et architecture d'un ordinateur. Environnement de travail, sécurité. Stratégies pour la résolution de problèmes : décomposition et raffinement graduel, algorithmes, description informelle. Langage de programmation évolué : syntaxe, structures de données élémentaires, structures de contrôle, pseudo-code, codage, bon style de programmation. Introduction à la récursivité et aux tableaux."
+  },
+  {
+    "sigle": "INFO1102",
+    "name": "Principes de programmation II",
+    "ofg": null,
+    "prerequisites": "INFO1101",
+    "description": "Approfondissement de la connaissance du langage de programmation vu lors du cours préalable. Structures de données abstraites (liste, fichiers, pile, file, dèque, tables, etc.). Algorithmes de recherche et de tri. Algorithmes itératifs et récursifs. Allocations dynamiques. Évaluation des programmes : complexité, vérification. Introduction à la programmation orientée objet. Programmation événementielle."
+  },
+  {
+    "sigle": "INFO2001",
+    "name": "Int. à l’architecture d’ord.",
+    "ofg": null,
+    "prerequisites": "INFO1101",
+    "description": "Systèmes numériques et représentation des données. Logique numérique et implantation. Logique de base et théorie de commutation. Technologie d'implantation des circuits. Conception des circuits combinatoires et des systèmes séquentiels synchrones et asynchrones. Systèmes de mémoires. Transfert des données. Introduction à la microprogrammation."
+  },
+  {
+    "sigle": "INFO2012",
+    "name": "Struct. de données et algor.",
+    "ofg": null,
+    "prerequisites": "INFO1102,MATH1173,MATH1563",
+    "description": "Rappel des structures linéaires (listes, piles, files d'attente). Structures de données abstraites, leurs opérateurs, et leurs implémentations (arbres binaires, de recherche, de Huffman, manceaux, graphes). Algorithmes récursifs. Analyse asymptotique. Suite des algorithmes de recherche, de hachage et de tri. Introduction à la complexité P et NP."
+  },
+  {
+    "sigle": "INFO2013",
+    "name": "Introduction à l'informatique",
+    "ofg": "OFG5",
+    "prerequisites": null,
+    "description": "Architecture et organisation d'ordinateurs, représentation logique et numérique, processeurs, mémoires, bus, registres, adressage, entrées/sorties. Éléments de programmation, variables, conditions, boucles, fonctions, analyse et résolution de problèmes, algorithmes, programmation Web et mobile, communication graphique. Systèmes d'exploitation, réseaux, sécurité informatique, bases de données, l'informatique et les différents métiers. TIC et responsabilités sociales."
+  },
+  {
+    "sigle": "INFO3103",
+    "name": "Organisation des ordinateurs",
+    "ofg": null,
+    "prerequisites": "INFO2001",
+    "description": "Organisation de base d'un ordinateur : le modèle Von Neumann, processeur central, mémoire centrale, bus, entrées/sorties, Représentation de données et codage d'instructions. L'architecture du processeur au niveau registres. Mémoire physique et mémoire virtuelle. Transfert de données dans l'ordinateur. Langage assembleur, modes d'adressage, entrées/sorties, interruptions."
+  },
+  {
+    "sigle": "INFO3106",
+    "name": "Développement de logiciels",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Modèles de cycle de vie. Conception. Documentation. Gestion et contrôle de configuration/version. Fiabilité, sécurité, responsabilité, évaluation du risque. Entretien. Outils de spécification, de conception et d'implantation. Spécifications : informelles, formelles, algébriques. Conceptions fonctionnelle et orientée-tâche. Réutilisation. Stratégies d'implantation. Vérification. Validation. Assurance de qualité. Métriques. Estimation du coût, échéanciers."
+  },
+  {
+    "sigle": "INFO3114",
+    "name": "Fichiers et bases de données",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Fichiers et supports externes. Représentation des enregistrements. Gestion de l'espace. Tri externe, B-arbres et indexation, adressage aléatoire. Introduction aux SGBD. Modèles relationnels et orienté-objets. Formes normales. Langages de définition de données et d'interrogation. Optimisation des requêtes. Récupération et accès concurrentiel aux bases de données. Introduction aux bases de données réparties."
+  },
+  {
+    "sigle": "INFO3201",
+    "name": "Architecture d'ordinateur",
+    "ofg": null,
+    "prerequisites": "INFO3103",
+    "description": "Microprogrammation : organisation, séquenceur, codage vertical et horizontal, comparaison entre contrôles câblé et microprogrammé. Opérations en virgules flottantes. Microprocesseurs : CISC versus RISC, superscalaire, superpipeline, effets de branchement sur le pipeline. Cache de mémoire : hiérarchie, cache de données, caches d'instructions, méthodes de mapping. Circuits d'entrées/sorties. Introduction aux architectures parallèles."
+  },
+  {
+    "sigle": "INFO3202",
+    "name": "Système d’exploitation",
+    "ofg": null,
+    "prerequisites": "INFO3103",
+    "description": "Structures et fonctions des systèmes d'exploitation. Tâches et processus. Synchronisation et coordination des processus. Blocages. L'ordonnancement de l'unité centrale : modèles déterministes et probabilistes. Gestion de la mémoire : organisation de la mémoire physique, implantation de la mémoire virtuelle, gestion de la mémoire secondaire. Sécurité et protection."
+  },
+  {
+    "sigle": "INFO3205",
+    "name": "Paradigmes de programmation",
+    "ofg": null,
+    "prerequisites": "INFO2012,INFO3103",
+    "description": "Étude comparative des paradigmes des langages de programmation. Modalités d'accès et types de données, gestions de l'allocation dynamique de la mémoire, traduction de programmes et sémantique. Paradigmes fonctionnel, logique et orienté-objets."
+  },
+  {
+    "sigle": "INFO3212",
+    "name": "Algorithmique",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Rappel des notions d'algorithme et de complexité temporelle et spatiale. Relations de récurrence. Algorithmes de retour en arrière, voraces, diviser-pour-régner, probabilistes, heuristiques, parallèles et distribués. Programmation dynamique. Classes de complexité P, NP.NP-complétude. Introduction aux fonctions calculables et à la décidabilité."
+  },
+  {
+    "sigle": "INFO3214",
+    "name": "Informatique théorique",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Langages réguliers et automates à états finis et à piles. Langages libres de contexte. Hiérarchie de Chomsky. Machine de Turing. Machine universelle. Hypothèse de Church. Calculabilité et déterminisme, problèmes indécidables. Applications dans les traitements de texte et les compilateurs."
+  },
+  {
+    "sigle": "INFO3221",
+    "name": "Réseaux informatiques",
+    "ofg": null,
+    "prerequisites": "INFO3103",
+    "description": "Concepts et terminologie des réseaux informatiques. Modèle en couches : OSI, TCP/IP. Couche application : HTTP, DNS, courriel, P2P, multimédia. Couche transport : multiplexage, pipelining, contrôle de flux, contrôle de congestion. Couche réseau : adressage, routage. Couche liaison : accès multiple, correction d'erreur, commutation, VLAN. Couche physique : codage, multiplexage."
+  },
+  {
+    "sigle": "INFO4002",
+    "name": "Applications client-serveur",
+    "ofg": null,
+    "prerequisites": "INFO3103,INFO3114",
+    "description": "Modèle client-serveur. Installation et gestion des différents types de serveurs et clients existants sur le marché: Windows NT, Httpd, WAIS, etc. Conception et développement d'une application client-serveur utilisant un langage de programmation réseau."
+  },
+  {
+    "sigle": "INFO4004",
+    "name": "Principes de simulations",
+    "ofg": null,
+    "prerequisites": "INFO2012,STAT2603,STAT2633",
+    "description": "Simulation des processus complexes et développement des applications distribuées utilisant des techniques de simulation. Concepts classiques de simulation. Techniques de programmation pour systèmes dynamiques complexes. Modélisation, phénomènes aléatoires. Files d'attente, priorités, techniques de scheduling, synchronisation. Protocoles de coordination. Hyper-ordinateurs. Langages de simulation distribuée. Développement des simulations complexes."
+  },
+  {
+    "sigle": "INFO4006",
+    "name": "Multimédia",
+    "ofg": null,
+    "prerequisites": "INFO3103",
+    "description": "Réalisation des éléments de base d'une application multimédia: image, vidéo, son, texte, etc. Logiciels-outils nécessaires pour produire ces éléments. Techniques de conversion et de compression de données spécifiques. Programmation et implantation d'une application multimédia."
+  },
+  {
+    "sigle": "INFO4009",
+    "name": "Applications en temps réel",
+    "ofg": null,
+    "prerequisites": "INFO3202",
+    "description": "Outils et techniques de programmation en temps réel. Application: contrôle de processus, acquisition de données, communication."
+  },
+  {
+    "sigle": "INFO4023",
+    "name": "Intro. aux réseaux sans fil",
+    "ofg": null,
+    "prerequisites": "INFO3221",
+    "description": "Couche physique sans fil : Codage, modulation, propagation des signaux. Couche liaison sans fil. Accès multiple. Protocoles de routage dans MANET : réactifs, proactifs, hybrides. Réseaux locaux IEEE802.11. Réseaux véhiculaires. Réseaux à radios cognitives. Réseaux personnels sans fil : Bluetooth, Zigbee. Réseaux de capteurs. Internet des objets. Réseaux cellulaires."
+  },
+  {
+    "sigle": "INFO4028",
+    "name": "Analyse et traitement d’images",
+    "ofg": null,
+    "prerequisites": "INFO3114,MATH2613,MATH1153",
+    "description": "Ce cours couvre les techniques numériques utilisées en traitement d'images. On y abordera entre autres la théorie de l'échantillonnage, les standards, le filtrage, la restauration, la compression, l'appariement d'images, etc. Ce cours comprend une partie théorique, la programmation par la personne étudiante d'algorithmes spécifiques ainsi qu'un projet appliqué."
+  },
+  {
+    "sigle": "INFO4030",
+    "name": "BD relationnelles et réparties",
+    "ofg": null,
+    "prerequisites": "INFO3114",
+    "description": "Approfondissement du modèle relationnel. Contrôle des accès concurrents. Concepts de modélisation avancés. Bases de données distribuées, BDDD. Fragmentation, réplication. Traitement et optimisation des requêtes dans un BDDD. Contrôle des accès concurrents et reprise après une panne dans un BDDD. Bases de connaissances. Bases de données multimédias."
+  },
+  {
+    "sigle": "INFO4035",
+    "name": "Algorithmes syst. par. et dist",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Le cours porte sur la conception, la structure et l'utilisation des systèmes basés sur l'interaction des processeurs multiples. Exécution parallèle et synchronisation. Support architectural. Constructions parallèles dans les langages de programmation. Algorithmes parallèles, complexité. Messages, RPCs, modèles à mémoire partagée, processus et threads. Client-serveur. Objets distribués. Agents."
+  },
+  {
+    "sigle": "INFO4041",
+    "name": "Analyse perf., vérif. et valid",
+    "ofg": null,
+    "prerequisites": "INFO3106",
+    "description": "Processus et cycle de vie. Méthodes de spécification, notations et outils. Validation et vérification. Déverminage et compréhension du code. Paradigmes de testage (unité, régression). Stratégies de testage (boîte blanche, testage fonctionnel). Gestion des configurations. Considérations reliées à l'usager, modélisation d'usager. Standards internationaux. Méthodologies de développement orientée objet."
+  },
+  {
+    "sigle": "INFO4042",
+    "name": "Applications web",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Historique du World Wide Web; protocole HTTP. Langages du WWW : HTML; CSS; JavaScript. Navigateurs; moteurs de rendu. Web et multimédia : images; sons; vidéos. Environnements Modèle-Vue-Contrôleur. Web et fichiers : téléchargement; téléversement; glisser-déposer. Sockets web; stockage web; accéléromètre; géolocalisation. Langages jQuery et jQuery mobile. Design responsif; développement sous Bootstrap."
+  },
+  {
+    "sigle": "INFO4044",
+    "name": "Intro apprentissage profond",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Théorie et algorithmes d'apprentissage profond (Deep Learning), réseaux convolutifs, autres réseaux, architectures d'apprentissage et de classification, visualisation des résultats, stratégies de développement, outils de développement, applications."
+  },
+  {
+    "sigle": "INFO4063",
+    "name": "Algorithmique numérique",
+    "ofg": null,
+    "prerequisites": "INFO1102,MATH2613",
+    "description": "Représentation des données, les types, la précision. Gestion de mémoire lors d'exécutions; effets des approches itératives versus récursives sur l'efficacité et la mémoire; algorithmes numériques, approximation et optimisation; algorithmes distribués; algorithmes graphiques; solutions d'équations linéaires, non linéaires; dérivées et intégrales numériques. Convergence, stabilité. Complexité de programme. Applications en science."
+  },
+  {
+    "sigle": "INFO4108",
+    "name": "Programmation UNIX",
+    "ofg": null,
+    "prerequisites": "INFO3220",
+    "description": "Commandes Unix/Linux : entrées/sorties, redirections, fichiers, tubes, gestion des signaux, communication, synchronisation, filtrage de texte, expressions régulières. Programmation Shell : variables d'environnement, script Shell, structures de contrôle, fonctions, paramètres. Programmations système en C/C++ : gestion des processus, points de reprise, fonctionnalités avancées. Installation et configuration d'une distribution Linux"
+  },
+  {
+    "sigle": "INFO4301",
+    "name": "Apprentissage machine",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Architectures et algorithmes d'apprentissage machine. Les thèmes abordés sont : apprentissage supervisé et non-supervisé, classification et régression, groupement, réduction de dimensionnalité, données massives (Big data), science des données, introduction à l'apprentissage profond, outils de programmation, et applications."
+  },
+  {
+    "sigle": "INFO4302",
+    "name": "Algorithmes avancés",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Techniques théoriques et pratiques de résolution de problèmes informatiques dans les catégories suivantes : Entrées/sorties, Chaînes de caractères, Énumérations, Graphes, Programmation dynamique, Géométrie, Génération de nombres aléatoires suivant une loi donnée."
+  },
+  {
+    "sigle": "INFO4303",
+    "name": "Progr. massivement parallèle",
+    "ofg": null,
+    "prerequisites": "INFO2012,INFO3103",
+    "description": "Introduction des concepts, langages, architectures et modèles de programmation hétérogène des processeurs massivement parallèles graphiques (GPU). Sujets abordés : programmation GPGPU avec CUDA, transfert entre CPU et GPU, stratégies d'optimisation, CUDA vs OpenCL, calcul haute performance (High Performance Computing) et applications."
+  },
+  {
+    "sigle": "INFO4304",
+    "name": "Vision par ordinateur",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Techniques, algorithmes et architecture des systèmes de vision par ordinateur et de vision robotique. Les sujets traités sont : architecture matérielle et logicielle d'un système de vision, extraction des caractéristiques, reconnaissance de formes, analyse du mouvement, suivi et navigation, vision 3D, traitements temps réel, algorithmes avancés, applications pratiques et industrielles."
+  },
+  {
+    "sigle": "INFO4305",
+    "name": "Cryptographie",
+    "ofg": null,
+    "prerequisites": "INFO2012",
+    "description": "Objectifs de la sécurité. Algorithmes de chiffrement classiques. Classification des attaques. Cryptographie symétrique : Chiffrement de flux (masque jetable, RC4), chiffrement par bloc (DES, AES). Cryptographie asymétrique : RSA, logarithme discret. Échange Diffie-Hellman. Hachage cryptographique. Signature numérique. Code d'authentification de message. Gestion de clés. Applications : SSL/TLS, VPN, PGP, Blockchain."
+  },
+  {
+    "sigle": "INFO4307",
+    "name": "Cybersécurité",
+    "ofg": null,
+    "prerequisites": "INFO3221",
+    "description": "Ce cours de cybersécurité permet d'acquérir les connaissances essentielles sur les concepts de sécurité informatique, d'identifier et analyser les menaces, d'appliquer des outils de surveillance réseau, de pratiquer le piratage éthique, et d'évaluer les bonnes pratiques pour sécuriser efficacement les systèmes et protéger les données."
+  },
+  {
+    "sigle": "INFO4900",
+    "name": "Sujets avancés en informatique",
+    "ofg": null,
+    "prerequisites": null,
+    "description": "Sujets choisis par la directrice ou le directeur du Département en tenant compte des activités récentes en informatique."
+  },
+  {
+    "sigle": "MATH1073",
+    "name": "Calcul différentiel",
+    "ofg": "OFG 5",
+    "prerequisites": "MATH30411C,MATH1023",
+    "description": "Rappels. Fonctions et opérations. Fonctions polynomiales, rationnelles, trigonométriques, exponentielles et logarithmiques. Fonction réciproque. Limites et continuité. Dérivée et fonction dérivée, interprétation géométrique, dérivées d'ordres supérieurs. Dérivation en chaîne, dérivation implicite. Approximations linéaires. Règles de l'Hôpital. Tracés de courbes et optimisation. Méthode de Newton-Raphson."
+  },
+  {
+    "sigle": "MATH1173",
+    "name": "Calcul intégral",
+    "ofg": null,
+    "prerequisites": "MATH1073,MATH1153",
+    "description": "Coordonnées polaires. Nombres complexes. Équations paramétriques. L'intégrale définie : sommes de Riemann, interprétation géométrique, propriétés. Primitives, intégration, théorème fondamental du calcul intégral. Méthodes d'intégration. Intégrales généralisées. Applications à la géométrie, au calcul des centres de masse, etc. Suites et séries géométriques. Utilisation d'un logiciel de calcul symbolique."
+  },
+  {
+    "sigle": "MATH1563",
+    "name": "Éléments de math. discrètes",
+    "ofg": null,
+    "prerequisites": "MATH1073",
+    "description": "Fondements: logique, ensembles et fonctions. Algorithmes. Complexité des algorithmes. Matrices. Méthodes de preuves. Induction mathématique. Permutations et combinaisons. Relations d'équivalence et ordres partiels. Introduction aux graphes: graphes connexes, graphes planaires, arbres et applications."
+  },
+  {
+    "sigle": "MATH2613",
+    "name": "Algèbre matricielle",
+    "ofg": null,
+    "prerequisites": "MATH1073,MATH1153",
+    "description": "Matrices. Opérations sur les matrices. Algorithme de Gauss-Jordan. Résolution de systèmes d'équations linéaires. Déterminants. Valeurs et vecteurs propres. Introduction aux espaces vectoriels. Applications linéaires et changement de base. Diagonalisation. Applications diverses : animation, méthode des moindres carrés, graphes orientés, chaînes de Markov. Utilisation d'un logiciel de calcul numérique."
+  },
+  {
+    "sigle": "PHYS1373",
+    "name": "Électricité et magnétisme",
+    "ofg": "OFG 4",
+    "prerequisites": "MATH1073",
+    "description": "Force électrique. Champ électrique. Théorème de Gauss. Potentiel électrique. Condensateurs et diélectriques. Courant et résistance. Circuits à courant continu. Lois de Kirchoff. Champ magnétique. Sources de champ magnétique. Induction électromagnétique. Circuits alimentés en courant alternatif. Certaines parties de la théorie sont appliquées en laboratoire."
+  },
+  {
+    "sigle": "STAT2603",
+    "name": "Intro aux prob et statistique",
+    "ofg": null,
+    "prerequisites": "MATH1173",
+    "description": "Statistique descriptive. Probabilité élémentaire. Lois de probabilité. Distributions discrètes et continues (de Poisson, normale...). Tests d'hypothèse et estimation de paramètres. Lissage de courbe. Régression."
+  },
+  {
+    "sigle": "STAT2633",
+    "name": "Intro à la stat appliquée",
+    "ofg": null,
+    "prerequisites": "MATH1153,MATH1073",
+    "description": "Types de variables; représentation graphique; population et échantillon; mesures de tendance centrale, dispersion et position; tableau de contingence; corrélation; notions de probabilités; théorème de Bayes; distributions discrètes et continues : binomiale, Poisson, normale, Student; méthodes d'échantillonnage; théorème limite centrale; inférence statistique pour la moyenne et la proportion; marge d'erreur."
+  },
+  {
+    "sigle": "ADCO1010",
+    "name": "Comptabilité financière I",
+    "ofg": null,
+    "prerequisites": null,
+    "description": "Initiation à la comptabilité financière, aux normes comptables, à la préparation des états financiers et à l'utilisation des informations financières."
+  },
+  {
+    "sigle": "ADMK1310",
+    "name": "Introduction au marketing",
+    "ofg": null,
+    "prerequisites": null,
+    "description": "Introduction au marketing et son rôle dans l'entreprise moderne. Les concepts suivants sont étudiés : segmentation des marchés, positionnement, prix, produit, service, communication, distribution et stratégie de mise en marché."
+  },
+  {
+    "sigle": "ADMN1220",
+    "name": "Introduction au management",
+    "ofg": null,
+    "prerequisites": null,
+    "description": "Définition du management. Structures juridiques des organisations. Fonctions du management : planification, organisation, direction et contrôle. Interaction du management avec les autres fonctions de l'organisation."
+  },
+  {
+    "sigle": "ADRH3222",
+    "name": "Comportement organisationnel",
+    "ofg": null,
+    "prerequisites": "ADMN1220",
+    "description": "Étude du comportement des individus dans les organisations. Rapport entre les individus ayant divers intérêts et motifs à l'intérieur et à l'extérieur des organisations. Influence du comportement des individus sur la performance de l'organisation."
+  },
+  {
+    "sigle": "ADRH3223",
+    "name": "Gestion ressources humaines",
+    "ofg": null,
+    "prerequisites": "ADMN1220",
+    "description": "Application des fondements théoriques et des fonctions de la gestion des ressources humaines (GRH) : dotation du personnel, formation et développement des compétences, gestion de la performance et gestion de la rémunération; organisations syndicales et législation du travail; négociation collective et règlement des conflits."
+  },
+  {
+    "sigle": "PHIL3475",
+    "name": "Éthique de l’information",
+    "ofg": "OFG 3",
+    "prerequisites": null,
+    "description": "Rapports de l'information avec les droits et libertés. Fonctions de l'information dans la communication. La communication faussée, la désinformation et ses différentes formes. Tensions et conflits dans les activités d'information. Problèmes institutionnels et éléments d'éthique professionnelle."
+  },
+  {
+    "sigle": "PHIL3492",
+    "name": "Éthique et informatique",
+    "ofg": "OFG 3",
+    "prerequisites": null,
+    "description": "Contexte social et historique de l'informatique. Responsabilité professionnelle: servir l'intérêt de la société, protéger l'information privée, et éduquer les concitoyens sur ce qu'est l'informatique, ses promesses, ses limites et ses dangers. Similitudes et différences par rapport aux autres professions. Responsabilités éthiques et juridiques aux niveaux personnel et institutionnel. La propriété intellectuelle en informatique."
+  },
+  {
+    "sigle": "SOCI3320",
+    "name": "Technologies et sociétés",
+    "ofg": "OFG 3",
+    "prerequisites": null,
+    "description": "Histoire sociale des développements techniques. Révolution scientifique, virage technologique et informatisation des sociétés : impacts sur l'organisation des sociétés, du travail, de la formation professionnelle. Risques du progrès et crise écologique. Développement durable et modernisation écologique. Innovations institutionnelles et modernisation sociétale. Changement et refondation des pratiques, éthique et justice sociale."
+  },
+  {
+    "sigle": "ADSI3541",
+    "name": "Intranet/Extranet en gestion",
+    "ofg": null,
+    "prerequisites": "ADSI1601,ADMK2999",
+    "description": "Comprendre les concepts de gestion et d'utilisation des nouvelles technologies dans les techniques de communication et de marketing d'une entreprise. Concevoir, développer et gérer des sites Intranet ou Extranet qui répondront aux objectifs désirés d'une entreprise. Comprendre les implications de l'échange de documents informatisés et du commerce électronique. Voir les niveaux de sécurité et les problèmes reliés à la sécurité des informations."
+  },
+  {
+    "sigle": "ADSI3601",
+    "name": "Analyse des systèmes d'info",
+    "ofg": null,
+    "prerequisites": "ADSI1601",
+    "description": "Étude traitant de l'analyse et de la structure de systèmes; l'évaluation des données, des fichiers et de l'information générée par l'ordinateur; projet pratique d'analyse."
+  },
+  {
+    "sigle": "ADSI3603",
+    "name": "Gest. des besoins/qualité",
+    "ofg": null,
+    "prerequisites": "ADSI2602",
+    "description": "Étude des techniques de gestion des besoins des applications en SIO. Modélisation des besoins des utilisateurs. Organisation, supervision et évaluation du plan qualité, des plans de tests et de tests d'applications en SIO. Application des normes ISO-9001, 9002, 9003 et 9004 pour les logiciels."
+  },
+  {
+    "sigle": "ADSI4571",
+    "name": "Gestion projets syst. d'info",
+    "ofg": null,
+    "prerequisites": "ADSI3601",
+    "description": "Rôles et fonctions d'un gestionnaire de projets informatisés. Cycle de développement d'un système d'information. Planification des ressources humaines, matérielles, logicielles et financières nécessaires au développement et à l'exploitation d'un système informatisé. Analyse des projets informatisés : estimations, projection, analyse des risques, planification. Sous-traitance versus développement interne. Rôle du gestionnaire et outils de gestion de projets à sa disposition. Gestion de l'entretien d'un système informatisé."
+  },
+  {
+    "sigle": "ADSI4603",
+    "name": "Projets en systèmes d'info",
+    "ofg": null,
+    "prerequisites": "ADSI3601",
+    "description": "Projet d'analyse ou de programmation permettant l'application des connaissances dans le domaine de l'informatique. Tout projet doit être autorisé par le directeur ou la directrice du Département et le professeur ou la professeure qui en assume la direction."
+  },
+  {
+    "sigle": "ADSI4604",
+    "name": "Gestion des systèmes d'info",
+    "ofg": null,
+    "prerequisites": "ADSI1601",
+    "description": "Gestion des systèmes d'information et des ressources informationnelles. Compréhension des technologies de l'information comme levier d'innovation organisationnelle. Aspects stratégiques, économiques, entrepreneuriaux, financiers, éthiques, juridiques, environnementaux et sécuritaires des systèmes/technologies de l'information. Influence des systèmes d'information sur les organisations modernes : réingénierie et adéquation entre systèmes/technologies de l'information et performance organisationnelle."
+  },
+  {
+    "sigle": "MATH2013",
+    "name": "Suites, séries, calcul dans Rn",
+    "ofg": null,
+    "prerequisites": "MATH1173",
+    "description": "Fonctions de plusieurs variables réelles. Dérivées partielles et dérivées partielles d'ordre supérieur. Approximation linéaire et différentielle. Règle de dérivation en chaîne. Extrema de fonctions de plusieurs variables. Multiplicateurs de Lagrange. Suites et séries réelles. Séries entières. Théorème de Taylor."
+  },
+  {
+    "sigle": "MATH2023",
+    "name": "Analyse math. appliquée",
+    "ofg": null,
+    "prerequisites": "MATH1173",
+    "description": "Compléments sur les séries. Fonctions de plusieurs variables réelles. Vecteurs. Dérivées partielles, différentielle et gradient et applications (linéarisation locale, optimisation contrainte et non-contrainte, multiplicateurs de Lagrange, ...). Intégrales multiples (coordonnées cartésiennes, polaires, cylindriques et sphériques). Intégration numérique. Applications (aires, volumes, centre de masse, ...). Utilisation du logiciel de calcul symbolique."
+  },
+  {
+    "sigle": "MATH2423",
+    "name": "Fondements des mathématiques",
+    "ofg": null,
+    "prerequisites": "MATH1173",
+    "description": "Raisonnement logique. Axiomes et théorèmes, quantificateurs. Théorie des ensembles. Axiomes de sélection. Graphes et fonctions. Axiome du choix. Cardinal d'un ensemble. Théorème de Cantor. Ensembles finis et infinis. Entiers naturels. Relation d'équivalence. Ensemble quotient. Construction des entiers rationnels. Raisonnement par récurrence. Algorithme d'Euclide. Congruence."
+  },
+  {
+    "sigle": "MATH2673",
+    "name": "Algèbre linéaire",
+    "ofg": null,
+    "prerequisites": "MATH2613",
+    "description": "Espaces vectoriels. Bases et dimension. Changement de bases et matrice de passage. Applications linéaires. Représentation matricielle. Déterminants. Valeurs et vecteurs propres. Polynôme caractéristique. Diagonalisation. Étude des opérateurs normaux complexes et réels (en particulier, les opérateurs hermitiens, unitaires, symétriques et orthogonaux). Formes quadratiques. Formes canoniques."
+  },
+  {
+    "sigle": "STAT3123",
+    "name": "Conc. et analyse d'expériences",
+    "ofg": null,
+    "prerequisites": "STAT",
+    "description": "Éléments de statistique inférentielle. Modèles de régression linéaire, non linéaire et généralisés. Analyse de variance à une et plusieurs dimensions. Blocs aléatoires et complètement aléatoires. Carrés latins. Expériences factorielles. Classification et degrés de liberté. Méthodes non paramétriques. Analyse de covariance. Applications en sciences naturelles, physiques et humaines. Usage de l'ordinateur."
+  },
+  {
+    "sigle": "STAT3423",
+    "name": "Sondages et inférence stat.",
+    "ofg": null,
+    "prerequisites": "STAT",
+    "description": "Éléments de statistique inférentielle. Questionnaires. Propriétés des estimateurs: variance, intervalles de confiance, taille d'échantillons. Méthodes non paramétriques. Échantillonnage aléatoire simple, systématique, stratifié, par grappes et à degrés multiples. Estimation par le quotient et par la régression. Applications en sciences naturelles, physiques et humaines. Usage de l'ordinateur."
+  },
+  {
+    "sigle": "STAT3703",
+    "name": "Analyse des données",
+    "ofg": null,
+    "prerequisites": "STAT2603,MATH2613",
+    "description": "Théorie et application de méthodes d'analyse de données multidimensionnelles : analyse en composantes principales, analyse factorielle des correspondances, analyse discriminante, positionnement multidimensionnel, classification et arbres de décision. Apprentissage de logiciels facilitant l'utilisation de ces méthodes."
+  }
+]

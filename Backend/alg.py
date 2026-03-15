@@ -580,8 +580,16 @@ class ScheduleOptimizer:
 
                     if needs_clarification:
                         # Always ask the user — store options and LLM's ranked picks.
+                        # Include section schedule so the frontend can detect mutual conflicts.
                         pending_choices[sem_key] = {
-                            "options": [{"code": c["code"], "name": c["name"]} for c in available[:10]],
+                            "options": [
+                                {
+                                    "code": c["code"],
+                                    "name": c["name"],
+                                    "schedule": c.get("section", {}).get("schedule", []),
+                                }
+                                for c in available[:10]
+                            ],
                             "recommended": [
                                 c.split()[0] if isinstance(c, str) else str(c)
                                 for c in (codes or [])[:count]
